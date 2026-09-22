@@ -6,7 +6,7 @@
 | ----- | --------- | ------------------------------------------------------------------------------- |
 | Quiz1 | 灰階影像轉換    | NumPy 實作 vs. OpenCV `cvtColor`，比較速度與結果差異                                        |
 | Quiz2 | 直方圖等化     | NumPy 實作 vs. OpenCV `equalizeHist`，比較增強效果                                       |
-| Quiz3 | 斜拍影像透視校正  | Gaussian Blur → Canny → 輪廓偵測 → Perspective Transform，並用**資料增強**控制變因找出演算法失效的邊界條件 |
+| Quiz3 | 斜拍影像梯形校正  | Gaussian Blur → Canny → 輪廓偵測 → Perspective Transform，並用**資料增強**控制變因找出演算法失效的邊界條件 |
 | Quiz4 | SIFT 影像拼接 | SIFT → 匹配 → RANSAC Homography → 融合，並實際測試亮度、角度、重疊範圍對拼接穩定度的影響，加入前處理提升穩定性          |
 
 > 完整的演算法原理、實驗數據與逐段討論請見 `main.ipynb`（notebook 內含所有程式碼、圖片輸出與分析文字，本檔案僅作專案導覽與環境設置用）。
@@ -73,7 +73,7 @@ Python 3.11.9
 pip install -r week1\requirements.txt
 ```
 
-### Run Project Week1 on Jupyter Notebook
+### Run Project on Jupyter Notebook
 
 Enter the `week1` directory:
 To run `main.ipynb`, install Jupyter **if needed**:
@@ -122,7 +122,7 @@ Python 3.11.9
 - 速度：OpenCV 0.43 ms、NumPy 12.83 ms，速度比約 29.9 倍；兩方法像素差異 100% 落在 ±1 以內。
 - 輸出: Quiz2_result
 
-### Quiz3：斜拍影像透視校正
+### Quiz3：斜拍影像梯形校正
 - 演算法失效門檻（理想全黑背景下）：對比 ≤ 0.2、解析度 ≤ 5%、視角旋轉 ≥ 85°。
 - 實拍情境下因光照、背景、鏡頭畸變等因素，實際可用範圍會比理論值更保守。
 - 輸出：
