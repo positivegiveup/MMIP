@@ -10,21 +10,6 @@
 
 > 完整的演算法原理、實驗數據與逐段討論請見 `main.ipynb`（notebook 內含所有程式碼、圖片輸出與分析文字，本檔案僅作專案導覽與環境設置用）。
 
-## 環境需求
-
-- Python 3.11
-```bash
-pip install numpy opencv-python matplotlib
-```
-
-## 執行方式
-
-在專案根目錄下執行：
-
-```bash
-main.ipynb
-```
-
 ## 專案結構
 
 ```
@@ -46,6 +31,75 @@ week1
 
 ```
 
+
+## Setup
+
+### 1. Clone the repository
+
+```
+git clone <repository-url>
+cd MMIP
+```
+
+### 2. Create a virtual environment with Python 3.11.9
+Create the virtual environment:
+```
+py -3.11 -m venv .venv
+```
+
+Activate the virtual environment:
+```
+.\.venv\Scripts\Activate.ps1
+```
+
+Verify the Python version:
+```
+python --version
+```
+
+Expected output:
+```
+Python 3.11.9
+```
+
+### 3. Install Week 1 dependencies
+
+```
+pip install -r week1\requirements.txt
+```
+
+## Run Project Week1 on Jupyter Notebook
+
+Enter the `week1` directory:
+To run `main.ipynb`, install Jupyter **if needed**:
+```
+pip install jupyter
+```
+
+Then:
+```
+jupyter notebook
+```
+
+Open:
+```
+week1/main.ipynb
+```
+
+And RUN ALL!
+
+## Environment Verification
+
+To verify the virtual environment and installed packages:
+```
+python --version
+pip list
+```
+
+The Python version should be:
+```
+Python 3.11.9
+```
 ---
 
 ## 重點摘要
@@ -55,17 +109,32 @@ week1
 ### Quiz1：RGB 轉灰階影像
 - NumPy 與 OpenCV 結果幾乎一致（mean=120.71，std=53.13 相同），最大像素差異僅 1（0.001% 像素）。
 - 速度：OpenCV 平均 0.62 ms、NumPy 平均 32.05 ms，速度比約 51.7 倍。
+- 輸出: Quiz1_result
 
 ### Quiz2：Histogram Equalization
 - 標準差由原圖 42.90 提升至 NumPy 73.52 / OpenCV 73.58，對比度明顯增強。
 - 速度：OpenCV 0.43 ms、NumPy 12.83 ms，速度比約 29.9 倍；兩方法像素差異 100% 落在 ±1 以內。
+- 輸出: Quiz2_result
 
 ### Quiz3：斜拍影像透視校正
 - 演算法失效門檻（理想全黑背景下）：對比 ≤ 0.2、解析度 ≤ 5%、視角旋轉 ≥ 85°。
 - 實拍情境下因光照、背景、鏡頭畸變等因素，實際可用範圍會比理論值更保守。
+- 輸出：
+
+| 檔案                   | 說明                          |
+| -------------------- | --------------------------- |
+| `<檔名>-contour.jpg`   | 標出偵測到的四邊形輪廓與 TL/TR/BR/BL 角點 |
+| `<檔名>-corrected.jpg` | 校正後的正視影像                    |
+
 
 ### Quiz4：SIFT 影像拼接
 - 重疊比例遞減測試：只要重疊區仍保有可辨識紋理（如文字、圖案邊緣），即使比例低至個位數百分比仍可拼接；僅剩純色區塊（無紋理）才會失效。
 - 亮度測試：只要未造成像素飽和／裁切，−25%～−100% 的均勻調暗皆可成功拼接。
 - 角度測試：兩影像視角相差達 70° 左右時開始無法順利拼接。
 - 前處理效果（CLAHE）：SIFT 特徵點數量提升約 5.6～6.5 倍，RANSAC 內點由 8 增至 31（Inlier Ratio 由 53.3% 升至 57.4%），顯著提升拼接穩定性。
+- 輸出
+
+| 檔案                  | 說明           |
+| ------------------- | ------------ |
+| `Quiz4-matches.jpg` | SIFT 特徵匹配預覽圖 |
+| `Quiz4-result.jpg`  | 拼接結果影像       |
