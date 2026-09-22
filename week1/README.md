@@ -14,22 +14,101 @@
 
 ```
 week1
-├── main.ipynb               # 主程式進入點，依序呼叫各 Quiz，並包含完整分析報告
+├── main.ipynb               # 含完整分析報告
 ├── Codes/
-│   ├── utils
-│   │   ├──
+│   ├── utils                # 輔助
 │   ├── Quiz1.py             # RGB 轉灰階
 │   ├── Quiz2.py             # Histogram Equalization
-│   ├── Quiz3.py
-│   └── Quiz4.py
+│   ├── Quiz3.py             # 梯形校正
+│   └── Quiz4.py             # SIFT拼接
 └── Data/
     ├── Quiz1.jpg             # Quiz1 輸入影像
-    ├── Quiz2/                # Quiz2 輸入影像
+    ├── Quiz2.jpg             # Quiz2 輸入影像
     ├── Quiz3/                # 實拍斜拍影像
     ├── Quiz3_aug/            # 資料增強產生的受控條件影像
     └── Quiz4/                # 拼接測試影像組 (4-1 ~ 4-4 系列)
 
 ```
+
+# MMIP
+
+Machine Learning and Image Processing course projects.
+
+## Environment
+OS: Windows
+Python: 3.11.9
+
+## Setup
+
+### 1. Clone the repository
+
+```
+git clone <repository-url>
+cd MMIP
+```
+
+### 2. Create a virtual environment with Python 3.11.9
+Create the virtual environment:
+```
+py -3.11 -m venv .venv
+```
+
+Activate the virtual environment:
+```
+.\.venv\Scripts\Activate.ps1
+```
+
+Verify the Python version:
+```
+python --version
+```
+
+Expected output:
+```
+Python 3.11.9
+```
+
+### 3. Install Week 1 dependencies
+
+```
+pip install -r week1\requirements.txt
+```
+
+## Run Project Week1 on Jupyter Notebook
+
+Enter the `week1` directory:
+To run `main.ipynb`, install Jupyter **if needed**:
+```
+pip install jupyter
+```
+
+Then:
+```
+jupyter notebook
+```
+
+Open:
+```
+week1/main.ipynb
+```
+
+And RUN ALL!
+
+## Environment Verification
+
+To verify the virtual environment and installed packages:
+```
+python --version
+pip list
+```
+
+The Python version should be:
+```
+Python 3.11.9
+```
+---
+
+
 ## 重點摘要
 
 以下僅列各題的關鍵數據與結論，完整推導與原理說明請見 `main.ipynb` 對應段落。
