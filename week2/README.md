@@ -18,8 +18,6 @@
 
 ## 環境需求
 
-**推薦使用 Google Colab 可直接執行**
-否則:
 - Python 3.11
 - numpy、pandas、matplotlib、scikit-learn
 - torch
@@ -71,7 +69,7 @@ week1/
 
 在 0.05 ~ 0.95 之間每隔 0.01 試一個 Threshold，挑選 **F1-Score 最高**者。
 
-![Threshold vs F1](images/q1_threshold_vs_f1.png)
+![Threshold vs F1](Outputs/Q1_threshold_vs_F1.png)
 
 ### 結果（Validation Dataset，共 1022 筆，其中中風 50 筆）
 
@@ -84,9 +82,9 @@ week1/
 
 ROC-AUC：Logistic Regression **0.8437**、Random Forest **0.8133**。
 
-![Metrics before vs after](images/q1_metrics_before_after.png)
+![Metrics before vs after](Outputs/Q1_metrics_before_after.png)
 
-![Confusion matrices](images/q1_confusion_matrix.png)
+![Confusion matrices](Outputs/Q1_confusion_matrix.png)
 
 ### 結論
 
@@ -144,7 +142,7 @@ Loss Function 為 `BCEWithLogitsLoss`。
 | AUC | 0.7697 | 0.7727 |
 | Epochs Run | 50 | 25 |
 
-![Loss comparison](images/q2_loss_comparison.png)
+![Loss comparison](Outputs/Q2_loss_comparison.png)
 
 ### 結論
 
@@ -163,7 +161,7 @@ Loss Function 為 `BCEWithLogitsLoss`。
 
 ### MLP 的 ROC Curve
 
-![MLP ROC](images/q3_roc_mlp.png)
+![MLP ROC](Outputs/Q3_roc_curve_mlp.png)
 
 - **ROC Curve**：呈現不同 Threshold 下 TPR 與 FPR 的關係，曲線越靠近左上方，模型越好。
 - **AUC**：ROC 曲線下方面積，越接近 1 越好，0.5 代表隨機猜測。MLP 的 AUC = 0.7727，代表隨機抽一位會違約與一位不會違約的客戶，模型給前者較高風險分數的機率為 77.27%。
@@ -175,7 +173,7 @@ Loss Function 為 `BCEWithLogitsLoss`。
 | MLP | **0.7727** |
 | Decision Tree | 0.7479 |
 
-![ROC comparison](images/q3_roc_comparison.png)
+![ROC comparison](Outputs/Q3_roc_comparison.png)
 
 ### 結論
 
