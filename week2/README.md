@@ -84,7 +84,7 @@ ROC-AUC：Logistic Regression **0.8437**、Random Forest **0.8133**。
 
 ![Metrics before vs after](Outputs/Q1_metrics_before_after.png)
 
-![Confusion matrices](Outputs/Q1_confusion_matrix.png)
+![Confusion matrices](Outputs/Q1_confusion_matrix_before_after.png)
 
 ### 結論
 
@@ -173,7 +173,7 @@ Loss Function 為 `BCEWithLogitsLoss`。
 | MLP | **0.7727** |
 | Decision Tree | 0.7479 |
 
-![ROC comparison](Outputs/Q3_roc_comparison.png)
+![ROC comparison](Outputs/Q3_roc_curve_comparison.png)
 
 ### 結論
 
