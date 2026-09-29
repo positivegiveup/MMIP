@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+kagglehub
+ipython
+scikit-learn
+joblib
+torch
