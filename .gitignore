@@ -3,5 +3,10 @@ venv/
 env/
 __pycache__/
 .DS_Store
+Data/
+models/
+*.csv
+*.pt
 template/
+week1/
 week2/
