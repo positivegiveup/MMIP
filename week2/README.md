@@ -1,4 +1,4 @@
-# Week 1：機器學習與深度學習分類任務
+# Week 2：機器學習與深度學習分類任務
 
 本週作業包含三個 Quiz，皆整合於 [`main.ipynb`](./main.ipynb)（可直接於 Google Colab 執行）。
 
