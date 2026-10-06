@@ -54,7 +54,7 @@ week3/
 
 ## Quiz1 資料集與切分
 
-**目標**：說明資料來源與內容，建立訓練 / 驗證 / 測試資料，並定義影像分類問題。
+說明資料來源與內容，建立訓練 / 驗證 / 測試資料，並定義影像分類問題。
 
 ### 資料來源與內容
 
@@ -69,26 +69,95 @@ week3/
 
 ### 問題定義
 
-| 項目       | 內容                                                                                       |
-| ---------- | ------------------------------------------------------------------------------------------ |
-| 任務       | 影像分類（單標籤、多類別，37 類）                                                          |
-| 輸入       | 一張 RGB 寵物影像                                                                          |
-| 輸出       | 37 個品種的機率分布；最高者為 Top-1 預測，並另外評估 Top-5                                 |
-| 困難點     | **細粒度分類**：品種間外觀非常相似（例如 Staffordshire Bull Terrier 與 American Pit Bull Terrier、British Shorthair 與 Russian Blue） |
-| 評估指標   | Top-1 / Top-5 Accuracy、各類別 ROC 與 Macro-AUC、參數量、訓練時間                           |
+| 項目   | 內容                                                                                                                                                  |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 任務   | 影像分類（單標籤、多類別，37 類）                                                                                                                                  |
+| 輸入   | 一張 RGB 寵物影像                                                                                                                                         |
+| 輸出   | 37 個品種的機率分布；最高者為 Top-1 預測，並另外評估 Top-5                                                                                                               |
+| 困難點  | **細粒度分類 (Fine-Grained Classification, FGC)** ：品種間外觀非常相似（例如 Staffordshire Bull Terrier 與 American Pit Bull Terrier、British Shorthair 與 Russian Blue） |
+| 評估指標 | Top-1 / Top-5 Accuracy、各類別 ROC 與 Macro-AUC、參數量、訓練時間                                                                                                 |
+
+### 資料類別
+
+資料集共有 37 個品種，可依動物種類分為：
+
+|動物種類|品種數量|分類目標|
+|---|---|---|
+|Cat|12|辨識 12 種貓的具體品種|
+|Dog|25|辨識 25 種狗的具體品種|
+|**Total**|**37**|**37-class breed classification**|
+
+Cat / Dog 並不是本實驗的最終分類類別，模型是在 37 個品種中進行分類。
+
+### 分類問題
+
+本資料集主要屬於 Fine-Grained Image Classification (FGC)問題。不同類別之間可能具有高度相似的外觀特徵，如: 
+
+- Staffordshire Bull Terrier / American Pit Bull Terrier
+- British Shorthair / Russian Blue
+
+這些品種可能具有相似的毛色、臉部輪廓、身體比例或姿勢，使模型需要學習較細微的視覺特徵。
+
+另一方面，同一品種內部也可能存在較大的變異，例如不同的拍攝角度、姿勢、背景、光線及個體差異。因此模型同時需要處理：
+
+- **Inter-class similarity**：不同品種之間外觀相似
+- **Intra-class variation**：同一品種內部影像差異大
+
+這也是本實驗比較 Plain CNN 與經典 CNN Backbone 分類效能的重要原因之一。
+
 
 ### 資料切分
 
-- 找不到官方 `trainval.txt` / `test.txt`，因此改用**固定種子的 50/50 分層切分**（依品種 stratify），得到 trainval（3,695 張：狗 2,495、貓 1,200）與 test（3,695 張）。**因此成績不能直接與官方 benchmark 比較。**
-- trainval 再以 **Stratified 5-Fold** 切成 train / val，每折皆為 **train 2,956 / val 739**，各品種比例一致。
-- **test 只在最後評估時使用**，不參與訓練、挑選模型或調整超參數。
-- 前處理：影像轉 RGB，Resize 成方形，以 ImageNet 平均 / 標準差正規化（Plain CNN 輸入 128×128，Backbone 輸入 224×224）。
+由於在 Kaggle 中找不到官方 `trainval.txt` / `test.txt`，因此使用固定 random SEED 進行 **50/50 分層切分（stratified split）**。
+
+依照 37 個品種進行 stratify 後，得到：
+- Trainval：3,695 張
+- Test：3,695 張
+
+Trainval 中包含：
+- Dog：2,495 張
+- Cat：1,200 張
+
+由於此切分方式與官方 benchmark 不同，因此本實驗的結果**不應直接與官方 benchmark 數據比較**。
+
+接著，再將 Trainval 以 **Stratified 5-Fold Cross Validation** 進行切分，使每一折維持接近原始的品種比例：
 
 | 折 | Train | Val |
 | -- | ----- | --- |
 | Fold 0 ~ 4 | 2,956 | 739 |
 
 > 主要實驗（Quiz2 主模型、Quiz3）固定使用 **Fold 0** 的 train / val；完整 5-Fold 交叉驗證見 [Quiz2-4](#quiz2-4-完整-5-fold-交叉驗證)。
+
+
+### 前處理
+
+所有影像首先轉換為 RGB 格式，再依照模型輸入尺寸進行 Resize，並使用 ImageNet 的 mean 與 standard deviation 進行正規化。
+
+不同模型採用不同的輸入解析度：
+
+|模型|Input Size|
+|---|---|
+|Plain CNN|128 × 128|
+|CNN Backbone|224 × 224|
+
+如此可在控制計算量的同時，分別比較自行設計的 Plain CNN 與經典 CNN Backbone 在 37 類細粒度影像分類任務上的表現。
+
+
+### 評估指標
+
+本實驗主要使用以下指標評估模型：
+
+1. **Top-1 Accuracy**  
+    模型最高機率的預測類別是否與真實品種相同。
+2. **Top-5 Accuracy**  
+    真實品種是否出現在模型預測機率最高的前五個類別中。
+3. **ROC Curve / Macro-AUC**  
+    將 37 個類別分別視為 one-vs-rest binary classification，計算各類別 ROC Curve，並以 Macro-AUC 衡量模型在所有類別上的整體分類能力。
+4. **Parameter Count**  
+    比較不同模型的參數量，以評估模型複雜度。
+5. **Training Time**  
+    記錄模型訓練所需時間，作為計算成本的比較依據。
+
 
 ---
 
@@ -353,8 +422,6 @@ Maine Coon、British Shorthair、Beagle：Grad-CAM 的高亮區集中在**臉部
 | Russian_Blue  | British_Shorthair (0.99) | 注意力在臉部與眼睛，但兩品種皆為灰藍短毛、圓臉，外觀極為相似                       |
 
 - 這些錯誤多半**不是「看錯位置」，而是品種外觀本身相近**；模型卻給出接近 1.0 的信心，顯示有**過度自信**的問題（可考慮 label smoothing、溫度校正等）。
-
-**限制**：(1) 找不到 trimaps 目錄，因此「Grad-CAM 落在前景的比例」量化被略過，以上只是少量樣本的定性觀察，不能推論整體；(2) Grad-CAM 空間解析度較粗；(3) 擴增前後注意力區域的差異本次未量化比較。
 
 ---
 

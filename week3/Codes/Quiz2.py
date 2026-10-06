@@ -186,6 +186,74 @@ def per_class_accuracy(pred_df):
     return g.sort_values("correct_top1")
 
 
+def _load_rgb(path):
+    from PIL import Image
+    return Image.open(path).convert("RGB")
+
+
+def show_predictions(pred_df, test_df, mode="random", n=12, ncols=4, title="Model", tag="model",
+                     seed=q1.SEED):
+    """
+    顯示測試集影像與預測結果。標題：T=真實類別、P=Top-1 預測(信心)，綠色=答對、紅色=答錯。
+    mode: 'random' 隨機 | 'wrong' 信心最高的錯誤 | 'correct' 信心最高的正確 | 'low_conf' 信心最低
+    pred_df 由 predict_testset 產生，與 test_df 同順序。
+    """
+    if mode == "random":
+        idx = pred_df.sample(n, random_state=seed).index
+    elif mode == "wrong":
+        idx = pred_df[~pred_df.correct_top1].sort_values("confidence", ascending=False).head(n).index
+    elif mode == "correct":
+        idx = pred_df[pred_df.correct_top1].sort_values("confidence", ascending=False).head(n).index
+    else:
+        idx = pred_df.sort_values("confidence").head(n).index
+    nrows = int(np.ceil(len(idx) / ncols))
+    fig, axes = plt.subplots(nrows, ncols, figsize=(3.2 * ncols, 3.5 * nrows))
+    for ax in np.atleast_1d(axes).ravel():
+        ax.axis("off")
+    for ax, i in zip(np.atleast_1d(axes).ravel(), idx):
+        r = pred_df.loc[i]
+        ax.imshow(_load_rgb(test_df.loc[i, "path"]))
+        ax.set_title(f"T: {r['true']}\nP: {r['pred_top1']} ({r['confidence']:.2f})", fontsize=8,
+                     color="green" if r["correct_top1"] else "red")
+    plt.suptitle(f"{title} - test predictions ({mode})")
+    plt.tight_layout(); q1.save_fig(f"Q2_{tag}_predictions_{mode}")
+
+
+def show_top5(pred_df, probs, test_df, class_names, idxs, title="Model", tag="model"):
+    """單張影像的 Top-5 機率長條圖。probs: predict_testset 回傳 metrics['probs']。"""
+    fig, axes = plt.subplots(len(idxs), 2, figsize=(9, 3 * len(idxs)),
+                             gridspec_kw={"width_ratios": [1, 1.6]})
+    axes = np.atleast_2d(axes)
+    for r, i in enumerate(idxs):
+        axes[r, 0].imshow(_load_rgb(test_df.loc[i, "path"])); axes[r, 0].axis("off")
+        axes[r, 0].set_title(f"true: {pred_df.loc[i, 'true']}", fontsize=9)
+        top = np.argsort(-probs[i])[:5][::-1]
+        colors = ["tab:green" if class_names[k] == pred_df.loc[i, "true"] else "tab:gray" for k in top]
+        axes[r, 1].barh([class_names[k] for k in top], probs[i][top], color=colors)
+        axes[r, 1].set_xlim(0, 1); axes[r, 1].set_title("Top-5 probability (green = true class)", fontsize=9)
+    plt.suptitle(f"{title} - Top-5"); plt.tight_layout(); q1.save_fig(f"Q2_{tag}_top5")
+
+
+def compare_predictions(pred_a, pred_b, test_df, names=("Plain CNN", "ResNet-18"), n=8, seed=q1.SEED,
+                        tag="comparison"):
+    """同一批隨機測試影像，並排顯示兩個模型的預測。"""
+    idx = pred_a.sample(n, random_state=seed).index
+    fig, axes = plt.subplots(2, n // 2, figsize=(3.2 * (n // 2), 7.2))
+    for ax, i in zip(axes.ravel(), idx):
+        ax.imshow(_load_rgb(test_df.loc[i, "path"])); ax.axis("off")
+        a, b = pred_a.loc[i], pred_b.loc[i]
+        ax.set_title(f"True: {a['true']}\n{names[0]}: {a['pred_top1']} {'✓' if a['correct_top1'] else '✗'}"
+                     f"\n{names[1]}: {b['pred_top1']} {'✓' if b['correct_top1'] else '✗'}", fontsize=8)
+    plt.tight_layout(); q1.save_fig(f"Q2_prediction_{tag}")
+
+
+def top_confusions(pred_df, k=10):
+    """最常被混淆的 (真實 -> 預測) 品種對。"""
+    wrong = pred_df[~pred_df.correct_top1]
+    return (wrong.groupby(["true", "pred_top1"]).size().sort_values(ascending=False)
+            .head(k).rename("count").reset_index())
+
+
 # ==========================================================================
 # 4. ROC / Macro-AUC
 # ==========================================================================
