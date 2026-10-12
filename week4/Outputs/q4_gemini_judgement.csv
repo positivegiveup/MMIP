@@ -1,0 +1,21 @@
+method,idx,caption,match,score,reason
+A_CNN+LSTM,0,a man is jumping over a brown dog,False,1,"The image shows a man running through a dusty area, not jumping over a dog."
+A_CNN+LSTM,1,a little boy in a blue shirt is playing in a puddle,False,1,"The image shows a little girl in a swimsuit playing in a splash pad, not a boy in a blue shirt."
+A_CNN+LSTM,2,a man in a red shirt is walking down a street,False,1,There is no man in a red shirt walking down the street.
+A_CNN+LSTM,3,two children are playing in a bed,False,2,"The children are playing in a living room, not in a bed."
+A_CNN+LSTM,4,a girl in a pink dress is standing on a beach,False,1,"The image shows a boy sandboarding down a dune, not a girl in a pink dress."
+A_CNN+LSTM,5,a black dog is running through the sand,False,2,"The dog is running on a path or trail, not sand."
+A_CNN+LSTM,6,a dog is standing on a <unk> with a <unk>,False,2,"The dog is lying down, not standing, and the image shows a dog tied to a car mirror."
+A_CNN+LSTM,7,a young boy in a red helmet is riding a bike on a dirt path,False,2,The surface is paved asphalt rather than a dirt path.
+A_CNN+LSTM,8,a dirt biker in a dirt bike,True,5,The image clearly shows a person riding a dirt bike on a dirt track.
+A_CNN+LSTM,9,a man in a black and white coat is playing with a black dog,False,2,"The man is wearing a blue hoodie and red hat, not a black and white coat."
+B_BLIP,0,a man is throwing a ball in the yard,False,1,"The man is running through sand or dust in a yard, not throwing a ball."
+B_BLIP,1,a child playing in a water park with an inflatable ball,False,2,"The child is playing in a water park, but there is no inflatable ball present."
+B_BLIP,2,a group of people walking down a street,True,5,The image clearly shows a group of people walking down a busy street.
+B_BLIP,3,a little boy playing with toys in a living room,True,5,The caption accurately describes a little boy playing with a toy in a living room.
+B_BLIP,4,two people are playing in the sand dunes,True,5,The image shows two people enjoying activities in the sand dunes.
+B_BLIP,5,a small dog running down a dirt road,True,5,The image clearly shows a small dog running along a dirt road.
+B_BLIP,6,a dog is tied to the side of a yellow car,True,5,The caption correctly describes a dog tied to the side of a yellow vehicle.
+B_BLIP,7,a little boy riding a bike down a street,True,5,The image shows a young boy riding his bicycle on a paved path or street.
+B_BLIP,8,a person riding a dirt bike on a dirt track,True,5,The image clearly shows a person riding a dirt bike on a dirt track.
+B_BLIP,9,a boy playing with a dog in the snow,True,5,The image clearly shows a boy playing with dogs in the snow.

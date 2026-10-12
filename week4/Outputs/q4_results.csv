@@ -1,0 +1,3 @@
+,BLEU-4,BERTScore_F1,Latency_s,Empty_captions,Gemini_match_rate,Gemini_mean_score
+A_CNN+LSTM,19.7807,0.9217,0.007,0.0,0.1,1.9
+B_BLIP,27.4654,0.9373,0.0788,0.0,0.8,4.3

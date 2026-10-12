@@ -3,8 +3,11 @@ venv/
 env/
 __pycache__/
 .DS_Store
+*.pt
+*.pth
+*.ckpt
 template/
 week1/
 week2/
-week3/Data/dataset/
-week3/Outputs/models/
+week3/
+week3/

@@ -1,0 +1,3 @@
+,Accuracy,Macro_F1,Macro_AUC,Params(M),Epochs_run,Best_epoch,Train_time_s
+ViT,0.9487,0.9497,0.9966,85.8033,9.0,3.0,340.3631
+ResNet,0.9393,0.9402,0.9962,23.5203,9.0,3.0,148.3724

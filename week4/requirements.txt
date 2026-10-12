@@ -1,0 +1,19 @@
+# Week 4 dependencies
+# 版本未固定。要完全重現環境，請在可正常執行的環境中執行 `pip freeze > requirements.txt` 取代此檔。
+# PyTorch 請依你的 CUDA 版本到 https://pytorch.org 取得對應安裝指令。
+torch
+torchvision
+numpy
+pandas
+matplotlib
+scikit-learn
+pillow
+datasets
+kagglehub
+transformers
+sacrebleu
+bert-score
+google-genai
+python-dotenv
+jupyter
+ipykernel
