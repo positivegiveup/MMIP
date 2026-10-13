@@ -1,9 +1,11 @@
 """
-Quiz 3：Vision Transformer vs ResNet（Intel Image Classification, 6 類）
-- 使用 early stopping（val loss）+ ReduceLROnPlateau
+Quiz 3：Vision Transformer vs ResNet（CUB-200-2011，200 類鳥類細粒度分類）
+- 兩個模型皆為 ImageNet 預訓練、完整微調；early stopping（val loss）+ ReduceLROnPlateau
+- 分類頭使用較大的學習率（head_lr_mult），因為 200 類的新分類頭要從隨機初始化學起
 圖片輸出 -> Outputs/Q3_*.png ；模型輸出 -> Outputs/q3_*.pt
 """
 import copy
+import textwrap
 import time
 
 import matplotlib.pyplot as plt
@@ -12,8 +14,7 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torchvision.transforms as T
-from sklearn.metrics import (ConfusionMatrixDisplay, confusion_matrix, f1_score, log_loss,
-                             roc_auc_score, roc_curve)
+from sklearn.metrics import confusion_matrix, f1_score, roc_auc_score, roc_curve
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import label_binarize
 from torch.utils.data import DataLoader, Dataset
@@ -39,22 +40,22 @@ class ArrDS(Dataset):
         return self.tf(self.x[i]), self.y[i]
 
 
-def build_context(paths, intel, bs=64, val_ratio=0.1):
+def build_context(paths, cub, bs=64, val_ratio=0.1):
     """
-    intel = Quiz1.prepare_intel 的回傳值。
-    官方 seg_train 切 90/10 成 train/val（分層），官方 seg_test 當測試集。
-    影像 150x150 放大到 224。
+    cub = Quiz1.prepare_cub 的回傳值（影像已 resize 為 256x256）。
+    官方訓練集切 90/10（分層）為 train/val，官方測試集為測試。
+    訓練：RandomResizedCrop(224) + 水平翻轉；驗證/測試：CenterCrop(224)。
     """
-    train_tf = T.Compose([T.ToPILImage(), T.RandomResizedCrop(224, scale=(0.6, 1.0)),
+    train_tf = T.Compose([T.ToPILImage(), T.RandomResizedCrop(224, scale=(0.5, 1.0)),
                           T.RandomHorizontalFlip(), T.ToTensor(), T.Normalize(MEAN, STD)])
-    eval_tf = T.Compose([T.ToPILImage(), T.Resize(224), T.ToTensor(), T.Normalize(MEAN, STD)])
-    idx_tr, idx_va = train_test_split(np.arange(len(intel["y_train"])), test_size=val_ratio,
-                                      stratify=intel["y_train"], random_state=42)
-    ds_tr = ArrDS(intel["x_train"][idx_tr], intel["y_train"][idx_tr], train_tf)
-    ds_va = ArrDS(intel["x_train"][idx_va], intel["y_train"][idx_va], eval_tf)
-    ds_te = ArrDS(intel["x_test"], intel["y_test"], eval_tf)
-    print(f"train={len(ds_tr)} val={len(ds_va)} test={len(ds_te)}")
-    cn = intel["class_names"]
+    eval_tf = T.Compose([T.ToPILImage(), T.CenterCrop(224), T.ToTensor(), T.Normalize(MEAN, STD)])
+    idx_tr, idx_va = train_test_split(np.arange(len(cub["y_train"])), test_size=val_ratio,
+                                      stratify=cub["y_train"], random_state=42)
+    ds_tr = ArrDS(cub["x_train"][idx_tr], cub["y_train"][idx_tr], train_tf)
+    ds_va = ArrDS(cub["x_train"][idx_va], cub["y_train"][idx_va], eval_tf)
+    ds_te = ArrDS(cub["x_test"], cub["y_test"], eval_tf)
+    print(f"train={len(ds_tr)} val={len(ds_va)} test={len(ds_te)} classes={len(cub['class_names'])}")
+    cn = cub["class_names"]
     return {"paths": paths, "class_names": cn, "nc": len(cn), "ds_te": ds_te,
             "dl_tr": DataLoader(ds_tr, bs, shuffle=True, num_workers=2, pin_memory=True),
             "dl_va": DataLoader(ds_va, 128, num_workers=2),
@@ -85,19 +86,52 @@ def predict_loader(model, loader):
     return torch.cat(probs).numpy(), torch.cat(ys).numpy()
 
 
+# ----------------------------------------------------------------------
+# 指標（200 類，部分類別在小的驗證集可能沒有樣本，故自行實作 OvR AUC）
+# ----------------------------------------------------------------------
+def per_class_auc(y, p):
+    """每個類別的 one-vs-rest AUC；該類別沒有正樣本或負樣本時為 NaN。"""
+    nc = p.shape[1]
+    Y = label_binarize(y, classes=range(nc))
+    out = np.full(nc, np.nan)
+    for c in range(nc):
+        if 0 < Y[:, c].sum() < len(y):
+            out[c] = roc_auc_score(Y[:, c], p[:, c])
+    return out
+
+
 def macro_auc(y, p):
-    return roc_auc_score(y, p, multi_class="ovr", average="macro")
+    return float(np.nanmean(per_class_auc(y, p)))
 
 
-def train(ctx, name, max_epochs=15, patience=3, lr=1e-4):
+def topk_acc(y, p, k=5):
+    top = np.argsort(-p, axis=1)[:, :k]
+    return float((top == y[:, None]).any(axis=1).mean())
+
+
+def nll(y, p):
+    return float(-np.log(np.clip(p[np.arange(len(y)), y], 1e-12, 1.0)).mean())
+
+
+# ----------------------------------------------------------------------
+# 訓練
+# ----------------------------------------------------------------------
+def train(ctx, name, max_epochs=30, patience=5, lr=1e-4, head_lr_mult=10):
     """
-    微調預訓練模型。early stopping：val loss 連續 patience 個 epoch 沒進步就停止並還原最佳權重；
-    val loss 停滯 1 個 epoch 時學習率 x0.3（ReduceLROnPlateau）。存成 q3_{name}.pt。
+    微調預訓練模型。
+    - 骨幹學習率 lr、分類頭學習率 lr * head_lr_mult（兩個模型使用相同倍率）
+    - early stopping：val loss 連續 patience 個 epoch 沒進步就停止並還原最佳權重
+    - ReduceLROnPlateau：val loss 停滯 1 個 epoch 即 x0.3
+    存成 q3_{name}.pt。
     """
     q1.set_seed(42)
     nc = ctx["nc"]
     model = build_model(name, nc).to(device)
-    opt = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.05)
+    head, backbone = [], []
+    for n, p in model.named_parameters():
+        (head if n.startswith(("heads.", "fc.")) else backbone).append(p)
+    opt = torch.optim.AdamW([{"params": backbone, "lr": lr},
+                             {"params": head, "lr": lr * head_lr_mult}], weight_decay=0.05)
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, mode="min", factor=0.3, patience=1)
     scaler = torch.amp.GradScaler("cuda", enabled=(device == "cuda"))
     crit = nn.CrossEntropyLoss()
@@ -116,8 +150,7 @@ def train(ctx, name, max_epochs=15, patience=3, lr=1e-4):
             scaler.step(opt); scaler.update()
             tl += loss.item() * len(y); n += len(y)
         vp, vy = predict_loader(model, ctx["dl_va"])
-        vl = log_loss(vy, vp, labels=list(range(nc)))
-        acc, auc = float((vp.argmax(1) == vy).mean()), macro_auc(vy, vp)
+        vl, acc, auc = nll(vy, vp), float((vp.argmax(1) == vy).mean()), macro_auc(vy, vp)
         sched.step(vl)
         for k, v in zip(("tr_loss", "va_loss", "va_acc", "va_auc"), (tl / n, vl, acc, auc)):
             hist[k].append(v)
@@ -140,6 +173,9 @@ def train(ctx, name, max_epochs=15, patience=3, lr=1e-4):
     return model, hist, train_time
 
 
+# ----------------------------------------------------------------------
+# 評估與繪圖
+# ----------------------------------------------------------------------
 def _save(ctx, name):
     out = ctx["paths"]["outputs"] / name
     plt.savefig(out, dpi=150, bbox_inches="tight")
@@ -147,75 +183,125 @@ def _save(ctx, name):
     print("[saved]", out)
 
 
-def evaluate_and_plot(ctx, vit_res, resnet_res):
-    """vit_res / resnet_res = train() 的回傳值 (model, hist, time)。回傳 (指標表, 每類 AUC 表, probs, y)。"""
+def macro_roc(y, p, n_grid=501):
+    """巨觀平均 ROC：各類別 ROC 在共同 FPR 網格上內插後取平均。"""
+    Y = label_binarize(y, classes=range(p.shape[1]))
+    grid, tprs = np.linspace(0, 1, n_grid), []
+    for c in range(p.shape[1]):
+        if 0 < Y[:, c].sum() < len(y):
+            fpr, tpr, _ = roc_curve(Y[:, c], p[:, c])
+            tprs.append(np.interp(grid, fpr, tpr))
+    return grid, np.mean(tprs, axis=0)
+
+
+def evaluate_and_plot(ctx, vit_res, resnet_res, top_n_confusions=10, n_worst=15):
+    """
+    vit_res / resnet_res = train() 的回傳值 (model, hist, time)。
+    回傳 (指標表, 每類別表, probs, y)。每類別表欄位：AUC_/Acc_ + 模型名稱。
+    """
     names = ["ViT", "ResNet"]
     runs = dict(zip(names, (vit_res, resnet_res)))
-    cn, nc = ctx["class_names"], ctx["nc"]
+    cn, nc, out_dir = ctx["class_names"], ctx["nc"], ctx["paths"]["outputs"]
+
     probs, results = {}, {}
-    for name, (model, _, t) in runs.items():
+    for name, (model, hist, t) in runs.items():
         p, y = predict_loader(model, ctx["dl_te"])
         probs[name] = p
-        results[name] = {"Accuracy": (p.argmax(1) == y).mean(),
+        results[name] = {"Accuracy": float((p.argmax(1) == y).mean()), "Top5_Acc": topk_acc(y, p, 5),
                          "Macro_F1": f1_score(y, p.argmax(1), average="macro"),
                          "Macro_AUC": macro_auc(y, p),
                          "Params(M)": sum(q.numel() for q in model.parameters()) / 1e6,
-                         "Epochs_run": len(runs[name][1]["tr_loss"]),
-                         "Best_epoch": runs[name][1]["best_epoch"], "Train_time_s": t}
+                         "Epochs_run": len(hist["tr_loss"]), "Best_epoch": hist["best_epoch"],
+                         "Train_time_s": t}
     res = pd.DataFrame(results).T
-    res.round(4).to_csv(ctx["paths"]["outputs"] / "q3_metrics.csv")
+    res.round(4).to_csv(out_dir / "q3_metrics.csv")
 
     # 訓練曲線
     fig, axes = plt.subplots(1, 4, figsize=(18, 3.8))
     for name, (_, h, _) in runs.items():
         ep = range(1, len(h["tr_loss"]) + 1)
-        axes[0].plot(ep, h["tr_loss"], label=name)
-        axes[1].plot(ep, h["va_loss"], label=name)
-        axes[2].plot(ep, h["va_acc"], label=name)
-        axes[3].plot(ep, h["va_auc"], label=name)
+        for ax, k in zip(axes, ("tr_loss", "va_loss", "va_acc", "va_auc")):
+            ax.plot(ep, h[k], label=name)
     for a, t in zip(axes, ("train loss", "val loss", "val accuracy", "val Macro-AUC")):
         a.set_title(t); a.set_xlabel("epoch"); a.legend()
     _save(ctx, "Q3_training_curves.png")
 
-    # 每類 AUC
-    Y = label_binarize(y, classes=range(nc))
-    per_cls = pd.DataFrame({n: roc_auc_score(Y, p, average=None) for n, p in probs.items()}, index=cn)
-    per_cls.loc["MACRO"] = [res.loc[n, "Macro_AUC"] for n in per_cls.columns]
-    per_cls.round(4).to_csv(ctx["paths"]["outputs"] / "q3_per_class_auc.csv")
-    per_cls.plot.bar(figsize=(9, 4), rot=30, ylim=(per_cls.values.min() - 0.01, 1.0))
-    plt.title("Per-class AUC & Macro-AUC (Intel test)")
+    # 每類別 AUC / Accuracy
+    per_cls = pd.DataFrame(index=cn)
+    for name, p in probs.items():
+        per_cls[f"AUC_{name}"] = per_class_auc(y, p)
+        cm = confusion_matrix(y, p.argmax(1), labels=range(nc))
+        per_cls[f"Acc_{name}"] = np.diag(cm) / np.maximum(cm.sum(1), 1)
+    per_cls.round(4).to_csv(out_dir / "q3_per_class.csv")
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.3))
+    lo = np.nanmin(per_cls[["AUC_ViT", "AUC_ResNet"]].values)
+    bins = np.linspace(lo, 1.0, 40)
+    for name in names:
+        axes[0].hist(per_cls[f"AUC_{name}"].dropna(), bins=bins, alpha=0.6, label=name)
+    axes[0].set_title("Per-class AUC distribution (200 classes)")
+    axes[0].set_xlabel("AUC"); axes[0].set_ylabel("number of classes"); axes[0].legend()
+    axes[1].scatter(per_cls["AUC_ResNet"], per_cls["AUC_ViT"], s=10, alpha=0.6)
+    axes[1].plot([lo, 1], [lo, 1], "k--", lw=0.8)
+    axes[1].set_xlabel("ResNet per-class AUC"); axes[1].set_ylabel("ViT per-class AUC")
+    axes[1].set_title("Per-class AUC: ViT vs ResNet (above line = ViT better)")
     _save(ctx, "Q3_auc_comparison.png")
 
-    # ROC
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.8))
-    for ax, (name, p) in zip(axes, probs.items()):
-        for c in range(nc):
-            fpr, tpr, _ = roc_curve(Y[:, c], p[:, c])
-            ax.plot(fpr, tpr, label=cn[c])
-        ax.plot([0, 1], [0, 1], "k--", lw=0.8)
-        ax.set_title(f'{name} ROC (Macro-AUC={res.loc[name, "Macro_AUC"]:.4f})')
-        ax.set_xlabel("FPR"); ax.set_ylabel("TPR"); ax.legend(fontsize=6)
+    # 巨觀平均 ROC（完整 + 低 FPR 放大）
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.6))
+    for name, p in probs.items():
+        g, t_ = macro_roc(y, p)
+        for ax in axes:
+            ax.plot(g, t_, label=f'{name} (Macro-AUC={res.loc[name, "Macro_AUC"]:.4f})')
+    axes[0].plot([0, 1], [0, 1], "k--", lw=0.8)
+    axes[0].set_title("Macro-average ROC")
+    axes[1].set_xlim(0, 0.05); axes[1].set_ylim(0.8, 1.0); axes[1].set_title("Zoom: FPR <= 0.05")
+    for ax in axes:
+        ax.set_xlabel("FPR"); ax.set_ylabel("TPR"); ax.legend(loc="lower right")
     _save(ctx, "Q3_roc_curves.png")
 
-    # 混淆矩陣
-    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
+    # 錯誤熱圖（200x200 的混淆矩陣去掉對角線）與最常被混淆的類別對
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5.8))
+    conf_rows = []
     for ax, (name, p) in zip(axes, probs.items()):
-        ConfusionMatrixDisplay(confusion_matrix(y, p.argmax(1)), display_labels=cn).plot(
-            ax=ax, colorbar=False, xticks_rotation=45)
-        ax.set_title(f"{name} confusion matrix")
+        cm = confusion_matrix(y, p.argmax(1), labels=range(nc))
+        off = cm.copy(); np.fill_diagonal(off, 0)
+        im = ax.imshow(off, cmap="Reds", vmin=0, vmax=max(off.max(), 1))
+        ax.set_title(f"{name}: misclassifications (diagonal removed)")
+        ax.set_xlabel("predicted class index"); ax.set_ylabel("true class index")
+        fig.colorbar(im, ax=ax, fraction=0.046)
+        for k in np.argsort(-off, axis=None)[:top_n_confusions]:
+            i, j = divmod(int(k), nc)
+            if off[i, j] > 0:
+                conf_rows.append({"model": name, "true": cn[i], "pred": cn[j], "count": int(off[i, j])})
     _save(ctx, "Q3_confusion_matrix.png")
+    pd.DataFrame(conf_rows).to_csv(out_dir / "q3_top_confusions.csv", index=False)
+
+    # 最難的類別（兩模型平均 Accuracy 最低）
+    worst = per_cls.assign(m=per_cls[["Acc_ViT", "Acc_ResNet"]].mean(1)).sort_values("m").head(n_worst)
+    fig, ax = plt.subplots(figsize=(8, 0.38 * n_worst + 1.5))
+    yy = np.arange(len(worst))
+    ax.barh(yy - 0.2, worst["Acc_ViT"], 0.4, label="ViT")
+    ax.barh(yy + 0.2, worst["Acc_ResNet"], 0.4, label="ResNet")
+    ax.set_yticks(yy); ax.set_yticklabels([c[:30] for c in worst.index], fontsize=8)
+    ax.invert_yaxis(); ax.set_xlabel("test accuracy"); ax.set_xlim(0, 1)
+    ax.set_title(f"{n_worst} hardest classes"); ax.legend()
+    _save(ctx, "Q3_worst_classes.png")
     return res, per_cls, probs, y
 
 
 def show_predictions(ctx, probs, n=10, seed=0):
-    """隨機取 n 張測試圖，顯示 ViT / ResNet 預測。"""
+    """隨機取 n 張測試圖，顯示 ViT / ResNet 預測；任一模型答錯時標題為紅色。"""
     ds, cn = ctx["ds_te"], ctx["class_names"]
+    short = lambda s: textwrap.shorten(s, 22, placeholder="..")
     idx = np.random.RandomState(seed).choice(len(ds), n, replace=False)
     cols = 5
-    fig, axes = plt.subplots(int(np.ceil(n / cols)), cols, figsize=(14, 3.2 * np.ceil(n / cols)))
-    for ax, i in zip(axes.ravel(), idx):
+    rows = int(np.ceil(n / cols))
+    fig, axes = plt.subplots(rows, cols, figsize=(15, 3.6 * rows))
+    for ax, i in zip(np.atleast_1d(axes).ravel(), idx):
         ax.imshow(ds.x[i]); ax.axis("off")
-        ax.set_title(f"GT: {cn[ds.y[i]]}\nViT: {cn[probs['ViT'][i].argmax()]}\n"
-                     f"ResNet: {cn[probs['ResNet'][i].argmax()]}", fontsize=8)
+        gt, pv, pr = ds.y[i], probs["ViT"][i].argmax(), probs["ResNet"][i].argmax()
+        ax.set_title(f"GT: {short(cn[gt])}\nViT: {short(cn[pv])}\nResNet: {short(cn[pr])}",
+                     fontsize=8, color="black" if (pv == gt and pr == gt) else "red")
     plt.tight_layout()
     _save(ctx, "Q3_prediction_examples.png")

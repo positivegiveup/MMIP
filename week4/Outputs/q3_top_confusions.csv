@@ -1,0 +1,21 @@
+model,true,pred,count
+ViT,Great Grey Shrike,Loggerhead Shrike,10
+ViT,American Crow,Common Raven,9
+ViT,Elegant Tern,Caspian Tern,9
+ViT,Louisiana Waterthrush,Northern Waterthrush,8
+ViT,Barn Swallow,Cliff Swallow,8
+ViT,Artic Tern,Common Tern,8
+ViT,Common Tern,Artic Tern,8
+ViT,Pelagic Cormorant,Brandt Cormorant,7
+ViT,California Gull,Ring billed Gull,7
+ViT,Black billed Cuckoo,Yellow billed Cuckoo,7
+ResNet,Great Grey Shrike,Loggerhead Shrike,9
+ResNet,Pomarine Jaeger,Long tailed Jaeger,9
+ResNet,Common Tern,Artic Tern,9
+ResNet,Chuck will Widow,Whip poor Will,8
+ResNet,American Crow,Common Raven,8
+ResNet,Acadian Flycatcher,Least Flycatcher,8
+ResNet,Pelagic Cormorant,Brandt Cormorant,8
+ResNet,Shiny Cowbird,Boat tailed Grackle,8
+ResNet,Glaucous winged Gull,Herring Gull,8
+ResNet,Fish Crow,American Crow,8

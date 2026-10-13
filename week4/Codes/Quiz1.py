@@ -1,7 +1,7 @@
 """
 Quiz 1：資料集準備
 - Yelp Review Full           -> Quiz 2 (Sentiment Analysis, 3 類)
-- Intel Image Classification -> Quiz 3 (Vision Transformer / ResNet, 6 類)
+- CUB-200-2011              -> Quiz 3 (Vision Transformer / ResNet, 200 類)
 - Flickr8k        -> Quiz 4 (Image Captioning)
 
 所有圖片輸出皆存到 Outputs/，命名 Q1_{}.png
@@ -118,72 +118,129 @@ def prepare_yelp(paths, n_per_class_train: int = 30000, n_per_class_test: int = 
 
 
 # ----------------------------------------------------------------------
-# 2) Intel Image Classification（6 類場景）
+# 2) CUB-200-2011（200 種鳥類，細粒度分類）
 # ----------------------------------------------------------------------
-def _find_class_root(base, name):
-    """在 kaggle 下載目錄中找出 seg_train / seg_test（資料夾有巢狀結構）。"""
+def _find_file(base, name):
+    import os
+    for r, _, files in os.walk(base):
+        if name in files:
+            return Path(r) / name
+    return None
+
+
+def _find_class_dir(base):
+    """找出含有 >=200 個 'NNN.Name' 類別資料夾的目錄（即 images/）。"""
     import os
     for r, dirs, _ in os.walk(base):
-        if name in dirs and (Path(r) / name / "buildings").is_dir():
-            return Path(r) / name
-    raise FileNotFoundError(f"找不到 {name}，請確認資料集已完整下載")
+        if sum(bool(re.match(r"^\d{3}\.", d)) for d in dirs) >= 200:
+            return Path(r)
+    return None
 
 
-def _load_folder(root, class_names, size):
-    from PIL import Image
-    xs, ys = [], []
-    for ci, c in enumerate(class_names):
-        for f in sorted((root / c).iterdir()):
+def _clean_cub_name(name: str) -> str:
+    return re.sub(r"^\d+\.", "", name).replace("_", " ")
+
+
+def _read_cub_index(base):
+    """
+    解析 CUB 目錄，回傳 (圖片路徑 list, 標籤 0-based, is_train bool, 類別名稱 list, 切分來源)。
+    優先使用官方檔案 images.txt / image_class_labels.txt / train_test_split.txt / classes.txt；
+    若找不到，退回「資料夾結構 + 每類 50% 分層切分」。
+    """
+    f_img, f_lab = _find_file(base, "images.txt"), _find_file(base, "image_class_labels.txt")
+    f_spl, f_cls = _find_file(base, "train_test_split.txt"), _find_file(base, "classes.txt")
+
+    img_root = None
+    if f_img is not None and (f_img.parent / "images").is_dir():
+        img_root = f_img.parent / "images"
+    else:
+        img_root = _find_class_dir(base)
+    if img_root is None:
+        raise FileNotFoundError("找不到 CUB 的 images/ 資料夾，請確認資料集已完整下載")
+
+    if all(f is not None for f in (f_img, f_lab, f_spl, f_cls)):
+        rows = [l.split() for l in f_img.read_text().splitlines() if l.strip()]
+        lab = dict(l.split() for l in f_lab.read_text().splitlines() if l.strip())
+        spl = dict(l.split() for l in f_spl.read_text().splitlines() if l.strip())
+        cls = [l.split(maxsplit=1)[1] for l in f_cls.read_text().splitlines() if l.strip()]
+        paths_list = [img_root / rel for _, rel in rows]
+        y = np.array([int(lab[i]) - 1 for i, _ in rows])
+        is_train = np.array([spl[i] == "1" for i, _ in rows])
+        return paths_list, y, is_train, [_clean_cub_name(c) for c in cls], "official"
+
+    # 備援：由資料夾結構建立標籤，自行做分層切分
+    from sklearn.model_selection import train_test_split
+    cls_dirs = sorted(d for d in img_root.iterdir() if d.is_dir())
+    paths_list, y = [], []
+    for ci, d in enumerate(cls_dirs):
+        for f in sorted(d.iterdir()):
             if f.suffix.lower() in (".jpg", ".jpeg", ".png"):
-                xs.append(np.asarray(Image.open(f).convert("RGB").resize((size, size))))
-                ys.append(ci)
-    return np.stack(xs), np.array(ys, dtype=np.int64)
+                paths_list.append(f); y.append(ci)
+    y = np.array(y)
+    idx_tr, _ = train_test_split(np.arange(len(y)), train_size=0.5, stratify=y, random_state=SEED)
+    is_train = np.zeros(len(y), dtype=bool)
+    is_train[idx_tr] = True
+    print("[warn] 找不到官方切分檔，改用每類 50% 的分層切分")
+    return paths_list, y, is_train, [_clean_cub_name(d.name) for d in cls_dirs], "folder"
 
 
-def prepare_intel(paths, size: int = 150):
+def _build_cub_arrays(base, size):
+    from PIL import Image
+    paths_list, y, is_train, class_names, source = _read_cub_index(base)
+    x = np.empty((len(paths_list), size, size, 3), dtype=np.uint8)
+    for k, p in enumerate(paths_list):
+        x[k] = np.asarray(Image.open(p).convert("RGB").resize((size, size), Image.BILINEAR))
+        if (k + 1) % 2000 == 0:
+            print(f"  loaded {k + 1}/{len(paths_list)}")
+    return {"x_train": x[is_train], "y_train": y[is_train].astype(np.int64),
+            "x_test": x[~is_train], "y_test": y[~is_train].astype(np.int64),
+            "class_names": class_names, "source": source}
+
+
+def prepare_cub(paths, size: int = 256):
     """
-    以 kagglehub 下載 puneet6060/intel-image-classification，全部讀進記憶體並快取成
-    Data/intel/intel_{size}.npz（之後不必再下載、也不用逐檔讀 Drive）。
-    若匿名下載失敗：到 Kaggle 建立 API token，於 Colab 密鑰設定 KAGGLE_USERNAME / KAGGLE_KEY。
-    回傳 dict: x_train, y_train（官方 seg_train）、x_test, y_test（官方 seg_test）、class_names。
-    seg_pred 沒有標籤，不使用。
+    以 kagglehub 下載 wenewone/cub2002011，全部讀進記憶體（resize 成 size x size）並快取成
+    Data/cub/cub_{size}.npz。官方切分：約 5,994 張訓練、5,794 張測試，共 200 類。
+    若匿名下載失敗：於 Kaggle 建立 API token，設定 KAGGLE_USERNAME / KAGGLE_KEY 環境變數。
+    回傳 dict: x_train, y_train, x_test, y_test, class_names, source。
     """
-    root = paths["data"] / "intel"
+    root = paths["data"] / "cub"
     root.mkdir(parents=True, exist_ok=True)
-    cache = root / f"intel_{size}.npz"
+    cache = root / f"cub_{size}.npz"
 
     if not cache.exists():
         import kagglehub
-        base = Path(kagglehub.dataset_download("puneet6060/intel-image-classification"))
-        tr_root, te_root = _find_class_root(base, "seg_train"), _find_class_root(base, "seg_test")
-        class_names = sorted(d.name for d in tr_root.iterdir() if d.is_dir())
-        x_tr, y_tr = _load_folder(tr_root, class_names, size)
-        x_te, y_te = _load_folder(te_root, class_names, size)
-        np.savez(cache, x_train=x_tr, y_train=y_tr, x_test=x_te, y_test=y_te,
-                 class_names=np.array(class_names))
+        base = Path(kagglehub.dataset_download("wenewone/cub2002011"))
+        out = _build_cub_arrays(base, size)
+        np.savez(cache, x_train=out["x_train"], y_train=out["y_train"], x_test=out["x_test"],
+                 y_test=out["y_test"], class_names=np.array(out["class_names"]),
+                 source=np.array(out["source"]))
 
     d = np.load(cache, allow_pickle=False)
     out = {k: d[k] for k in ("x_train", "y_train", "x_test", "y_test")}
     out["class_names"] = [str(c) for c in d["class_names"]]
-    print({k: v.shape for k, v in out.items() if k != "class_names"}, out["class_names"])
+    out["source"] = str(d["source"])
+    nc = len(out["class_names"])
+    print({k: v.shape for k, v in out.items() if k.startswith(("x_", "y_"))}, f"classes={nc}",
+          f"split={out['source']}")
 
     rng = np.random.RandomState(SEED)
-    cn = out["class_names"]
-    fig, axes = plt.subplots(len(cn), 4, figsize=(6, 1.6 * len(cn)))
-    for c, name in enumerate(cn):
-        idx = rng.choice(np.where(out["y_train"] == c)[0], 4, replace=False)
-        for j, i in enumerate(idx):
-            axes[c, j].imshow(out["x_train"][i]); axes[c, j].axis("off")
-        axes[c, 0].set_title(name, fontsize=8, loc="left")
+    cls_pick = rng.choice(nc, min(24, nc), replace=False)
+    fig, axes = plt.subplots(4, 6, figsize=(13, 9))
+    for ax, c in zip(axes.ravel(), cls_pick):
+        i = rng.choice(np.where(out["y_train"] == c)[0])
+        ax.imshow(out["x_train"][i]); ax.axis("off")
+        ax.set_title(out["class_names"][c][:26], fontsize=7)
     plt.tight_layout()
-    _save_fig(paths, "Q1_intel_samples.png")
+    _save_fig(paths, "Q1_cub_samples.png")
 
-    fig, ax = plt.subplots(figsize=(7, 3.5))
-    pd.DataFrame({"train": np.bincount(out["y_train"], minlength=len(cn)),
-                  "test": np.bincount(out["y_test"], minlength=len(cn))}, index=cn).plot.bar(ax=ax, rot=30)
-    ax.set_title("Intel Image class distribution")
-    ax.set_ylabel("count")
-    _save_fig(paths, "Q1_intel_label_dist.png")
+    fig, ax = plt.subplots(figsize=(6.5, 3.5))
+    n_tr, n_te = np.bincount(out["y_train"], minlength=nc), np.bincount(out["y_test"], minlength=nc)
+    ax.hist(n_tr, bins=range(0, int(max(n_tr.max(), n_te.max())) + 3), alpha=0.6, label="train")
+    ax.hist(n_te, bins=range(0, int(max(n_tr.max(), n_te.max())) + 3), alpha=0.6, label="test")
+    ax.set_title(f"CUB-200-2011: images per class ({nc} classes)")
+    ax.set_xlabel("images in a class"); ax.set_ylabel("number of classes"); ax.legend()
+    _save_fig(paths, "Q1_cub_label_dist.png")
     return out
 
 

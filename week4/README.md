@@ -4,9 +4,9 @@
 
 | 題目 | 主題 | 重點 |
 | ----- | --------- | -------------------------------------------------------------------------------- |
-| Quiz1 | 資料集準備 | Yelp Review Full（3 類情感）、Intel Image Classification（6 類場景）、Flickr8k（影像描述），並輸出分佈與樣本圖 |
+| Quiz1 | 資料集準備 | Yelp Review Full（3 類情感）、CUB-200-2011（200 類鳥類）、Flickr8k（影像描述），並輸出分佈與樣本圖 |
 | Quiz2 | Sentiment Analysis | 以相同設定訓練 RNN 與 LSTM，比較 Accuracy、Macro-F1、Macro-AUC 與嚴重錯誤率；加做不同序列長度的對照實驗 |
-| Quiz3 | Vision Transformer | 微調 ViT-B/16 與 ResNet-50，以 Macro-AUC 比較，並分析每類別 AUC 與混淆矩陣 |
+| Quiz3 | Vision Transformer | 在 CUB-200-2011 細粒度分類上微調 ViT-B/16 與 ResNet-50，以 Macro-AUC、Top-1/Top-5 accuracy 比較，並分析每類別表現與最常混淆的鳥種 |
 | Quiz4 | Image Captioning | 自訓練 CNN+LSTM 與預訓練 BLIP 比較 BLEU-4、BERTScore、延遲，並用 Gemini 判斷描述是否符合影像 |
 
 > 完整的設定表、逐段結果分析與結論請見 `main.ipynb`（notebook 內含所有程式碼、圖片輸出與分析文字，本檔案僅作專案導覽與環境設置用）。
@@ -19,13 +19,13 @@ week4
 ├── requirements.txt
 ├── .env                     # 自行建立，放 GEMINI_API_KEY（不要上傳）
 ├── Codes/
-│   ├── Quiz1.py             # 資料集準備（Yelp / Intel / Flickr8k）
+│   ├── Quiz1.py             # 資料集準備（Yelp / CUB-200-2011 / Flickr8k）
 │   ├── Quiz2.py             # RNN vs LSTM（Yelp 3 類）
-│   ├── Quiz3.py             # ViT vs ResNet（Intel 6 類）
+│   ├── Quiz3.py             # ViT vs ResNet（CUB-200-2011，200 類）
 │   └── Quiz4.py             # Image Captioning + Gemini 評判
 ├── Data/                    # 第一次執行 Quiz1 時自動下載與快取
 │   ├── yelp/                # train_3class.csv、test_3class.csv
-│   ├── intel/               # intel_150.npz
+│   ├── cub/                 # cub_256.npz
 │   └── flickr8k/            # images/、captions.json、feats_resnet50.pt
 └── Outputs/                 # 圖片 Q{n}_*.png、模型 q{n}_*.pt、結果 q{n}_*.csv
 ```
@@ -89,7 +89,7 @@ pip install -r requirements.txt
   ```
 
   Notebook 預設使用的模型名稱在 4 開頭的設定 cell（`GEMINI_MODEL`），若該模型不可用請改成目前可用的 Gemini 模型。
-- **Intel Image Classification（Kaggle）**：以 `kagglehub` 下載。若匿名下載失敗，請設定 `KAGGLE_USERNAME` 與 `KAGGLE_KEY` 環境變數。
+- **CUB-200-2011（Kaggle `wenewone/cub2002011`）**：以 `kagglehub` 下載。若匿名下載失敗，請設定 `KAGGLE_USERNAME` 與 `KAGGLE_KEY` 環境變數。程式會自動尋找官方的 `images.txt`、`train_test_split.txt` 等檔案；找不到時退回資料夾結構並自行做每類 50% 的分層切分（會印出警告）。
 - **Yelp / Flickr8k**：由 HuggingFace `datasets` 自動下載（`Yelp/yelp_review_full`、`jxie/flickr8k`），不需金鑰。
 - 第一次執行 Quiz1 會下載資料並快取到 `Data/`，Flickr8k 會寫入 8,000 張圖片，需要數分鐘。
 
@@ -130,10 +130,10 @@ python -c "import torch; print(torch.cuda.is_available())"
 | 任務 | 資料集 | 規模 |
 | --- | --- | --- |
 | Sentiment Analysis | Yelp Review Full → 3 類（1–2 星 negative、3 星 neutral、4–5 星 positive，各類數量相同） | 訓練 90,000、測試 30,000；評論平均 136 字、中位數 101 字 |
-| Image Classification | Intel Image Classification，6 類場景；官方 `seg_train` 切 90/10 為 train/val，`seg_test` 為測試 | train 12,630、val 1,404、test 3,000（150×150 放大到 224） |
+| Image Classification | CUB-200-2011，200 種鳥類；沿用官方切分，官方訓練集再切 90/10 為 train/val，官方測試集為測試 | 官方約 5,994 張訓練、5,794 張測試（以執行輸出為準）；影像 resize 為 256×256，訓練裁切 224 |
 | Image Captioning | Flickr8k，沿用官方切分，每張 5 句描述 | train 6,000、val 1,000、test 1,000 |
 
-- 輸出：`Q1_yelp_label_dist.png`、`Q1_yelp_length_hist.png`、`Q1_intel_samples.png`、`Q1_intel_label_dist.png`、`Q1_flickr8k_samples.png`、`Q1_flickr8k_caption_length.png`
+- 輸出：`Q1_yelp_label_dist.png`、`Q1_yelp_length_hist.png`、`Q1_cub_samples.png`、`Q1_cub_label_dist.png`、`Q1_flickr8k_samples.png`、`Q1_flickr8k_caption_length.png`
 
 ### Quiz2：RNN vs LSTM（Yelp 3 類）
 
@@ -158,27 +158,33 @@ python -c "import torch; print(torch.cuda.is_available())"
 | `q2_rnn.pt`、`q2_lstm.pt`、`q2_vocab.json` | 模型權重與詞表 |
 | `q2_metrics.csv`、`q2_length_experiment.csv`、`q2_test_predictions.csv` | 結果表與測試集預測 |
 
-### Quiz3：ViT vs ResNet（Intel 6 類）
+### Quiz3：ViT vs ResNet（CUB-200-2011，200 類）
 
-設定：兩者皆為 ImageNet 預訓練、完整微調；AdamW（weight decay 0.05）、ReduceLROnPlateau、混合精度 fp16、batch 64；ViT lr 3e-5、ResNet lr 1e-4；early stopping（val loss，patience 6，上限 15 epochs）。
+設定：兩者皆使用 ImageNet 預訓練權重並完整微調；AdamW（weight decay 0.05）、ReduceLROnPlateau、混合精度 fp16、batch size 64；骨幹學習率 ViT 3e-5、ResNet 1e-4，分類頭學習率為骨幹的 10 倍；early stopping（val loss，patience 5，上限 30 epochs）。
 
-| 模型 | Accuracy | Macro-F1 | **Macro-AUC** | 參數量 | 最佳 / 實際 epoch | 訓練時間 |
-| --- | --- | --- | --- | --- | --- | --- |
-| ViT-B/16 | **0.9487** | **0.9497** | **0.9966** | 85.8 M | 3 / 9 | 340 s |
-| ResNet-50 | 0.9393 | 0.9402 | 0.9962 | 23.5 M | 3 / 9 | 148 s |
+| 模型 | Top-1 Acc | Top-5 Acc | Macro-F1 | Macro-AUC | 參數量 | 最佳 / 實際 epoch | 訓練時間 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ViT-B/16** | 0.8217 | 0.9563 | 0.8222 | 0.9957 | 85.95 M | 17 / 22 | 365.08 s |
+| **ResNet-50** | 0.7970 | 0.9505 | 0.7980 | 0.9964 | 23.92 M | 14 / 19 | 142.70 s |
 
-- Macro-AUC 差距僅 0.0004，在這個簡單且各類平衡的資料集上幾乎無法區分；Accuracy 差約 0.94 個百分點（約 28 張圖）。
-- 兩者主要錯誤都是 glacier ↔ mountain 與 buildings ↔ street。ViT 的代價是 3.6 倍的參數量與約 2.3 倍的訓練時間。
-- 輸出：
+- ViT 在 Top-1、Top-5 Accuracy 與 Macro-F1 均優於 ResNet，Top-1 高出 2.47 個百分點；ResNet 的 Macro-AUC 則略高 0.0007，顯示 AUC 不一定與最終分類準確率一致。
+
+- ViT 的參數量約為 ResNet 的 3.6 倍，訓練時間約為 2.6 倍。部分鳥種的辨識率偏低，例如 California Gull 的兩模型 Accuracy 均為 0.333，顯示細粒度鳥類分類仍具挑戰性。
+
+- Early stopping 分別選出 ViT 第 17 個 epoch、ResNet 第 14 個 epoch 的最佳檢查點；由於驗證集每類約僅 3 張圖片，驗證指標容易波動，最佳 epoch 的選擇可能受到少數樣本影響。
+
+- 兩者皆使用 ImageNet 預訓練權重，而 ImageNet 本身包含鳥類相關視覺特徵，因此結果具有遷移學習的先天優勢。由於僅使用單一隨機種子，效能差距仍需透過重複實驗確認，不能直接視為統計顯著差異。
 
 | 檔案 | 說明 |
 | --- | --- |
 | `Q3_training_curves.png` | 訓練 / 驗證 loss、accuracy、Macro-AUC |
-| `Q3_auc_comparison.png` | 每類別 AUC 與 Macro-AUC |
-| `Q3_roc_curves.png`、`Q3_confusion_matrix.png` | ROC 與混淆矩陣 |
-| `Q3_prediction_examples.png` | 隨機 10 張測試圖的 ViT / ResNet 預測 |
+| `Q3_auc_comparison.png` | 每類別 AUC 的分佈與 ViT 對 ResNet 散點圖 |
+| `Q3_roc_curves.png` | 巨觀平均 ROC（含低 FPR 放大） |
+| `Q3_confusion_matrix.png` | 去除對角線的錯誤熱圖 |
+| `Q3_worst_classes.png` | 兩模型平均 accuracy 最低的 15 個類別 |
+| `Q3_prediction_examples.png` | 隨機 10 張測試圖的預測（任一模型答錯則標題為紅色） |
 | `q3_vit.pt`、`q3_resnet.pt` | 模型權重 |
-| `q3_metrics.csv`、`q3_per_class_auc.csv` | 結果表 |
+| `q3_metrics.csv`、`q3_per_class.csv`、`q3_top_confusions.csv` | 整體結果、每類別 AUC 與 accuracy、最常混淆的類別對 |
 
 ### Quiz4：Image Captioning
 
