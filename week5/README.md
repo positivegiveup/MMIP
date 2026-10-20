@@ -16,7 +16,7 @@ week5/
 ├── README.md
 ├── Codes/
 │   ├── Quiz1.py        # Oxford5k 影像檢索；同時提供共用工具（set_seed、EarlyStopping、save_fig…）
-│   ├── Quiz2b.py       # UPMC Food-101 多模態分類
+│   ├── Quiz2.py       # UPMC Food-101 多模態分類
 │   └── Quiz3.py        # CLIP Image Captioning
 ├── Data/               # 資料集（不存在時程式會自動下載或偵測）
 └── Outputs/            # 所有圖片（Q{n}_*.png）、模型（q{n}_*.pt）與結果表（q{n}_*.csv）
@@ -28,7 +28,7 @@ week5/
 - 建議使用 GPU；訓練皆使用 early stopping。
 - 依序執行 `main.ipynb`；每個 Quiz 分成多個 cell，可單獨重跑。特徵會快取在 `Data/`，第二次執行會直接讀取。
 - Quiz 3 需要 Week 4 訓練好的 LSTM 權重：請放在 `Outputs/`（預設檔名 `q4_cnn_lstm.pt`），或用 `q3.load_week4(ctx3, path=...)` 指定實際路徑與檔名。
-- 圖片內文字一律使用英文；圖片存成 `Q1_*`、`Q2b_*`、`Q3_*`，模型存成 `q1_*`、`q2b_*`、`q3_*`。
+- 圖片內文字一律使用英文；圖片存成 `Q1_*`、`Q2_*`、`Q3_*`，模型存成 `q1_*`、`q2_*`、`q3_*`。
 
 ---
 
@@ -60,7 +60,7 @@ week5/
 
 ## Quiz 2：UPMC Food-101 多模態分類（影像 + 食譜文字）
 
-**資料**：UPMC Food-101，每筆為一張影像加一段網頁文字，101 類。偵測到 90,704 張影像；train 再分層切出 10% 當 val，train / val / test = 61,177 / 6,795 / 22,716。程式會先找 `Data/upmc_food101/`，沒有才嘗試用 kagglehub 下載（`Quiz2b.KAGGLE_ID`，尚未驗證，失敗時請手動放置資料），資料夾結構與文字格式採自動偵測。
+**資料**：UPMC Food-101，每筆為一張影像加一段網頁文字，101 類。偵測到 90,704 張影像；train 再分層切出 10% 當 val，train / val / test = 61,177 / 6,795 / 22,716。程式會先找 `Data/upmc_food101/`，沒有才嘗試用 kagglehub 下載（`Quiz2.KAGGLE_ID`，尚未驗證，失敗時請手動放置資料），資料夾結構與文字格式採自動偵測。
 
 **方法**
 1. Backbone 網格（皆凍結、先抽特徵並快取）：影像 ResNet-50 vs CLIP ViT-B/16 影像編碼器；文字 BERT-base vs CLIP 文字編碼器。共 4 組單模態基準 + 4 組 concat 融合。
@@ -81,7 +81,7 @@ week5/
 | clip_img + clip_txt（late） | 0.942 | 0.942 | 0.984 |
 | clip_img + clip_txt（gated） | 0.948 | 0.948 | 0.985 |
 
-![Q2b model comparison](Outputs/Q2b_model_comparison.png)
+![Q2 model comparison](Outputs/Q2_model_comparison.png)
 
 **結論**
 - 多模態融合明顯優於任何單模態：最佳融合 0.949，高於最佳單模態文字（0.867）8.2 個百分點。
@@ -90,7 +90,7 @@ week5/
 - 模態消融：遮掉影像 Accuracy 降到 0.854，遮掉文字降到 0.717，模型明顯更依賴文字；融合模型訓練時未見過缺少模態的輸入，此數字應視為依賴程度，而非單模態實力。
 - 錯誤集中在外觀或語意相近的類別，例如 tuna_tartare ↔ beef_tartare、sashimi ↔ sushi、gyoza → dumplings。
 
-![Q2b class analysis](Outputs/Q2b_class_analysis.png)
+![Q2 class analysis](Outputs/Q2_class_analysis.png)
 
 **限制**：seed 只改變分類頭的初始化與抽樣順序，標準差會低估整體不確定性；backbone 凍結、未微調；未檢查 train 與 test 之間是否有近重複樣本。
 
@@ -132,5 +132,5 @@ week5/
 | Quiz | 圖片 | 模型 | 結果表 |
 |---|---|---|---|
 | 1 | `Q1_dataset_overview.png`、`Q1_training_curves.png`、`Q1_method_comparison.png`、`Q1_retrieval_examples.png` | `q1_cnn.pt`、`q1_vit.pt` | `q1_results.csv`、`q1_per_landmark_map.csv` |
-| 2 | `Q2b_data_overview.png`、`Q2b_training_curves.png`、`Q2b_model_comparison.png`、`Q2b_class_analysis.png`、`Q2b_modality_ablation.png`、`Q2b_top_confusions.png`、`Q2b_predictions.png` | `q2b_*.pt`（每組實驗一個，共 10 個） | `q2b_results.csv`、`q2b_per_class_acc.csv` |
+| 2 | `Q2_data_overview.png`、`Q2_training_curves.png`、`Q2_model_comparison.png`、`Q2_class_analysis.png`、`Q2_modality_ablation.png`、`Q2_top_confusions.png`、`Q2_predictions.png` | `q2_*.pt`（每組實驗一個，共 10 個） | `q2_results.csv`、`q2_per_class_acc.csv` |
 | 3 | `Q3_training_curves.png`、`Q3_method_comparison.png`、`Q3_caption_examples.png` | `q3_clip_lstm.pt`、`q3_clip_gpt2.pt` | `q3_results.csv`、`q3_generated_captions.csv` |
