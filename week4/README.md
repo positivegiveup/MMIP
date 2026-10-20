@@ -135,6 +135,23 @@ python -c "import torch; print(torch.cuda.is_available())"
 
 - 輸出：`Q1_yelp_label_dist.png`、`Q1_yelp_length_hist.png`、`Q1_cub_samples.png`、`Q1_cub_label_dist.png`、`Q1_flickr8k_samples.png`、`Q1_flickr8k_caption_length.png`
 
+#### Quiz1 圖表
+
+<p align="center">
+  <img src="Outputs/Q1_yelp_length_hist.png" width="48%">
+  <img src="Outputs/Q1_cub_samples.png" width="48%">
+</p>
+<p align="center">
+  <img src="Outputs/Q1_flickr8k_samples.png" width="70%">
+</p>
+
+<sub>左上：Yelp 評論長度分佈（紅線為 128 / 256 / 400）；右上：CUB 的 24 個隨機鳥種樣本；下：Flickr8k 樣本與描述。</sub>
+
+**小結**
+- Yelp 評論長度偏長尾，中位數約 101 字、75% 分位數 178 字，所以序列長度 256 已涵蓋大多數評論，也是 Quiz2 長度實驗要比較 64～400 的原因。
+- CUB 每類只有約 30 張訓練圖，且類別之間外觀很接近，是細粒度分類，難度明顯高於一般場景分類。
+- Flickr8k 每張圖有 5 句人工描述，適合以多參考的方式計算 BLEU 與 BERTScore。
+
 ### Quiz2：RNN vs LSTM（Yelp 3 類）
 
 設定：詞表 20,000、序列長度 256、Embedding 128、單層單向循環層（hidden 128）、Dropout 0.3、Adam lr 1e-3、early stopping（val loss，patience 5，上限 30 epochs）。RNN 與 LSTM 僅差循環單元。
@@ -157,6 +174,24 @@ python -c "import torch; print(torch.cuda.is_available())"
 | `Q2_length_experiment.png` | 序列長度對照 |
 | `q2_rnn.pt`、`q2_lstm.pt`、`q2_vocab.json` | 模型權重與詞表 |
 | `q2_metrics.csv`、`q2_length_experiment.csv`、`q2_test_predictions.csv` | 結果表與測試集預測 |
+
+#### Quiz2 圖表
+
+<p align="center">
+  <img src="Outputs/Q2_training_curves.png" width="48%">
+  <img src="Outputs/Q2_confusion_matrix.png" width="48%">
+</p>
+<p align="center">
+  <img src="Outputs/Q2_metrics_bar.png" width="48%">
+  <img src="Outputs/Q2_length_experiment.png" width="48%">
+</p>
+
+<sub>左上：訓練 / 驗證曲線；右上：列正規化混淆矩陣；左下：整體指標；右下：序列長度對照。</sub>
+
+**小結**
+- LSTM 的驗證曲線較平滑、較早（第 7 個 epoch）達到最佳；RNN 的 val loss 起伏大，到第 13 個 epoch 才達到最佳。
+- 混淆矩陣顯示 negative 與 positive 的 recall 兩者接近，LSTM 的優勢主要來自 neutral（recall 0.66 對 0.46）。
+- 兩個模型都隨序列變長而進步，LSTM 在每個長度都領先 RNN 8.8–12.6 個百分點。
 
 ### Quiz3：ViT vs ResNet（CUB-200-2011，200 類）
 
@@ -186,6 +221,25 @@ python -c "import torch; print(torch.cuda.is_available())"
 | `q3_vit.pt`、`q3_resnet.pt` | 模型權重 |
 | `q3_metrics.csv`、`q3_per_class.csv`、`q3_top_confusions.csv` | 整體結果、每類別 AUC 與 accuracy、最常混淆的類別對 |
 
+#### Quiz3 圖表
+
+<p align="center">
+  <img src="Outputs/Q3_training_curves.png" width="48%">
+  <img src="Outputs/Q3_confusion_matrix.png" width="48%">
+</p>
+<p align="center">
+  <img src="Outputs/Q3_worst_classes.png" width="48%">
+  <img src="Outputs/Q3_prediction_examples.png" width="48%">
+</p>
+
+<sub>左上：訓練曲線（loss、val accuracy、Macro-AUC）；右上：去除對角線的錯誤熱圖（左 ViT、右 ResNet）；左下：兩模型平均 accuracy 最低的 15 個類別；右下：隨機 10 張測試圖的預測（標題為紅色代表至少一個模型答錯）。</sub>
+
+**小結**
+- 兩個模型的 train loss 都降到約 0.012，val loss 卻停在 0.71（ViT）與 0.87（ResNet），過擬合明顯，early stopping 在第 22、19 個 epoch 停止。
+- 錯誤熱圖顯示錯誤集中在對角線附近的方塊。CUB 的類別編號依鳥類名稱分組，所以這代表錯誤主要發生在同一類群內的相似物種之間。
+- 最難的類別以海鷗、燕鷗、烏鴉、鶲與麻雀為主，兩個模型高度重疊，但優劣並不一致（例如 Pomarine Jaeger 是 ViT 較好，Elegant Tern 是 ResNet 較好）。
+- 隨機 10 張預測中 ViT 答對 8 張、ResNet 答對 6 張，答錯的都是近緣物種（Western Gull → California Gull、Pomarine Jaeger → Long tailed Jaeger、Clay colored Sparrow → Grasshopper Sparrow）。這 10 張僅供示意，不能代表整體比較。
+
 ### Quiz4：Image Captioning
 
 兩種方法（batch size = 1 計時圖片 → 文字的端到端時間），共用從測試集以固定種子隨機抽出的 1,000 張圖（N_EVAL = 1000，即整個 Flickr8k 測試集）：
@@ -211,6 +265,31 @@ python -c "import torch; print(torch.cuda.is_available())"
 | `Q4_caption_examples.png` | 範例圖與兩種方法的描述（附 Gemini 判斷） |
 | `q4_cnn_lstm.pt` | 自訓練解碼器權重與詞表 |
 | `q4_generated_captions.csv`、`q4_gemini_judgement.csv`、`q4_results.csv` | 產生的描述、Gemini 判斷明細與結果表 |
+
+#### Quiz4 圖表
+
+<p align="center">
+  <img src="Outputs/Q4_training_curve.png" width="48%">
+  <img src="Outputs/Q4_method_comparison.png" width="48%">
+</p>
+<p align="center">
+  <img src="Outputs/Q4_caption_examples.png" width="95%">
+</p>
+
+<sub>上左：解碼器訓練 / 驗證 loss；上右：兩種方法的 BLEU-4、BERTScore、Gemini 符合率與延遲（延遲為對數軸）；下：前 6 張被 Gemini 評判的圖片與兩種方法的描述（[OK] 為符合、[X] 為不符合）。</sub>
+
+**小結**
+- 解碼器的 val loss 在第 18 個 epoch 之後不再下降，train loss 持續下降，是 Flickr8k 資料量小造成的過擬合。
+- 範例圖中，A（CNN+LSTM）的 6 張描述全被 Gemini 判為不符合，B（BLIP）有 4 張符合、2 張不符合；A 常能抓到場景大類，卻說錯動作與人物細節（例如把在沙丘上滑行的男孩說成站在沙灘上的粉紅洋裝女孩）。
+- 範例只是被評判的 10 張中的前 6 張，整體符合率以上方表格為準。
+
+## 整體小結
+
+| 題目 | 比較 | 結論 |
+| --- | --- | --- |
+| Quiz2 | RNN vs LSTM（Yelp 三類） | LSTM 全面優於 RNN（Accuracy 0.741 對 0.661，Macro-AUC 0.896 對 0.831），差距主要在 neutral 類別，且在所有測試序列長度都領先 |
+| Quiz3 | ViT vs ResNet（CUB 二百類） | ViT 的 Top-1 與 Macro-F1 領先約 2.5 個百分點，代價是 3.6 倍參數量、約 2.6 倍訓練時間；Macro-AUC 兩者都超過 0.995，無法區分 |
+| Quiz4 | CNN+LSTM vs BLIP | BLIP 品質全面較佳（BLEU-4 28.25 對 18.52，Gemini 符合率 8/10 對 1/10），CNN+LSTM 延遲低約 11 倍 |
 
 ## 已知限制
 
