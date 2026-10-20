@@ -1,0 +1,13 @@
+torch
+torchvision
+transformers
+datasets
+huggingface_hub
+bert_score
+nltk
+scikit-learn
+pandas
+matplotlib
+tqdm
+pillow
+jupyter

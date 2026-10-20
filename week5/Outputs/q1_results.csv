@@ -1,0 +1,5 @@
+Model,mAP,Recall@1,Recall@5,Params_M,Embed_s_per_img
+ResNet-18 (zero-shot),0.5155,0.7843,0.8775,11.1765,0.0056
+ResNet-18 (fine-tuned),0.7212,0.8775,0.9265,11.1765,0.0036
+ViT-B/16 (zero-shot),0.5479,0.7647,0.8873,85.7987,0.0035
+ViT-B/16 (fine-tuned),0.7041,0.799,0.902,85.7987,0.0034

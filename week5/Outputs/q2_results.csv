@@ -1,0 +1,11 @@
+,Type,Fusion,Accuracy,Accuracy_std,Macro-F1,Macro-F1_std,Top5-Acc,Top5-Acc_std
+img:resnet50,single-modal,-,0.5923,0.002,0.5898,0.0018,0.8051,0.0024
+img:clip_img,single-modal,-,0.7879,0.0005,0.787,0.0005,0.9196,0.0005
+txt:bert,single-modal,-,0.8437,0.001,0.843,0.001,0.8916,0.0004
+txt:clip_txt,single-modal,-,0.8671,0.0006,0.8669,0.0005,0.9075,0.0005
+resnet50+bert,fusion,concat,0.9003,0.0007,0.8996,0.0007,0.9614,0.0009
+resnet50+clip_txt,fusion,concat,0.9192,0.0004,0.9189,0.0003,0.9679,0.0003
+clip_img+bert,fusion,concat,0.9393,0.0005,0.9389,0.0004,0.9833,0.0004
+clip_img+clip_txt,fusion,concat,0.9489,0.0002,0.9486,0.0003,0.9851,0.0004
+clip_img+clip_txt|late,fusion,late,0.9418,0.0007,0.9416,0.0006,0.9842,0.0004
+clip_img+clip_txt|gated,fusion,gated,0.9482,0.0008,0.9478,0.0008,0.9848,0.0005
