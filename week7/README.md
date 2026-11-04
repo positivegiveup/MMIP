@@ -1,9 +1,9 @@
-# Week 6 — LLM / VLM Quiz 1–3
+# Week 7 — 大型語言模型、多模態、DPO 微調
 
 Open-source LLM / VLM 的部署、評估、Prompt Engineering、量化、DPO 微調與影像畫質實驗。
 所有圖片由 `main.ipynb` 產生並存於 `Outputs/`，命名為 `Q1_*`、`Q2_*`、`Q3_*`。
 
-## 1. 專案結構
+## 專案結構
 
 ```
 .
@@ -17,7 +17,7 @@ Open-source LLM / VLM 的部署、評估、Prompt Engineering、量化、DPO 微
 └── Outputs/            # 圖片 Q{n}_*.png、模型 q{n}_*、csv
 ```
 
-## 2. 環境與執行
+## 環境與執行
 
 | 項目 | 內容 |
 |---|---|
@@ -39,14 +39,14 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 
 ---
 
-## 3. Quiz 1 — LLM 部署、評估、Prompting、量化
+## Quiz 1 — LLM 部署、評估、Prompting、量化
 
-### 3.1 自訂 20 題 Instruction Benchmark
+### 自訂 20 題 Instruction Benchmark
 涵蓋數學、推理、中英文知識、程式（單元測試驗證）、翻譯、摘要、格式/長度/語言控制、安全拒答、常識、創作、幻覺（false premise）共 13 類。每題有自動 checker 與參考答案，另由 Gemini 評 1–10 分。
 
 ![benchmark categories](Outputs/Q1_benchmark_categories.png)
 
-### 3.2 Prompting Techniques（bf16）
+### Prompting Techniques（bf16）
 
 | 技巧 | 自動通過率 | Judge | 平均輸出 tokens |
 |---|---|---|---|
@@ -62,13 +62,13 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 * **CoT 最差**：多數題目有嚴格輸出格式限制，要求先推理反而違規。
 * few-shot / combo 讓輸出更短，但 prompt 長 3–4 倍。
 
-### 3.3 預設精度（bf16）的 GPU 記憶體
+### 預設精度（bf16）的 GPU 記憶體
 
 權重 2.88 GiB，20 題平均推理峰值 2.89 GiB（std 0.003）；推理額外開銷僅約 13 MiB。
 
 ![memory default](Outputs/Q1_memory_default_precision.png)
 
-### 3.4 量化（bitsandbytes，baseline prompt）
+### 量化（bitsandbytes，baseline prompt）
 
 | 精度 | 自動通過率 | Judge | tok/s | 權重 (MiB) | 平均推理記憶體 (MiB) | 相對 bf16 |
 |---|---|---|---|---|---|---|
@@ -82,7 +82,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 * int4 沒有降到理論的 1/4：診斷顯示權重中 625 MiB 為 uint8（量化後 Linear），**445 MiB 的 embedding / lm_head 仍為 bf16**（約佔 41%），1.5B 小模型的 embedding 佔比很大。
 * 量測注意：載入量化模型後需 `gc.collect()` 再量測，否則殘留暫存 tensor 會讓數字偏大（已在 `load_llm` 處理）。
 
-### 3.5 最佳 Prompt + int4 vs 預設
+### 最佳 Prompt + int4 vs 預設
 
 | 設定 | 自動通過率 | Judge | 平均輸出 tokens | 平均推理記憶體 |
 |---|---|---|---|---|
@@ -98,13 +98,13 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 
 ---
 
-## 4. Quiz 2 — 兩個 VLM 比較
+## Quiz 2 — 兩個 VLM 比較
 
-### 4.1 為什麼有兩版 Benchmark
+### 為什麼有兩版 Benchmark
 **v1（隨機負樣本、小計數、明顯主體）**：Qwen2-VL-2B 與 SmolVLM 在 16 題客觀題**都是 100%**（天花板效應），只有描述題（4 張圖）有差異（recall 0.625 vs 0.812、幻覺率 0.25 vs 0.00），無法有效比較。
 **處理方式：保持模型不變，換成更難的題目（v2）。** 模型是作業要比較的對象，問題在題目沒有鑑別力。
 
-### 4.2 v2 — 自訂 20 題 Hard Benchmark（COCO val，自動下載）
+### v2 — 自訂 20 題 Hard Benchmark（COCO val，自動下載）
 
 | 類型 | 題數 | 難點 | 指標 |
 |---|---|---|---|
@@ -119,7 +119,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 
 ![benchmark samples](Outputs/Q2_benchmark_samples.png)
 
-### 4.3 v2 結果（20 題）
+### v2 結果（20 題）
 
 | 任務類型 | Qwen2-VL-2B | SmolVLM-2B |
 |---|---|---|
@@ -147,7 +147,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 * 描述題：Qwen 0/4 張出現幻覺，SmolVLM 2/4。
 * 每類僅 3–4 題（1 題 = 25–33 個百分點），因此只能視為趨勢，以下擴充實驗確認。
 
-### 4.4 擴充實驗（49 題，同出題規則、不同 seed，無 judge）
+### 擴充實驗（49 題，同出題規則、不同 seed，無 judge）
 
 | 任務類型 | Qwen2-VL-2B | SmolVLM-2B |
 |---|---|---|
@@ -171,11 +171,11 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 
 ---
 
-## 5. Quiz 3 — DPO 微調與影像畫質實驗
+## Quiz 3 — DPO 微調與影像畫質實驗
 
 方法：LoRA（r=16）+ DPO（β=0.1，自寫訓練迴圈，reference = 關閉 adapter 的同一模型），以 validation loss 做 **early stopping**（patience=3）並還原最佳 checkpoint。
 
-### 5.1 LLM — 優化面向：簡潔回答
+### LLM — 優化面向：簡潔回答
 
 * **RLHF 資料**：Alpaca 指令 142 組訓練 + 20 組驗證；chosen = 同模型在「簡短」system prompt 下的回答，rejected = 預設冗長回答。
 * **通用能力 Benchmark**：另取 100 題 MMLU（與優化面向無關）。
@@ -199,7 +199,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 * 優化目標達成（長度約降為 1/8），MMLU 無顯著變化（n=100，±5 個百分點）。
 * **代價**：judge 有用性下降 1.36 分，簡短回答資訊量不足；chosen 未經品質過濾，DPO 也過度學到「越短越好」。
 
-### 5.2 VLM — 優化面向：降低物件幻覺
+### VLM — 優化面向：降低物件幻覺
 
 * **偏好資料（COCO 標註）**：每張圖 3 組 — 存在（Yes 為 chosen）、**不存在**（No 為 chosen）、物件列舉（混入不存在物件者為 rejected）；165 組訓練 + 51 組驗證。
 * **測試**：114 題存在題（未見過的圖）、30 張描述題。
@@ -222,7 +222,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 * 指標限制：COCO 標註不完整，像 `dining table` 會被誤算為幻覺。
 * 改進方向：加入對抗式負樣本（與圖中物件常共現的物件）與更多測試圖。
 
-### 5.3 影像畫質實驗（40 題 / 20 張圖，tuned vs base）
+### 影像畫質實驗（40 題 / 20 張圖，tuned vs base）
 
 6 種擾動 × 5 個強度：亮度、對比、模糊、JPEG 品質、高斯雜訊、解析度。
 
@@ -235,7 +235,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 
 ---
 
-## 6. 結論與限制
+## 結論與限制
 
 1. Prompt：簡單的 role prompt 最有效；CoT 對格式嚴格的題目有害。
 2. 量化：int8 記憶體 −42%、品質接近 bf16 但慢 4.7 倍；int4 −62%、品質略降，**加上 role prompt 後在 2.89 → 1.10 GiB 的同時通過率 0.90 → 1.00**。int4 因 embedding 仍為 bf16 而無法降到 1/4。
@@ -244,7 +244,7 @@ jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca /
 5. VLM 微調：存在題已達天花板，未能證明幻覺改善；畫質主要影響嚴重模糊與極低解析度。
 6. 共通限制：樣本數小（20 / 40 / 100 題）、單一 seed、judge 為單一商用模型。
 
-## 7. 產出清單
+## 產出清單
 
 * 圖片：`Outputs/Q1_*.png`、`Outputs/Q2_*.png`、`Outputs/Q3_*.png`
 * 模型：`Outputs/q1_qwen2.5-1.5b-instruct_{int8,int4}`、`Outputs/q3_llm_dpo_lora`、`Outputs/q3_vlm_dpo_lora`
