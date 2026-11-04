@@ -1,0 +1,12 @@
+torch 
+transformers 
+accelerate 
+bitsandbytes 
+peft 
+datasets 
+pillow 
+pandas 
+matplotlib 
+tqdm 
+google-genai 
+python-dotenv

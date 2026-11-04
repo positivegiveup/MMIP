@@ -1,0 +1,3 @@
+model,acc_yes_small,acc_no_adv,acc_count_hard,acc_mcq_hard,acc_spatial,acc_overall,count_MAE,cap_recall,cap_halluc_rate,yes_rate,judge_avg,mem_mean_GiB,latency_s
+qwen2vl2b,0.875,1.0,0.25,0.625,1.0,0.773,1.5,0.48,0.2,0.35,,4.156,0.116
+smolvlm2b,1.0,0.75,0.0,0.75,0.375,0.591,2.375,0.53,0.4,0.55,,4.223,0.07

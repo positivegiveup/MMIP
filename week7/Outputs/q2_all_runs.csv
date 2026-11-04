@@ -1,0 +1,71 @@
+text,n_tokens,latency,base_mb,peak_mb,correct,recall,halluc,abs_err,id,type,question,answer,model,model_mb,judge,n_halluc_obj
+Right,2,0.04679393768310547,4214.20166015625,4234.49951171875,1.0,,,,1,spatial,"In this image, is the keyboard on the left or on the right of the laptop? Answer with Left or Right.",right,qwen2vl2b,4213.3076171875,10.0,
+Right,2,0.07217025756835938,4215.41552734375,4254.85986328125,1.0,,,,2,spatial,"In this image, is the clock on the left or on the right of the book? Answer with Left or Right.",right,qwen2vl2b,4213.3076171875,10.0,
+Left,2,0.07900309562683105,4215.5322265625,4257.16796875,1.0,,,,3,spatial,"In this image, is the truck on the left or on the right of the cow? Answer with Left or Right.",left,qwen2vl2b,4213.3076171875,10.0,
+1,2,0.07840156555175781,4215.5322265625,4257.16748046875,0.0,,,3.0,4,count_hard,How many instances of 'person' are visible in this image? Answer with a single number.,4,qwen2vl2b,4213.3076171875,1.0,
+5,2,0.07721829414367676,4215.41552734375,4254.85986328125,0.0,,,1.0,5,count_hard,How many instances of 'carrot' are visible in this image? Answer with a single number.,6,qwen2vl2b,4213.3076171875,5.0,
+1,2,0.0774388313293457,4215.41552734375,4254.85986328125,0.0,,,6.0,6,count_hard,How many instances of 'hot dog' are visible in this image? Answer with a single number.,7,qwen2vl2b,4213.3076171875,1.0,
+B,2,0.07728362083435059,4215.41552734375,4254.8603515625,0.0,,,,7,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. bowl
+B. sandwich
+C. hot dog
+D. cup
+Answer with the letter only.",C,qwen2vl2b,4213.3076171875,1.0,
+A,2,0.08224296569824219,4215.61279296875,4258.76513671875,0.0,,,,8,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. broccoli
+B. fork
+C. truck
+D. bowl
+Answer with the letter only.",D,qwen2vl2b,4213.3076171875,1.0,
+C,2,0.0773317813873291,4215.36181640625,4253.794921875,1.0,,,,9,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. vase
+B. dining table
+C. pizza
+D. person
+Answer with the letter only.",C,qwen2vl2b,4213.3076171875,10.0,
+Yes,2,0.07824850082397461,4215.5322265625,4257.16748046875,1.0,,,,10,yes_small,Is there a baseball glove in this image? Answer with Yes or No.,yes,qwen2vl2b,4213.3076171875,10.0,
+No,2,0.08181333541870117,4215.61279296875,4258.7646484375,0.0,,,,11,yes_small,Is there a chair in this image? Answer with Yes or No.,yes,qwen2vl2b,4213.3076171875,1.0,
+Yes,2,0.0784296989440918,4215.5322265625,4257.16748046875,1.0,,,,12,yes_small,Is there a person in this image? Answer with Yes or No.,yes,qwen2vl2b,4213.3076171875,10.0,
+No,2,0.07669496536254883,4215.41552734375,4254.859375,1.0,,,,13,no_adv,Is there a truck in this image? Answer with Yes or No.,no,qwen2vl2b,4213.3076171875,10.0,
+No,2,0.0775609016418457,4215.45166015625,4255.56982421875,1.0,,,,14,no_adv,Is there a traffic light in this image? Answer with Yes or No.,no,qwen2vl2b,4213.3076171875,10.0,
+No,2,0.08144879341125488,4215.61279296875,4258.7646484375,1.0,,,,15,no_adv,Is there a knife in this image? Answer with Yes or No.,no,qwen2vl2b,4213.3076171875,10.0,
+No,2,0.07859301567077637,4215.5322265625,4257.16748046875,1.0,,,,16,no_adv,Is there a boat in this image? Answer with Yes or No.,no,qwen2vl2b,4213.3076171875,10.0,
+"The image shows a kitchen with wooden cabinets and a counter. There is a dog standing on the floor in front of the counter, and a person is standing behind the counter, possibly preparing food. The kitchen has various kitchen utensils hanging on the wall.",52,0.5326385498046875,4215.5322265625,4257.16748046875,,0.2857142857142857,0.0,,17,caption,Describe this image in one or two sentences.,,qwen2vl2b,4213.3076171875,9.0,0.0
+"The image shows a table setting with a vase of flowers in the center. The table is set with wine glasses, napkins, and a knife. The background is dimly lit, suggesting a formal or elegant setting.",45,0.4689757823944092,4215.5322265625,4257.16748046875,,0.5,0.0,,18,caption,Describe this image in one or two sentences.,,qwen2vl2b,4213.3076171875,9.0,0.0
+"The image shows a group of people sitting on benches in a city park. There are trees, a street lamp, and buildings in the background. Some people are engaged in conversation, while others are resting. The scene appears to be a typical day in a bustling urban area.",56,0.5667564868927002,4215.5322265625,4257.16748046875,,0.16666666666666666,0.0,,19,caption,Describe this image in one or two sentences.,,qwen2vl2b,4213.3076171875,5.0,0.0
+"The image shows a city street with a blue garbage truck parked on the side of the road. There is also a police car with the word ""POLICE"" on it parked nearby. The background features a tall building with large windows and a sign on the side of it.",56,0.566779613494873,4215.5322265625,4257.16748046875,,0.5,0.0,,20,caption,Describe this image in one or two sentences.,,qwen2vl2b,4213.3076171875,9.0,0.0
+Left.,3,0.04406309127807617,4286.4599609375,4324.97802734375,0.0,,,,1,spatial,"In this image, is the keyboard on the left or on the right of the laptop? Answer with Left or Right.",right,smolvlm2b,4284.4892578125,1.0,
+Left.,3,0.04419422149658203,4286.4599609375,4324.97802734375,0.0,,,,2,spatial,"In this image, is the clock on the left or on the right of the book? Answer with Left or Right.",right,smolvlm2b,4284.4892578125,1.0,
+Left.,3,0.04868268966674805,4286.4599609375,4324.97802734375,1.0,,,,3,spatial,"In this image, is the truck on the left or on the right of the cow? Answer with Left or Right.",left,smolvlm2b,4284.4892578125,10.0,
+2.,4,0.05649566650390625,4286.4599609375,4323.80517578125,0.0,,,2.0,4,count_hard,How many instances of 'person' are visible in this image? Answer with a single number.,4,smolvlm2b,4284.4892578125,5.0,
+3.,4,0.056319236755371094,4286.4599609375,4324.03955078125,0.0,,,3.0,5,count_hard,How many instances of 'carrot' are visible in this image? Answer with a single number.,6,smolvlm2b,4284.4892578125,1.0,
+2.,4,0.05646872520446777,4286.4599609375,4324.03955078125,0.0,,,5.0,6,count_hard,How many instances of 'hot dog' are visible in this image? Answer with a single number.,7,smolvlm2b,4284.4892578125,1.0,
+Answer: C,4,0.06396818161010742,4286.4609375,4327.79541015625,1.0,,,,7,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. bowl
+B. sandwich
+C. hot dog
+D. cup
+Answer with the letter only.",C,smolvlm2b,4284.4892578125,10.0,
+Answer: B,4,0.06393814086914062,4286.4609375,4327.56103515625,0.0,,,,8,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. broccoli
+B. fork
+C. truck
+D. bowl
+Answer with the letter only.",D,smolvlm2b,4284.4892578125,1.0,
+Answer: C,4,0.06380343437194824,4286.4609375,4327.79541015625,1.0,,,,9,mcq_hard,"Which of these objects occupies the largest part of the image?
+A. vase
+B. dining table
+C. pizza
+D. person
+Answer with the letter only.",C,smolvlm2b,4284.4892578125,10.0,
+Yes.,3,0.04896044731140137,4286.4599609375,4322.86669921875,1.0,,,,10,yes_small,Is there a baseball glove in this image? Answer with Yes or No.,yes,smolvlm2b,4284.4892578125,10.0,
+No.,3,0.05012226104736328,4286.4599609375,4322.63232421875,0.0,,,,11,yes_small,Is there a chair in this image? Answer with Yes or No.,yes,smolvlm2b,4284.4892578125,1.0,
+Yes.,3,0.04960942268371582,4286.4599609375,4322.63232421875,1.0,,,,12,yes_small,Is there a person in this image? Answer with Yes or No.,yes,smolvlm2b,4284.4892578125,10.0,
+No.,3,0.05085611343383789,4286.4599609375,4322.63232421875,1.0,,,,13,no_adv,Is there a truck in this image? Answer with Yes or No.,no,smolvlm2b,4284.4892578125,10.0,
+No.,3,0.04904007911682129,4286.4599609375,4322.86669921875,1.0,,,,14,no_adv,Is there a traffic light in this image? Answer with Yes or No.,no,smolvlm2b,4284.4892578125,10.0,
+No.,3,0.04902958869934082,4286.4599609375,4322.63232421875,1.0,,,,15,no_adv,Is there a knife in this image? Answer with Yes or No.,no,smolvlm2b,4284.4892578125,10.0,
+No.,3,0.048900604248046875,4286.4599609375,4322.63232421875,1.0,,,,16,no_adv,Is there a boat in this image? Answer with Yes or No.,no,smolvlm2b,4284.4892578125,10.0,
+"In this image, we can see a man standing in front of a kitchen counter. He is wearing a plaid shirt and blue jeans. He is holding a spoon in his right hand. There is a puppy standing in front of him. The puppy is looking at the man. There is a wooden plank on the floor. There is a chair on the left side of the image. There is a curtain on the right side of the image. There is a clock on the wall",96,0.7370362281799316,4286.4599609375,4334.2978515625,,0.2857142857142857,1.0,,17,caption,Describe this image in one or two sentences.,,smolvlm2b,4284.4892578125,5.0,2.0
+"In this image we can see table on which there are glasses, plates, forks, knives and spoons. In the background there is a wall.",30,0.2561511993408203,4286.4599609375,4321.921875,,0.3333333333333333,1.0,,18,caption,Describe this image in one or two sentences.,,smolvlm2b,4284.4892578125,9.0,1.0
+"In this image we can see a group of people sitting on the benches and a person standing. In the background we can see a tree, a pole, a car, a building and a person walking.",42,0.34157657623291016,4286.4599609375,4324.171875,,0.3333333333333333,0.0,,19,caption,Describe this image in one or two sentences.,,smolvlm2b,4284.4892578125,9.0,0.0
+"In this image there is a garbage truck on the road, beside it there is a police car, behind the garbage truck there are some garbage bins and behind the garbage bins there are some buildings.",40,0.323697566986084,4286.4599609375,4323.796875,,0.5,0.0,,20,caption,Describe this image in one or two sentences.,,smolvlm2b,4284.4892578125,9.0,0.0

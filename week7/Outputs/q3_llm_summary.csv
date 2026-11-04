@@ -1,0 +1,4 @@
+,base,tuned
+MMLU-100 acc,0.57,0.58
+mean words,194.24,25.24
+judge helpfulness,8.22,6.86
