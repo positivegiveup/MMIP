@@ -1,0 +1,493 @@
+exp,split,id,raw,json_valid,schema_valid,strict,error,latency,in_tokens,out_tokens,route,conf,ok_intent,ok_department,ok_priority,ok_order_id,ok_product_category,ok_image_evidence,ok_need_more_info,ok_missing_slots,summary_sim,cost_usd
+A_prompt,benchmark,q2_bench_00,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW20481733"",
+  ""product_category"": ""phone"",
+  ""issue_summary"": ""螢幕破裂"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,2.1574375722557306,1098,93,,,True,True,True,True,True,True,True,True,0.75,0.0002397152858061923
+A_prompt,benchmark,q2_bench_01,"{
+  ""intent"": ""logistics_tracking"",
+  ""department"": ""logistics"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC30551290"",
+  ""product_category"": ""phone"",
+  ""issue_summary"": ""包裹三天沒動了"",
+  ""image_evidence"": ""parcel_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4402558389119804,1081,94,,,True,True,False,True,False,False,True,True,0.9230769230769231,0.0001600284265457756
+A_prompt,benchmark,q2_bench_02,"{
+  ""intent"": ""technical_support"",
+  ""department"": ""tech_support"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""headphones"",
+  ""issue_summary"": ""連不上藍牙，配對失敗"",
+  ""image_evidence"": ""none"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.2750055100768805,823,87,,,True,True,True,True,True,True,True,True,0.75,0.00014166727889743116
+A_prompt,benchmark,q2_bench_03,"{""intent"":""refund_return"",""department"":""returns_refunds"",""priority"":""medium"",""order_id"":""TW20990012"",""product_category"":""unknown"",""issue_summary"":""買錯了"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問是什麼原因買錯了？""}",True,True,False,,1.093861788045615,845,74,,,True,True,True,True,True,True,False,False,1.0,0.000121540198671735
+A_prompt,benchmark,q2_bench_04,"{""intent"":""account_security"",""department"":""account_security"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""帳號被登入"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[""issue_summary""],""followup_question"":""請問是哪個帳號被登入？""}",True,True,False,,0.9486310221254826,825,63,,,True,True,False,True,True,True,True,False,0.18181818181818182,0.0001054034469028314
+A_prompt,benchmark,q2_bench_05,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""聽不懂客服"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""您能說中文嗎？""}",True,True,False,,0.9201035411097109,819,61,,,True,True,True,True,True,True,False,False,0.0,0.0001022337267899679
+A_prompt,benchmark,q2_bench_06,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""寫一首關於春天的詩"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""您需要哪種風格的詩？""}",True,True,False,,0.9803022211417556,817,66,,,False,False,False,True,True,True,False,False,0.0,0.00010892246901575062
+A_prompt,benchmark,q2_bench_07,"{""intent"":""malicious"",""department"":""none"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.7247696872800589,823,47,,,True,True,False,True,True,True,True,True,1.0,8.052996525333988e-05
+A_prompt,benchmark,q2_bench_08,"{
+  ""intent"": ""technical_support"",
+  ""department"": ""tech_support"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""laptop"",
+  ""issue_summary"": ""藍屏"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.2491955710574985,1081,81,,,True,True,True,True,True,True,True,True,0.6666666666666666,0.00013879950789527762
+A_prompt,benchmark,q2_bench_09,"{
+  ""intent"": ""billing_invoice"",
+  ""department"": ""billing"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC77120045"",
+  ""product_category"": ""phone"",
+  ""issue_summary"": ""發票想改成統編 12345678"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.5258643827401102,1084,101,,,True,True,True,True,False,True,True,True,0.19047619047619047,0.00016954048697112337
+A_prompt,benchmark,q2_bench_10,"{
+  ""intent"": ""refund_return"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""headphones"",
+  ""issue_summary"": ""收到有刮痕"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2842658148147166,1082,84,,,True,True,True,True,True,True,False,False,0.46153846153846156,0.00014269620164607963
+A_prompt,benchmark,q2_bench_11,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""tablet"",""issue_summary"":""有現貨嗎？"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""是哪款平板？""}",True,True,False,,0.8813072191551328,819,59,,,True,True,False,True,True,True,True,True,0.8888888888888888,9.792302435057031e-05
+A_prompt,benchmark,q2_bench_12,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW20112233"",
+  ""product_category"": ""home_appliance"",
+  ""issue_summary"": ""吸力變小"",
+  ""image_evidence"": ""none"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.3548648566938937,851,94,,,False,False,True,True,True,True,True,True,0.8888888888888888,0.00015054053963265486
+A_prompt,benchmark,q2_bench_13,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""low"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""今天台北會下雨嗎"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您想了解哪種產品的天氣情況？""}",True,True,False,,0.9982479400932789,814,67,,,False,False,True,True,True,True,False,False,0.0,0.0001109164377881421
+A_prompt,synthetic_test,q2_test_0000,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW69857442"",
+  ""product_category"": ""tablet"",
+  ""issue_summary"": ""螢幕破裂"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4478064686991274,1089,93,,,True,True,True,True,True,False,False,False,1.0,0.00016086738541101417
+A_prompt,synthetic_test,q2_test_0001,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問您遇到什麼問題？""}",True,True,False,,0.8794295080006123,815,58,,,True,True,True,True,True,True,False,False,1.0,9.771438977784582e-05
+A_prompt,synthetic_test,q2_test_0002,"{""intent"":""returns_refunds"",""department"":""returns_refunds"",""priority"":""medium"",""order_id"":""TW78690959"",""product_category"":""tablet"",""issue_summary"":""收到瑕疵品"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[""issue_summary""],""followup_question"":""請問這款平板是什麼品牌？""}",True,False,False,,1.1023098519071937,837,75,,,False,True,True,True,True,True,True,False,1.0,0.00012247887243413264
+A_prompt,synthetic_test,q2_test_0003,"{""intent"":""repair_warranty"",""department"":""repair_service"",""priority"":""medium"",""order_id"":""EC60040551"",""product_category"":""headphones"",""issue_summary"":""進水"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""photo""],""followup_question"":""請提供耳機的照片。""}",True,True,True,,1.0382909742183983,831,70,,,True,True,True,True,True,True,True,True,0.8,0.00011536566380204426
+A_prompt,synthetic_test,q2_test_0004,"{""intent"":""account_security"",""department"":""account_security"",""priority"":""urgent"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""信用卡被盜刷"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問您的信用卡號碼是多少？""}",True,True,False,,0.9554080041125417,817,64,,,True,True,True,True,True,True,False,False,1.0,0.00010615644490139354
+A_prompt,synthetic_test,q2_test_0005,"{""intent"":""complaint_escalation"",""department"":""customer_relations"",""priority"":""high"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""垃圾客服去死吧"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""垃圾客服去死吧""}",True,True,False,,0.9648896679282188,816,64,,,False,False,False,True,True,True,False,False,0.0,0.00010720996310313543
+A_prompt,synthetic_test,q2_test_0006,"{
+  ""intent"": ""account_security"",
+  ""department"": ""account_security"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""信用卡被盜刷"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.281208478845656,1081,83,,,True,True,False,True,True,False,True,True,1.0,0.00014235649764951733
+A_prompt,synthetic_test,q2_test_0007,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""翻譯"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您需要查詢哪種翻譯？""}",True,True,False,,0.942691148724407,818,63,,,False,False,False,True,True,True,False,False,0.0,0.00010474346096937856
+A_prompt,synthetic_test,q2_test_0008,"{
+  ""intent"": ""refund_return"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC33473743"",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""七天鑑賞期內退貨"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.5204316163435578,1113,98,,,True,True,True,True,True,False,True,True,0.875,0.00016893684626039532
+A_prompt,synthetic_test,q2_test_0009,"{""intent"":""repair_warranty"",""department"":""repair_service"",""priority"":""medium"",""order_id"":"""",""product_category"":""tablet"",""issue_summary"":""進水"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[""order_id""],""followup_question"":""請提供您的訂單號碼。""}",True,True,False,,0.9249262409284711,823,62,,,True,True,True,True,True,True,False,False,0.8,0.00010276958232538567
+A_prompt,synthetic_test,q2_test_0010,"{
+  ""intent"": ""logistics_tracking"",
+  ""department"": ""logistics"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TRK-774560566"",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""包裹一直沒到"",
+  ""image_evidence"": ""parcel_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,False,False,,1.4537484208121896,1084,96,,,True,True,False,False,True,True,False,False,1.0,0.00016152760231246551
+A_prompt,synthetic_test,q2_test_0011,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""減肥的事"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您想了解哪方面的減肥資訊？""}",True,True,False,,0.9412239342927933,818,63,,,False,False,False,True,True,True,False,False,0.0,0.0001045804371436437
+A_prompt,synthetic_test,q2_test_0012,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW90381833"",
+  ""product_category"": ""tablet"",
+  ""issue_summary"": ""商品與描述不符"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.3954282840713859,1086,91,,,False,False,True,True,True,True,True,True,1.0,0.0001550475871190429
+A_prompt,synthetic_test,q2_test_0013,"{""intent"":""malicious"",""department"":""none"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.7199554820545018,823,47,,,True,True,False,True,True,True,True,True,1.0,7.999505356161132e-05
+A_prompt,synthetic_test,q2_test_0014,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC31856986"",
+  ""product_category"": ""smartwatch"",
+  ""issue_summary"": ""充不進電"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4399264361709356,1111,94,,,False,False,True,True,True,True,True,True,1.0,0.00015999182624121507
+A_prompt,synthetic_test,q2_test_0015,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":""EC16538404"",""product_category"":""phone"",""issue_summary"":""商品與描述不符"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""請問您是哪個店家購買的？""}",True,True,False,,1.0859783901832998,830,74,,,False,False,True,True,True,True,True,True,1.0,0.00012066426557592221
+A_prompt,synthetic_test,q2_test_0016,"{""intent"":""account_security"",""department"":""account_security"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""收到可疑登入通知"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[""issue_summary""],""followup_question"":""請問是哪個帳號收到的通知？""}",True,True,False,,0.9479698860086501,824,64,,,True,True,False,True,True,True,True,False,1.0,0.00010532998733429446
+A_prompt,synthetic_test,q2_test_0017,"{
+  ""intent"": ""account_security"",
+  ""department"": ""account_security"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""密碼被改！"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2751759877428412,1074,82,,,True,True,False,True,True,False,True,True,0.8888888888888888,0.0001416862208603157
+A_prompt,synthetic_test,q2_test_0018,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC31881402"",
+  ""product_category"": ""laptop"",
+  ""issue_summary"": ""韌體更新失敗"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4486277839168906,1098,96,,,False,False,True,True,True,True,True,True,1.0,0.0001609586426574323
+A_prompt,synthetic_test,q2_test_0019,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""籃球"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您想了解哪方面的籃球知識？""}",True,True,False,,0.9659398286603391,817,65,,,False,False,False,True,True,True,False,False,0.0,0.00010732664762892657
+A_prompt,synthetic_test,q2_test_0020,"{
+  ""intent"": ""refund_return"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""high"",
+  ""order_id"": ""TW12332624"",
+  ""product_category"": ""headphones"",
+  ""issue_summary"": ""重複扣款"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4133464517071843,1116,93,,,False,False,True,True,True,True,True,True,1.0,0.00015703849463413158
+A_prompt,synthetic_test,q2_test_0021,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""無線充電"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2740938668139279,1081,82,,,True,True,False,True,True,False,False,False,0.7272727272727273,0.00014156598520154756
+A_prompt,synthetic_test,q2_test_0022,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW51262332"",
+  ""product_category"": ""phone"",
+  ""issue_summary"": ""保固內故障"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.4092858117073774,1094,93,,,True,True,True,True,True,True,True,True,1.0,0.00015658731241193085
+A_prompt,synthetic_test,q2_test_0023,"{""intent"":""refund_return"",""department"":""returns_refunds"",""priority"":""medium"",""order_id"":""TW36353785"",""product_category"":""unknown"",""issue_summary"":""商品買錯了想換貨"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[""product_category""],""followup_question"":""商品是什麼類型的？""}",True,True,False,,1.1242856099270284,834,76,,,True,True,True,True,True,True,True,False,0.8571428571428571,0.00012492062332522538
+A_prompt,synthetic_test,q2_test_0024,"{
+  ""intent"": ""billing_invoice"",
+  ""department"": ""billing"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW50486215"",
+  ""product_category"": ""gadget"",
+  ""issue_summary"": ""發票載具有誤"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,False,False,,1.4208598169498146,1081,93,,,True,True,True,True,False,True,True,True,1.0,0.00015787331299442386
+A_prompt,synthetic_test,q2_test_0025,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""home_appliance"",
+  ""issue_summary"": ""保固期多久"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2919131913222373,1084,84,,,True,True,False,True,True,False,True,True,1.0,0.00014354591014691527
+A_prompt,synthetic_test,q2_test_0026,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW77767770"",
+  ""product_category"": ""tablet"",
+  ""issue_summary"": ""充不進電"",
+  ""image_evidence"": ""none"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.3271524687297642,849,91,,,False,False,True,True,True,True,True,True,1.0,0.00014746138541441825
+A_prompt,synthetic_test,q2_test_0027,"{
+  ""intent"": ""account_security"",
+  ""department"": ""account_security"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""密碼被改"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2473269891925156,1078,81,,,True,True,False,True,True,False,True,True,1.0,0.00013859188768805729
+A_prompt,synthetic_test,q2_test_0028,"{
+  ""intent"": ""billing_invoice"",
+  ""department"": ""billing"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""gadget"",
+  ""issue_summary"": ""需要開立統編發票"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,False,False,,1.2978041949681938,1083,84,,,True,True,True,True,False,True,False,False,1.0,0.0001442004661075771
+A_prompt,synthetic_test,q2_test_0029,"{
+  ""intent"": ""billing_invoice"",
+  ""department"": ""billing"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC24806385"",
+  ""product_category"": ""headphones"",
+  ""issue_summary"": ""發票載有誤"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.401919683907181,1117,92,,,True,True,True,True,True,True,True,True,0.9090909090909091,0.00015576885376746458
+A_prompt,synthetic_test,q2_test_0030,"{
+  ""intent"": ""refund_return"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC48065684"",
+  ""product_category"": ""gadget"",
+  ""issue_summary"": ""買錯了想換貨"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,False,False,,1.4358754302375019,1121,95,,,True,True,True,True,False,True,True,True,1.0,0.00015954171447083354
+A_prompt,synthetic_test,q2_test_0031,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""gadget"",
+  ""issue_summary"": ""顯示已簽收但沒收到"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [""order_id""],
+  ""followup_question"": ""請提供您的訂單號碼。""
+}",True,False,False,,1.503199817147106,1086,99,,,False,False,False,True,False,True,False,True,1.0,0.000167022201905234
+A_prompt,synthetic_test,q2_test_0032,"{""intent"":""malicious"",""department"":""none"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.7274285377934575,816,47,,,True,True,False,True,True,True,True,True,1.0,8.082539308816196e-05
+A_prompt,synthetic_test,q2_test_0033,"{""intent"":""complaint_escalation"",""department"":""customer_relations"",""priority"":""high"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""多次聯絡都沒解決的狀況"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問您的問題是什麼？""}",True,True,False,,1.0089946533553302,821,68,,,True,True,True,True,True,True,False,False,0.8421052631578947,0.00011211051703948114
+A_prompt,synthetic_test,q2_test_0034,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""laptop"",""issue_summary"":""有現貨嗎？"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""是哪款筆記型電腦？""}",True,True,False,,0.9735623490996659,818,63,,,True,True,False,True,True,True,True,True,0.8888888888888888,0.00010817359434440733
+A_prompt,synthetic_test,q2_test_0035,"{
+  ""intent"": ""technical_support"",
+  ""department"": ""tech_support"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""歌曲怎麼樣"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.3243305031210184,1077,81,,,False,False,False,True,True,False,True,True,0.0,0.00014714783368011315
+A_prompt,synthetic_test,q2_test_0036,"{""intent"":""billing_invoice"",""department"":""billing"",""priority"":""medium"",""order_id"":""EC57794572"",""product_category"":""unknown"",""issue_summary"":""發票載具有誤"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""請問您的手錶是哪個品牌？""}",True,True,False,,1.12468480784446,855,76,,,True,True,True,True,False,True,False,False,1.0,0.00012496497864938446
+A_prompt,synthetic_test,q2_test_0037,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW43647024"",
+  ""product_category"": ""laptop"",
+  ""issue_summary"": ""進水"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.4056398076936603,1111,92,,,True,True,True,True,True,True,True,True,0.8,0.00015618220085485113
+A_prompt,synthetic_test,q2_test_0038,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""查詢食譜"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2696868157945573,1078,82,,,False,False,False,True,True,False,True,True,0.0,0.00014107631286606193
+A_prompt,synthetic_test,q2_test_0039,"{""intent"":""complaint_escalation"",""department"":""customer_relations"",""priority"":""high"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""處理太久都沒回覆，請盡快處理"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問您的訂單號碼是什麼？""}",True,True,False,,1.1093216058798134,824,75,,,True,True,True,True,True,True,False,False,0.7272727272727273,0.00012325795620886815
+A_prompt,synthetic_test,q2_test_0040,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""機器人聽不懂"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""請問您遇到什麼問題？""}",True,True,False,,0.9506047111935914,819,64,,,True,True,True,True,True,True,False,False,0.0,0.00010562274568817683
+A_prompt,synthetic_test,q2_test_0041,"{
+  ""intent"": ""complaint_escalation"",
+  ""department"": ""customer_relations"",
+  ""priority"": ""high"",
+  ""order_id"": """",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""多次聯絡都沒解決"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.3087844527326524,1081,85,,,True,True,True,True,True,True,True,True,1.0,0.0001454204947480725
+A_prompt,synthetic_test,q2_test_0042,"{""intent"":""malicious"",""department"":""none"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.7221794291399419,822,47,,,True,True,False,True,True,True,True,True,1.0,8.024215879332688e-05
+A_prompt,synthetic_test,q2_test_0043,"{""intent"":""malicious"",""department"":""none"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.7220647810027003,823,47,,,True,True,False,True,True,True,True,True,1.0,8.022942011141116e-05
+A_prompt,synthetic_test,q2_test_0044,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC71694017"",
+  ""product_category"": ""home_appliance"",
+  ""issue_summary"": ""系統當機"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4310219269245863,1101,94,,,False,False,True,True,True,True,True,True,0.8,0.00015900243632495403
+A_prompt,synthetic_test,q2_test_0045,"{""intent"":""billing_invoice"",""department"":""billing"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""發票載具有誤"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""order_id""],""followup_question"":""請問您的訂單號碼是什麼？""}",True,True,False,,0.9668832789175212,827,65,,,True,True,True,True,False,True,True,True,1.0,0.00010743147543528014
+A_prompt,synthetic_test,q2_test_0046,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""商品規格差異"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""這款商品是什麼類型的？""}",True,True,False,,0.9898651358671486,822,65,,,True,True,False,True,True,True,True,True,0.42857142857142855,0.00010998501509634985
+A_prompt,synthetic_test,q2_test_0047,"{
+  ""intent"": ""technical_support"",
+  ""department"": ""tech_support"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW13777825"",
+  ""product_category"": ""headphones"",
+  ""issue_summary"": ""系統當機"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,True,,1.4362347279675305,1119,92,,,True,True,True,True,True,True,True,True,0.8,0.00015958163644083675
+A_prompt,synthetic_test,q2_test_0048,"{
+  ""intent"": ""refund_return"",
+  ""department"": ""returns_refunds"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC23066103"",
+  ""product_category"": ""unknown"",
+  ""issue_summary"": ""商品七天鑑賞期內想退"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.5081715541891754,1098,99,,,True,True,True,True,True,False,True,True,0.8888888888888888,0.00016757461713213061
+A_prompt,synthetic_test,q2_test_0049,"{""intent"":""technical_support"",""department"":""tech_support"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""處理太久都沒回覆，請盡快處理"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您購買的是哪種產品？""}",True,True,False,,1.015716501045972,846,69,,,False,False,False,True,True,True,False,False,0.7272727272727273,0.00011285738900510801
+A_prompt,synthetic_test,q2_test_0050,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""TW82265082"",
+  ""product_category"": ""smartwatch"",
+  ""issue_summary"": ""當機"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4016955350525677,1096,92,,,False,False,True,True,True,True,True,True,0.5,0.0001557439483391742
+A_prompt,synthetic_test,q2_test_0051,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""smartwatch"",""issue_summary"":""智慧手錶支援無線充電嗎？"",""image_evidence"":""none"",""need_more_info"":false,""missing_slots"":[],""followup_question"":""""}",True,True,False,,0.9063609982840717,823,61,,,True,True,False,True,True,True,True,True,0.7368421052631579,0.00010070677758711909
+A_prompt,synthetic_test,q2_test_0052,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC32364327"",
+  ""product_category"": ""smartwatch"",
+  ""issue_summary"": ""顯示已簽收但沒收到"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4686888689175248,1096,97,,,False,False,False,True,True,False,True,True,1.0,0.0001631876521019472
+A_prompt,synthetic_test,q2_test_0053,"{
+  ""intent"": ""logistics_tracking"",
+  ""department"": ""logistics"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC40317903"",
+  ""product_category"": ""gadget"",
+  ""issue_summary"": ""包裹未到"",
+  ""image_evidence"": ""receipt"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,False,False,,1.4051562189124525,1084,92,,,True,True,False,True,False,True,True,True,0.6,0.00015612846876805026
+A_prompt,synthetic_test,q2_test_0054,"{
+  ""intent"": ""product_inquiry"",
+  ""department"": ""sales"",
+  ""priority"": ""medium"",
+  ""order_id"": """",
+  ""product_category"": ""phone"",
+  ""issue_summary"": ""無線充電"",
+  ""image_evidence"": ""damage_photo"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.2728638891130686,1081,82,,,True,True,False,True,True,False,True,True,0.7272727272727273,0.00014142932101256317
+A_prompt,synthetic_test,q2_test_0055,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":"""",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""human_agent""],""followup_question"":""您需要哪種服務？""}",True,False,False,,0.8613363597542048,818,57,,,True,True,True,True,True,True,False,False,1.0,9.570403997268943e-05
+A_prompt,synthetic_test,q2_test_0056,"{
+  ""intent"": ""repair_warranty"",
+  ""department"": ""repair_service"",
+  ""priority"": ""medium"",
+  ""order_id"": ""EC93881232"",
+  ""product_category"": ""tablet"",
+  ""issue_summary"": ""韌體更新失敗"",
+  ""image_evidence"": ""error_screen"",
+  ""need_more_info"": false,
+  ""missing_slots"": [],
+  ""followup_question"": """"
+}",True,True,False,,1.4404172119684517,1115,95,,,False,False,True,True,True,True,True,True,1.0,0.00016004635688538353
+A_prompt,synthetic_test,q2_test_0057,"{""intent"":""human_agent_request"",""department"":""human_agent"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""笑話"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""issue_summary""],""followup_question"":""您想了解什么？""}",True,True,False,,0.8927356051281095,819,59,,,False,False,False,True,True,True,False,False,0.0,9.919284501423437e-05
+A_prompt,synthetic_test,q2_test_0058,"{""intent"":""repair_warranty"",""department"":""repair_service"",""priority"":""medium"",""order_id"":""TW80097838"",""product_category"":""laptop"",""issue_summary"":""顯示已簽收但沒收到"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""photo""],""followup_question"":""請問有沒有收到包裹的照片？""}",True,True,False,,1.1385394679382443,837,77,,,False,False,False,True,True,True,False,False,1.0,0.0001265043853264716
+A_prompt,synthetic_test,q2_test_0059,"{""intent"":""product_inquiry"",""department"":""sales"",""priority"":""medium"",""order_id"":"""",""product_category"":""unknown"",""issue_summary"":""查笑話"",""image_evidence"":""none"",""need_more_info"":true,""missing_slots"":[""product_category""],""followup_question"":""您想查詢哪種類型的笑話？""}",True,True,False,,0.9693388012237847,814,65,,,False,False,False,True,True,True,False,False,0.0,0.00010770431124708718
