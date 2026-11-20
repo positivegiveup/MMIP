@@ -4,9 +4,9 @@
 
 | Quiz | 任務 | 資料集 / Benchmark | 方法 | 主要結果 |
 |---|---|---|---|---|
-| 1 | 業務情境、結構化 Spec 與技術架構 | –（設計題） | 9 個下游部門 + 離題 / 惡意類別、10 欄位 JSON Schema、架構圖、對話狀態機、18 種角落情境 | 同一份 Schema 同時用於路由、追問、驗證與限制式解碼 |
-| 2 | 四種結構化輸出方法比較 | 合成資料（train 700 / val 100 / test 150）+ 手寫 benchmark 14 筆 | Qwen2.5-VL-3B：A 純 Prompt、B LoRA SFT、C byte-level 限制式解碼、D System 1 分流 | strict：B 最高（bench 0.857 / test 0.983）；D 最快（0.20 s、0.022 USD / 1k） |
-| 3 | 多輪多模態分流聊天機器人 | 模擬讀者、離題劇本、自建攻擊測試集 | `ChatSession` 多輪狀態 + `Guard` 分層防禦 + 閱讀節奏出泡泡 + Gradio UI | 首段可讀時間 −67%；離題誤開單率 1.00 → 0；文字攻擊召回 1.00 |
+| 1 | 多模態多輪對話機器人 | –（設計題） | 9 個下游部門 + 離題 / 惡意類別、10 欄位 JSON Schema、架構圖、對話狀態機、18 種角落情境 | 同一份 Schema 同時用於路由、追問、驗證與限制式解碼 |
+| 2 | 建立與比較分流節點 | 合成資料（train 700 / val 100 / test 150）+ 手寫 benchmark 14 筆 | Qwen2.5-VL-3B：A 純 Prompt、B LoRA SFT、C byte-level 限制式解碼、D System 1 分流 | strict：B 最高（bench 0.857 / test 0.983）；D 最快（0.20 s、0.022 USD / 1k） |
+| 3 | 整合與優化 | 模擬讀者、離題劇本、自建攻擊測試集 | `ChatSession` 多輪狀態 + `Guard` 分層防禦 + 閱讀節奏出泡泡 + Gradio UI | 首段可讀時間 −67%；離題誤開單率 1.00 → 0；文字攻擊召回 1.00 |
 
 ## 專案結構
 
