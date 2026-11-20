@@ -1,35 +1,35 @@
-# Week 7 — 大型語言模型、多模態、DPO 微調
+# Week 7：LLM / VLM 部署評估、量化與 DPO 微調
 
-Open-source LLM / VLM 的部署、評估、Prompt Engineering、量化、DPO 微調與影像畫質實驗。
-所有圖片由 `main.ipynb` 產生並存於 `Outputs/`，命名為 `Q1_*`、`Q2_*`、`Q3_*`。
+本週包含三個 Quiz，全部在 `main.ipynb` 依步驟分 cell 執行（每個 Quiz 分成：資料前處理 → 訓練/推論 → 結果），核心程式放在 `Codes/`。
+
+| Quiz | 任務 | 資料集 / Benchmark | 方法 | 主要結果 |
+|---|---|---|---|---|
+| 1 | LLM 部署、Prompting 與量化 | 自訂 20 題 Instruction Benchmark（13 類） | Qwen2.5-1.5B-Instruct；4 種 prompting 技巧 × bf16 / int8 / int4 | int4 + role prompt：記憶體 2.89 → 1.10 GiB（−62%），通過率 0.90 → 1.00 |
+| 2 | 兩個 VLM 比較 | COCO val 自訂 hard benchmark（20 題 + 49 題擴充） | Qwen2-VL-2B vs SmolVLM-2B，相同 prompt 與圖片 | 客觀題 0.773 vs 0.591（擴充集），Qwen2-VL 較準、SmolVLM 較快 |
+| 3 | DPO 微調與畫質實驗 | Alpaca 偏好資料 + MMLU-100；COCO 偏好資料 | LoRA + DPO（LLM：簡潔回答；VLM：降低幻覺）＋ 6 種影像擾動 | LLM 回答字數 194 → 25 且 MMLU 不變；VLM 幻覺改善不顯著 |
 
 ## 專案結構
 
 ```
-.
-├── main.ipynb          # 主流程（每個 Quiz 分成：資料前處理 → 訓練/推論 → 結果）
+week7/
+├── main.ipynb          # 主要執行流程與每題結果分析
+├── README.md
 ├── Codes/
 │   ├── common.py       # 共用：模型載入、記憶體量測、Gemini judge、LoRA + DPO trainer
 │   ├── Quiz1.py        # LLM benchmark / prompting / 量化 / 記憶體
 │   ├── Quiz2.py        # COCO 資料、VLM 載入、20 題視覺 benchmark
 │   └── Quiz3.py        # LLM / VLM 偏好資料、DPO、MMLU、畫質擾動
 ├── Data/               # 資料集（不存在時自動下載）與 benchmark json
-└── Outputs/            # 圖片 Q{n}_*.png、模型 q{n}_*、csv
+└── Outputs/            # 所有圖片（Q{n}_*.png）、模型（q{n}_*）與結果表（q{n}_*.csv）
 ```
 
 ## 環境與執行
 
-| 項目 | 內容 |
-|---|---|
-| GPU | 單卡 RTX 3090；為相容 8 GB VRAM，模型皆選 ≤ 2.2B 參數 |
-| 主要套件 | torch, transformers (≥4.45), peft, bitsandbytes, datasets, google-genai |
-| 商用 LLM 評估 | Gemini（`gemini-3.5-flash-lite`），`.env` 設定 `GEMINI_API_KEY` |
-
-```bash
-pip install -U torch transformers accelerate bitsandbytes peft datasets pillow pandas matplotlib tqdm google-genai python-dotenv
-# .env: GEMINI_API_KEY=...   HF_TOKEN=...
-jupyter notebook main.ipynb     # 依序執行；資料集（COCO val / Alpaca / MMLU）會自動下載到 Data/
-```
+- Python 3.11；主要套件：`torch`、`transformers`（≥4.45）、`accelerate`、`peft`、`bitsandbytes`、`datasets`、`google-genai`、`python-dotenv`、`pillow`、`pandas`、`matplotlib`、`tqdm`。
+- 單卡 RTX 3090；為相容 8 GB VRAM，模型皆選 ≤ 2.2B 參數。
+- 商用 LLM 評估使用 Gemini（`gemini-3.5-flash-lite`）作為 judge：請在 `.env` 設定 `GEMINI_API_KEY`（以及 `HF_TOKEN`）。
+- 依序執行 `main.ipynb`；每個 Quiz 分成多個 cell，可單獨重跑。資料集（COCO val / Alpaca / MMLU）會自動下載到 `Data/`。
+- 圖片內文字一律使用英文；圖片存成 `Q1_*`、`Q2_*`、`Q3_*`，模型與結果表存成 `q1_*`、`q2_*`、`q3_*`。
 
 | 用途 | 模型 |
 |---|---|

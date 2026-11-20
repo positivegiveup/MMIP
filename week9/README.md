@@ -1,41 +1,40 @@
-# Week 9 — 3C 客服「分流 + 多輪 + 多模態」機器人
+# Week 9：3C 客服「分流 + 多輪 + 多模態」機器人
 
-電子產品電商客服：使用者常不會一次講完需求，還會附上照片（收據、損壞、藍屏、包裹）。系統先補問缺少的資訊，再以結構化 JSON 把需求分流給對應部門。
-所有圖片由 `main.ipynb` 產生並存於 `Outputs/`，命名為 `Q1_*`、`Q2_*`、`Q3_*`。
+情境為電子產品電商客服：使用者常不會一次講完需求，還會附上照片（收據、損壞、藍屏、包裹）。系統先補問缺少的資訊，再以結構化 JSON 把需求分流給對應部門。本週包含三個 Quiz，全部在 `main.ipynb` 依步驟分 cell 執行（每個 Quiz：前處理 → 訓練/推論 → 結果與觀察），核心程式放在 `Codes/`。
+
+| Quiz | 任務 | 資料集 / Benchmark | 方法 | 主要結果 |
+|---|---|---|---|---|
+| 1 | 業務情境、結構化 Spec 與技術架構 | –（設計題） | 9 個下游部門 + 離題 / 惡意類別、10 欄位 JSON Schema、架構圖、對話狀態機、18 種角落情境 | 同一份 Schema 同時用於路由、追問、驗證與限制式解碼 |
+| 2 | 四種結構化輸出方法比較 | 合成資料（train 700 / val 100 / test 150）+ 手寫 benchmark 14 筆 | Qwen2.5-VL-3B：A 純 Prompt、B LoRA SFT、C byte-level 限制式解碼、D System 1 分流 | strict：B 最高（bench 0.857 / test 0.983）；D 最快（0.20 s、0.022 USD / 1k） |
+| 3 | 多輪多模態分流聊天機器人 | 模擬讀者、離題劇本、自建攻擊測試集 | `ChatSession` 多輪狀態 + `Guard` 分層防禦 + 閱讀節奏出泡泡 + Gradio UI | 首段可讀時間 −67%；離題誤開單率 1.00 → 0；文字攻擊召回 1.00 |
 
 ## 專案結構
 
 ```
-.
-├── main.ipynb          # 主流程（每個 Quiz：前處理 → 訓練/推論 → 結果與觀察）
+week9/
+├── main.ipynb          # 主要執行流程與每題結果分析
+├── README.md
+├── requirements.txt
 ├── Codes/
 │   ├── common.py       # 共用：JSON Schema、意圖/部門/必填欄位、資料與圖片生成、評分
 │   ├── Quiz1.py        # Spec 表、架構圖、對話狀態機、角落情境矩陣
 │   ├── Quiz2.py        # VLM 載入、實驗 A/B/C/D、SFT（LoRA）、System 1、評估與作圖
 │   └── Quiz3.py        # ChatSession（多輪狀態）、Guard（攻擊防禦）、閱讀節奏、離題處理、Gradio UI
-├── Data/               # 合成資料集 q2_dataset.jsonl、benchmark、程式繪製的圖片（不存在時自動生成）
-└── Outputs/            # 圖片 Q{n}_*.png、模型 q{n}_*、結果 csv
+├── Data/               # 合成資料集、benchmark、程式繪製的圖片與攻擊測試資料（不存在時自動生成）
+└── Outputs/            # 所有圖片（Q{n}_*.png）、模型（q{n}_*）與結果表（q{n}_*.csv）
 ```
 
 實驗 C 修正版的 byte-level 限制式解碼器，以及 Q3 對話流程的兩個修正，都寫在 `main.ipynb` 裡（見 2.4 C-2 與 3.0）。
 
 ## 環境與執行
 
-| 項目 | 內容 |
-|---|---|
-| GPU | 單卡 RTX 3090（24 GB） |
-| 模型 | `Qwen/Qwen2.5-VL-3B-Instruct`（bf16 約 7 GB；實驗 A、C、D 的 System 2、Q3 OCR 共用，B 為其 LoRA SFT 版） |
-| 主要套件 | torch 2.15、transformers 4.57、peft 0.21、accelerate、lm-format-enforcer 0.11（僅對照組）、scikit-learn、jsonschema、gradio 6 |
-| 成本假設 | `GPU_USD_PER_HOUR = 0.40`（3090 等級租金，可在 `Quiz2.py` 修改） |
-
-```bash
-pip install -q "transformers>=4.51,<5" "huggingface-hub==0.34.4" "datasets==3.6.0" peft accelerate lm-format-enforcer \
-    jsonschema scikit-learn pandas matplotlib pillow tqdm joblib "gradio>=5"
-jupyter notebook main.ipynb     # 依序執行；資料集、字型、模型權重不存在時會自動生成或下載
-```
-
-* `main.ipynb` 第 2 格以 `CUDA_VISIBLE_DEVICES` 指定 GPU。
-* Q2 各實驗結果快取在 `Outputs/q2_results_*.csv`，已存在就直接讀取；要重新推論請刪除對應的 csv。SFT adapter 存在時也會跳過訓練。
+- 主要套件：`torch` 2.15、`transformers` 4.57、`peft` 0.21、`accelerate`、`lm-format-enforcer` 0.11（僅對照組）、`scikit-learn`、`jsonschema`、`gradio` 6、`pandas`、`matplotlib`、`pillow`、`joblib`（完整清單見 `requirements.txt`）。
+- 單卡 RTX 3090（24 GB）；`main.ipynb` 第 2 格以 `CUDA_VISIBLE_DEVICES` 指定 GPU。
+- 模型：`Qwen/Qwen2.5-VL-3B-Instruct`（bf16 約 7 GB）；實驗 A、C、D 的 System 2 與 Q3 OCR 共用，B 為其 LoRA SFT 版。
+- 成本假設：`GPU_USD_PER_HOUR = 0.40`（3090 等級租金，可在 `Quiz2.py` 修改）。
+- 依序執行 `main.ipynb`；每個 Quiz 分成多個 cell，可單獨重跑。資料集、字型、模型權重不存在時會自動生成或下載。
+- Q2 各實驗結果快取在 `Outputs/q2_results_*.csv`，已存在就直接讀取；要重新推論請刪除對應的 csv。SFT adapter 存在時也會跳過訓練。
+- 圖片標題與軸標籤使用英文（示範對話等內容保留中文）；圖片存成 `Q1_*`、`Q2_*`、`Q3_*`，模型與結果表存成 `q1_*`、`q2_*`、`q3_*`。
 
 ---
 
