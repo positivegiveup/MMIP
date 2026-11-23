@@ -1,0 +1,838 @@
+[
+ {
+  "id": "mt000",
+  "kind": "pronoun",
+  "doc_id": "D04",
+  "title": "自然語言處理",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼理論的架構不傾向於語料庫，而被認為不適合機器學習處理語言的方法？"
+   },
+   {
+    "role": "assistant",
+    "content": "喬姆斯基語言學理論"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "喬姆斯基語言學理論的缺點是什麼？",
+  "answer": "喬姆斯基語言學理論的架構不傾向於語料庫，這使得它不太適合機器學習處理語言的方法。",
+  "evidence": "該理論的架構不傾向於語料庫——機器學習處理語言所用方法的基礎。",
+  "ev_start": 1004,
+  "ev_end": 1035
+ },
+ {
+  "id": "mt001",
+  "kind": "pronoun",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "深度學習與人工智慧有何關係？"
+   },
+   {
+    "role": "assistant",
+    "content": "深度學習常常被看作是通向真正人工智慧的重要一步。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "深度學習的主要缺點是什麼？",
+  "answer": "深度學習的主要批評是許多方法缺乏理論支撐。大多數深度結構僅僅是梯度下降的某些變式。",
+  "evidence": "對深度學習的主要批評是許多方法缺乏理論支撐。大多數深度結構僅僅是梯度下降的某些變式。儘管梯度下降法已經被充分地研究，但理論",
+  "ev_start": 6931,
+  "ev_end": 6992
+ },
+ {
+  "id": "mt002",
+  "kind": "pronoun",
+  "doc_id": "D13",
+  "title": "推薦系統",
+  "history": [
+   {
+    "role": "user",
+    "content": "推薦系統根據什麼來推送相應內容？"
+   },
+   {
+    "role": "assistant",
+    "content": "推薦系統根據使用者對物品的「評分」或「偏好」來推送相應內容。"
+   }
+  ],
+  "followup": "那它會不會只根據評分來推薦？",
+  "standalone": "推薦系統會不會只根據評分來推薦？",
+  "answer": "不是的，推薦系統不僅根據評分，還會考慮使用者的偏好。",
+  "evidence": "推薦系統是一種資訊過濾系統，根據使用者對物品的「評分」或「偏好」來推送相應內容。",
+  "ev_start": 0,
+  "ev_end": 40
+ },
+ {
+  "id": "mt003",
+  "kind": "pronoun",
+  "doc_id": "D08",
+  "title": "強化學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "強化學習主體的目標是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "強化學習主體的目標是得到儘可能多的預期回報（return），其可以為獎勵∑trt、帶折扣的回報（discounted return）∑rt⋅γt，其中γ∈(0,1]為回報因子，表示對短期獎勵的鼓勵。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "強化學習的缺點是什麼？",
+  "answer": "強化學習的缺點包括需要大量的資料和計算資源，並且學習過程可能非常緩慢，尤其是在探索最佳策略時。",
+  "evidence": "強化學習的強大能力來源於兩個方面：使用",
+  "ev_start": 1882,
+  "ev_end": 1901
+ },
+ {
+  "id": "mt004",
+  "kind": "pronoun",
+  "doc_id": "D16",
+  "title": "支援向量機",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是支援向量機中超平面的定義？"
+   },
+   {
+    "role": "assistant",
+    "content": "高維空間中的超平面定義為與該空間中的某向量的點積是常數的點的集合。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "支援向量機的缺點有哪些？",
+  "answer": "支援向量機的主要缺點之一是對於大型資料集的訓練時間較長，因為需要計算核函式的值。此外，選擇合適的核函式和引數也需要一定的技巧和經驗。",
+  "evidence": "注意，如果隨著 y 逐漸遠離 x，k(x,y) 變小，則求和中的每一項都是在衡量測試點 x 與對應的資料基點 xi 的接近程度。這樣，上述核心的總和可以用於衡量每個測試點相對於待分離的集合中的資料點的相對接近度。",
+  "ev_start": 1082,
+  "ev_end": 1188
+ },
+ {
+  "id": "mt005",
+  "kind": "pronoun",
+  "doc_id": "D22",
+  "title": "反向傳播演算法",
+  "history": [
+   {
+    "role": "user",
+    "content": "反向傳播演演算法中，∂gl/∂Wcdl 的計算公式是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "∂gl/∂Wcdl = ∂gl+1/∂yld | yld=fl(x) × dfldx | x=∑yl−1aWadl × yl−1c"
+   }
+  ],
+  "followup": "那∂gl/∂yl−1c 的計算公式呢？",
+  "standalone": "在反向傳播演演算法中，∂gl/∂yl−1c 的計算公式是什麼？",
+  "answer": "∂gl/∂yl−1c = ∑i=1nl [∂gl+1/∂yli | yli=fl(x) × dfldx | x=∑yl−1aWail × Wcil]",
+  "evidence": "∂gl∂yl−1c=∑i=1nl[∂gl+1∂yli|yli=fl(x)×dfldx|x=∑yl−1aWail×Wcil]",
+  "ev_start": 1655,
+  "ev_end": 1716
+ },
+ {
+  "id": "mt006",
+  "kind": "pronoun",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "深度學習的基礎是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "深度學習的基礎是機器學習中的分散表示（distributed representation）。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "深度學習的基礎是什麼？那它的缺點呢？",
+  "answer": "深度學習的一個缺點是需要大量的資料來進行訓練，並且訓練過程可能非常耗時。此外，深度學習模型的解釋性較差，難以理解模型內部的工作機制。",
+  "evidence": "不少深度學習演演算法都以無監督學習的形式出現，因而這些演演算法能被應用於其他演演算法無法企及的無標籤資料，這一類資料比有標籤資料更豐富，也更容易獲得。",
+  "ev_start": 1718,
+  "ev_end": 1793
+ },
+ {
+  "id": "mt007",
+  "kind": "pronoun",
+  "doc_id": "D05",
+  "title": "大型語言模型",
+  "history": [
+   {
+    "role": "user",
+    "content": "大型語言模型在哪些任務中通常能夠表現出色？"
+   },
+   {
+    "role": "assistant",
+    "content": "即使在沒有針對特定任務（例如情感分析、命名實體辨識、文字翻譯、摘要生成或數學推理）進行訓練的情況下，LLM往往也能夠在這些任務中表現出色。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "大型語言模型有哪些缺點？",
+  "answer": "大型語言模型繼承了訓練資料中存在的誤差和偏差。",
+  "evidence": "但它們也繼承了訓練資料中存在的誤差和偏差。",
+  "ev_start": 356,
+  "ev_end": 377
+ },
+ {
+  "id": "mt008",
+  "kind": "pronoun",
+  "doc_id": "D19",
+  "title": "知識圖譜",
+  "history": [
+   {
+    "role": "user",
+    "content": "知識融合包含哪兩個部分？"
+   },
+   {
+    "role": "assistant",
+    "content": "知識融合分為實體連結和知識合併兩部分。"
+   }
+  ],
+  "followup": "實體連結是什麼過程？",
+  "standalone": "實體連結是什麼過程？",
+  "answer": "實體連結是指將文字中抽取出來的實體連結到知識庫中的正確實體的過程。",
+  "evidence": "實體連結（entity linking）指將在文字中抽取出來的實體連結到知識庫中正確實體。",
+  "ev_start": 2022,
+  "ev_end": 2067
+ },
+ {
+  "id": "mt009",
+  "kind": "pronoun",
+  "doc_id": "D09",
+  "title": "監督學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "監督學習的訓練資料是由什麼組成的？"
+   },
+   {
+    "role": "assistant",
+    "content": "訓練資料是由輸入物件（通常是向量）和預期輸出所組成。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "監督學習的缺點有哪些？",
+  "answer": "監督學習的主要缺點包括需要大量的標註資料、對標註資料的依賴性強、以及模型泛化能力受限。",
+  "evidence": "監督式學習產生一個全域模型，會將輸入物件對應到預期輸出。而另一種，則是將這種對應實作在一個區域模型。（如案例推論及最近鄰居法）。",
+  "ev_start": 404,
+  "ev_end": 468
+ },
+ {
+  "id": "mt010",
+  "kind": "pronoun",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是聽寫機？"
+   },
+   {
+    "role": "assistant",
+    "content": "聽寫機：大詞彙量、非特定人、連續語音辨識系統通常稱為聽寫機。"
+   }
+  ],
+  "followup": "那它的架構是什麼樣的？",
+  "standalone": "聽寫機的架構是什麼樣的？",
+  "answer": "聽寫機的架構是建立在聲學模型和語言模型基礎上的HMM拓撲結構。",
+  "evidence": "聽寫機：大詞彙量、非特定人、連續語音辨識系統通常稱為聽寫機。其架構就是建立在前述聲學模型和語言模型基礎上的HMM拓撲結構。",
+  "ev_start": 6804,
+  "ev_end": 6865
+ },
+ {
+  "id": "mt011",
+  "kind": "pronoun",
+  "doc_id": "D23",
+  "title": "過適",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼情況下可能會發生過適？"
+   },
+   {
+    "role": "assistant",
+    "content": "當模型嘗試「記住」訓練資料而非從訓練資料中學習規律時，就可能發生過適。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "過適的缺點是什麼？",
+  "answer": "過適會降低或破壞模型的一般化能力。",
+  "evidence": "當模型嘗試「記住」訓練資料而非從訓練資料中學習規律時，就可能發生過適。一般來說，當引數的自由度或模型結構的複雜度超過資料所包含資訊內容時，調適後的模型可能使用任意多的引數，這會降低或破壞模型一般化的能力。",
+  "ev_start": 502,
+  "ev_end": 604
+ },
+ {
+  "id": "mt012",
+  "kind": "pronoun",
+  "doc_id": "D17",
+  "title": "聚類分析",
+  "history": [
+   {
+    "role": "user",
+    "content": "哪些語言有提供開源聚類軟體的實現？"
+   },
+   {
+    "role": "assistant",
+    "content": "Python和Perl有提供開源聚類軟體的實現。"
+   }
+  ],
+  "followup": "這些語言的實現有哪些特點？",
+  "standalone": "Python和Perl的開源聚類軟體實現有哪些特點？",
+  "answer": "Python的實現包括一個C聚類庫、一個Python擴充套件模組和一個Perl模組。Perl模組也是其中之一。",
+  "evidence": "Cluster : Open source clustering software. The routines are available in the form of a C clustering library, an extension module to Python, a module to Perl.",
+  "ev_start": 7419,
+  "ev_end": 7576
+ },
+ {
+  "id": "mt013",
+  "kind": "pronoun",
+  "doc_id": "D25",
+  "title": "貝葉斯定理",
+  "history": [
+   {
+    "role": "user",
+    "content": "僱員吸毒的機率是多少？"
+   },
+   {
+    "role": "assistant",
+    "content": "僱員吸毒的機率為0.005。"
+   }
+  ],
+  "followup": "那P(+)的值是多少？",
+  "standalone": "P(+)的值是多少？",
+  "answer": "P(+)的值為0.0149或者1.49%。",
+  "evidence": "P(+)代表不考慮其他因素的影響的陽性檢出率，白話來說，即該公司有多少比例的檢測結果為陽性。該值為0.0149或者1.49%。",
+  "ev_start": 2705,
+  "ev_end": 2768
+ },
+ {
+  "id": "mt014",
+  "kind": "pronoun",
+  "doc_id": "D00",
+  "title": "人工智慧",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼時候開始，深度學習成為人工智慧領域廣泛採用的方法？"
+   },
+   {
+    "role": "assistant",
+    "content": "2012年以來"
+   }
+  ],
+  "followup": "深度學習因為哪些因素得以迅速普及？",
+  "standalone": "深度學習因為哪些因素得以在人工智慧領域迅速普及？",
+  "answer": "深度學習得以迅速普及的原因包括硬體進步（如更快的電腦、圖形處理單元與雲端運算技術）和廣泛的資料（包括精心策劃的資料集如ImageNet）。",
+  "evidence": "深度學習的突破，既得益於硬體進步（如更快的電腦、圖形處理單元與雲端運算技術），也離不開廣泛的資料（包括ImageNet這類精心策劃的資料集，）。",
+  "ev_start": 3274,
+  "ev_end": 3346
+ },
+ {
+  "id": "mt015",
+  "kind": "pronoun",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "深度置信網路中的每一層是如何訓練的？"
+   },
+   {
+    "role": "assistant",
+    "content": "深度置信網路中的每一層都是典型的受限玻爾茲曼機（RBM），可以使用高效的無監督逐層訓練方法進行訓練。"
+   }
+  ],
+  "followup": "那受限玻爾茲曼機是如何訓練的？",
+  "standalone": "受限玻爾茲曼機是如何訓練的？",
+  "answer": "受限玻爾茲曼機的訓練方法最初由傑弗裡·辛頓提出，被稱為對比分歧（contrast divergence, CD）。",
+  "evidence": "單層RBM的訓練方法最初由傑弗裡·辛頓在訓練「專家乘積」中提出，被稱為對比分歧（contrast divergence, CD）。",
+  "ev_start": 4805,
+  "ev_end": 4870
+ },
+ {
+  "id": "mt016",
+  "kind": "pronoun",
+  "doc_id": "D15",
+  "title": "決策樹",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是 CART 分析？"
+   },
+   {
+    "role": "assistant",
+    "content": "CART分析是結合了分類樹分析和回歸樹分析的一個概念。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "CART 分析的缺點有哪些？",
+  "answer": "CART 分析的一個缺點是容易過擬合，特別是在資料集較大時。",
+  "evidence": "決策樹，影響性圖表，應用函式以及其他的決策分析工具和方法主要的授課物件是學校裡商業、健康經濟學和公共衛生專業的本科生，屬於運籌學和管理科學的範疇。",
+  "ev_start": 1179,
+  "ev_end": 1252
+ },
+ {
+  "id": "mt017",
+  "kind": "pronoun",
+  "doc_id": "D28",
+  "title": "隨機森林",
+  "history": [
+   {
+    "role": "user",
+    "content": "隨機森林中度量特徵重要性的方法是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "為了度量第j個特徵的重要性，第j個特徵的值在訓練資料中被打亂，並重新計算打亂後的資料的out-of-bag誤差。則第j個特徵的重要性分數可以透過計算打亂前後的out-of-bag誤差的差值的平均來得到，這個分數透過計算這些差值的標準差進行標準化。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "隨機森林中度量特徵重要性的方法有哪些缺點？",
+  "answer": "隨機森林中度量特徵重要性的方法有一些缺點，例如對於包含不同取值個數的類別特徵，隨機森林更偏向於那些取值個數較多的特徵。",
+  "evidence": "對於包含不同取值個數的類別特徵，隨機森林更偏向於那些取值個數較多的特徵，部分置換、growing unbiased trees可以用來解決這個問題。",
+  "ev_start": 2237,
+  "ev_end": 2311
+ },
+ {
+  "id": "mt018",
+  "kind": "pronoun",
+  "doc_id": "D11",
+  "title": "計算機視覺",
+  "history": [
+   {
+    "role": "user",
+    "content": "電腦視覺的主要研究物件是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "電腦視覺的研究物件主要是對映到單幅或多幅影象上的三維場景，例如三維場景的重建。"
+   }
+  ],
+  "followup": "那影象處理和影象分析的研究物件呢？",
+  "standalone": "影象處理和影象分析的研究物件是什麼？",
+  "answer": "影象處理與影象分析的研究物件主要是二維影象，實現影象的轉化，尤其針對畫素級的操作，例如提高影象對比度，邊緣提取，去雜訊和幾何變換如影象旋轉。",
+  "evidence": "影象處理與影象分析的研究物件主要是二維影象，實現影象的轉化，尤其針對畫素級的操作，例如提高影象對比度，邊緣提取，去雜訊和幾何變換如影象旋轉。",
+  "ev_start": 2304,
+  "ev_end": 2374
+ },
+ {
+  "id": "mt019",
+  "kind": "pronoun",
+  "doc_id": "D27",
+  "title": "線性回歸",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是線性迴歸？"
+   },
+   {
+    "role": "assistant",
+    "content": "線性迴歸是利用稱為線性迴歸方程式的最小平方函式對一個或多個自變數和應變數之間關係進行建模的一種迴歸分析。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "線性迴歸有什麼缺點？",
+  "answer": "線性迴歸的主要缺點之一是它假設變數之間存線上性關係，對於非線性的關係可能表現不佳。",
+  "evidence": "線性迴歸是迴歸分析中第一種經過嚴格研究並在實際應用中廣泛使用的型別。這是因為線性依賴於其未知引數的模型比非線性依賴於其未知引數的模型更容易擬合，而且產生的估計的統計特性也更容易確定。",
+  "ev_start": 375,
+  "ev_end": 466
+ },
+ {
+  "id": "mt020",
+  "kind": "pronoun",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "最早進行一般自然雜亂影像中自然物體識別的深度學習網路是什麼時候發表的？"
+   },
+   {
+    "role": "assistant",
+    "content": "最早進行一般自然雜亂影像中自然物體識別的深度學習網路是翁巨揚（Juyang Weng）等在1991和1992發表的生長網（Cresceptron）。"
+   }
+  ],
+  "followup": "那這個方法有哪些優點呢？",
+  "standalone": "生長網（Cresceptron）有哪些優點？",
+  "answer": "生長網可以直接從雜亂自然場景中學習一般物體，並且可以用網路反向分析的方法把影象內被辨識了的物體從背景影象中分割出來。",
+  "evidence": "生長網不僅直接從雜亂自然場景中學習老師指定的一般物體，還用網路反向分析的方法把影象內被辨識了的物體從背景影象中分割出來。",
+  "ev_start": 941,
+  "ev_end": 1001
+ },
+ {
+  "id": "mt021",
+  "kind": "pronoun",
+  "doc_id": "D17",
+  "title": "聚類分析",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼可以被視為聚類目標？"
+   },
+   {
+    "role": "assistant",
+    "content": "內部評估措施本身可以被視為聚類目標。"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "內部評估措施的缺點是什麼？",
+  "answer": "內部評估措施的缺點是它們代表的功能本身可以被視為聚類目標，而透過使用這種內部衡量指標進行評估，人們更願意比較最佳化問題的相似性，而不是聚類的有用程度。",
+  "evidence": "內部評估措施存在一個問題，即它們代表的功能本身可以被視為聚類目標。 例如，可以透過 Silhouette 係數對資料集進行聚類； 除了沒有已知的有效演演算法之外。 透過使用這種內部衡量指標進行評估，人們更願意比較最佳化問題的相似性, 而不一定是聚類的有用程度",
+  "ev_start": 5969,
+  "ev_end": 6098
+ },
+ {
+  "id": "mt022",
+  "kind": "pronoun",
+  "doc_id": "D16",
+  "title": "支援向量機",
+  "history": [
+   {
+    "role": "user",
+    "content": "如何計算支援向量機中的分類向量 w→？"
+   },
+   {
+    "role": "assistant",
+    "content": "w→=∑i=1nciyiφ(x→i)"
+   }
+  ],
+  "followup": "那它的缺點呢？",
+  "standalone": "支援向量機的缺點有哪些？",
+  "answer": "支援向量機的主要缺點包括計算複雜度較高和對核函式的選擇敏感。",
+  "evidence": "與前面一樣，可以使用二次規劃來求解係數 ci。同樣，我們可以找到讓 0<ci<(2nλ)−1 的索引 i，使得 φ(x→i) 位於變換空間中間隔的邊界上，然後求解b=w→⋅φ(x→i)−yi=[∑k=1nckykφ(x→k)⋅φ(x→i)]−yi=[∑k=1nckykk(x→k,x→i)]−yi.",
+  "ev_start": 4412,
+  "ev_end": 4561
+ },
+ {
+  "id": "mt023",
+  "kind": "pronoun",
+  "doc_id": "D06",
+  "title": "卷積神經網路",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是池化層的主要功能？"
+   },
+   {
+    "role": "assistant",
+    "content": "池化層的主要功能是降低卷積層對邊緣的敏感性，並減少資料量。"
+   }
+  ],
+  "followup": "那它是如何降低卷積層對邊緣的敏感性的？",
+  "standalone": "池化層是如何降低卷積層對邊緣的敏感性的？",
+  "answer": "池化層透過在區域性視窗內取最大值或其他聚合操作，降低了原始影像中細微變化的重要性，從而使模型對邊緣位置的微小變動更加不敏感。",
+  "evidence": "池化層每次在一個池化視窗（depth slice）上計算輸出，然後根據步幅移動池化視窗。下圖是目前最常用的池化層，步幅為2，池化視窗為2×2的二維最大池化層。每隔2個元素從影象劃分出2×2的區塊，然後對每個區塊中的4個數取最大值。",
+  "ev_start": 1839,
+  "ev_end": 1954
+ },
+ {
+  "id": "mt024",
+  "kind": "pronoun",
+  "doc_id": "D15",
+  "title": "決策樹",
+  "history": [
+   {
+    "role": "user",
+    "content": "在機器學習中，決策樹代表的是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "在機器學習中，決策樹是一個預測模型；他代表的是物件屬性與物件值之間的一種對映關係。"
+   }
+  ],
+  "followup": "那這種對映關係是如何具體表現的呢？",
+  "standalone": "在機器學習中，決策樹的對映關係是如何具體表現的呢？",
+  "answer": "在機器學習中，決策樹透過樹中的每個節點表示某個物件，每個分叉路徑代表某個可能的屬性值，而每個葉節點則對應從根節點到該葉節點所經歷的路徑所表示的物件的值。",
+  "evidence": "樹中每個節點表示某個物件，而每個分叉路徑則代表某個可能的屬性值，而每個葉節點則對應從根節點到該葉節點所經歷的路徑所表示的物件的值。",
+  "ev_start": 322,
+  "ev_end": 387
+ },
+ {
+  "id": "mt025",
+  "kind": "pronoun",
+  "doc_id": "D22",
+  "title": "反向傳播演算法",
+  "history": [
+   {
+    "role": "user",
+    "content": "反向傳播演演算法的目的是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "找到一組能最大限度地減小誤差的權重。"
+   }
+  ],
+  "followup": "那它是如何找到這些權重的呢？",
+  "standalone": "反向傳播演演算法是如何找到這些權重的呢？",
+  "answer": "反向傳播演演算法透過梯度下降法來找到這些權重。",
+  "evidence": "在反向傳播中使用的方法是梯度下降法。",
+  "ev_start": 3362,
+  "ev_end": 3380
+ },
+ {
+  "id": "mt026",
+  "kind": "switch",
+  "doc_id": "D11",
+  "title": "計算機視覺",
+  "history": [
+   {
+    "role": "user",
+    "content": "人工智慧通常指的是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "人工智慧通常是指用普通電腦程式來呈現人類智慧的技術。"
+   }
+  ],
+  "followup": "什麼是電腦視覺的核心任務？",
+  "standalone": "什麼是電腦視覺的核心任務？",
+  "answer": "實現目標的辨識、跟蹤、測量及場景理解，並生成可供決策的資訊。",
+  "evidence": "其核心任務是實現目標的辨識、跟蹤、測量及場景理解，並生成可供決策的資訊（Shannon, 1948）。",
+  "ev_start": 636,
+  "ev_end": 687
+ },
+ {
+  "id": "mt027",
+  "kind": "switch",
+  "doc_id": "D05",
+  "title": "大型語言模型",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼技術在2017年誕生，並解決了長距離依賴問題？"
+   },
+   {
+    "role": "assistant",
+    "content": "Transformer架構"
+   }
+  ],
+  "followup": "哪個組織在2024年9月公佈了o1系列模型？",
+  "standalone": "哪個組織在2024年9月公佈了o1系列模型？",
+  "answer": "OpenAI",
+  "evidence": "2024年9月，OpenAI公佈o1系列，介紹了利用強化學習訓練模型執行多步推理的方法。",
+  "ev_start": 3106,
+  "ev_end": 3150
+ },
+ {
+  "id": "mt028",
+  "kind": "switch",
+  "doc_id": "D27",
+  "title": "線性回歸",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼時候開始，深度學習成為人工智慧領域廣泛採用的方法？"
+   },
+   {
+    "role": "assistant",
+    "content": "2012年以來"
+   }
+  ],
+  "followup": "線性回歸中，β̂ 的計算公式是什麼？",
+  "standalone": "線性回歸中，β̂ 的計算公式是什麼？",
+  "answer": "β̂=∑i=1n(xi−x¯)(yi−y¯)∑i=1n(xi−x¯)2=cov(X,Y)var(X)",
+  "evidence": "β̂=n∑i=1nxiyi−∑i=1nxi∑i=1nyin∑i=1nxi2−(∑i=1nxi)2=∑i=1n(xi−x¯)(yi−y¯)∑i=1n(xi−x¯)2=cov(X,Y)var(X)",
+  "ev_start": 2377,
+  "ev_end": 2473
+ },
+ {
+  "id": "mt029",
+  "kind": "switch",
+  "doc_id": "D25",
+  "title": "貝葉斯定理",
+  "history": [
+   {
+    "role": "user",
+    "content": "深度學習與人工智慧有何關係？"
+   },
+   {
+    "role": "assistant",
+    "content": "深度學習常常被看作是通向真正人工智慧的重要一步。"
+   }
+  ],
+  "followup": "在該案例中，檢測呈陽性的員工中有多少比例實際上是吸毒的？",
+  "standalone": "在該案例中，檢測呈陽性的員工中有多少比例實際上是吸毒的？",
+  "answer": "約33%",
+  "evidence": "在這15人裡面，只有約33%的人是真正有吸毒。",
+  "ev_start": 3328,
+  "ev_end": 3351
+ },
+ {
+  "id": "mt030",
+  "kind": "switch",
+  "doc_id": "D07",
+  "title": "迴圈神經網路",
+  "history": [
+   {
+    "role": "user",
+    "content": "哪位教育工作者預測ChatGPT將導致高中英語教學的終結？"
+   },
+   {
+    "role": "assistant",
+    "content": "丹尼爾·赫爾曼"
+   }
+  ],
+  "followup": "迴圈神經網路中，非輸入單元的啟用是如何計算的？",
+  "standalone": "迴圈神經網路中，非輸入單元的啟用是如何計算的？",
+  "answer": "每個非輸入單元將其當前啟用(結果)計算為與其連線的所有單元的啟用的加權和的非線性函式。",
+  "evidence": "在任何給定的時間步長，每個非輸入單元將其當前啟用(結果)計算為與其連線的所有單元的啟用的加權和的非線性函式。",
+  "ev_start": 2284,
+  "ev_end": 2338
+ },
+ {
+  "id": "mt031",
+  "kind": "switch",
+  "doc_id": "D06",
+  "title": "卷積神經網路",
+  "history": [
+   {
+    "role": "user",
+    "content": "迴圈神經網路如何處理輸入序列中的時間相關性？"
+   },
+   {
+    "role": "assistant",
+    "content": "距離當前時間越長，越早輸入的序列，在更新後的狀態中所佔權重越小，從而表現出時間相關性。"
+   }
+  ],
+  "followup": "什麼是最大池化的定義？",
+  "standalone": "什麼是最大池化的定義？",
+  "answer": "最大池化是將輸入的影像劃分為若干個矩形區域，對每個子區域輸出最大值。",
+  "evidence": "池化（Pooling）是卷積神經網路中另一個重要的概念，它實際上是一種非線性形式的降取樣。有多種不同形式的非線性池化函式，而其中「最大池化（Max pooling）」是最為常見的。它是將輸入的影象劃分為若干個矩形區域，對每個子區域輸出最大值。",
+  "ev_start": 1456,
+  "ev_end": 1577
+ },
+ {
+  "id": "mt032",
+  "kind": "switch",
+  "doc_id": "D16",
+  "title": "支援向量機",
+  "history": [
+   {
+    "role": "user",
+    "content": "知識圖譜中的事實基礎表達方式是什麼？"
+   },
+   {
+    "role": "assistant",
+    "content": "「實體-關係-實體」或者「實體-屬性-屬性值」"
+   }
+  ],
+  "followup": "最大間隔超平面如何定義？",
+  "standalone": "最大間隔超平面如何定義？",
+  "answer": "最大間隔超平面是位於兩個分離兩類資料的平行超平面正中間的超平面。",
+  "evidence": "最大間隔超平面是位於它們正中間的超平面。",
+  "ev_start": 1999,
+  "ev_end": 2019
+ },
+ {
+  "id": "mt033",
+  "kind": "switch",
+  "doc_id": "D28",
+  "title": "隨機森林",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼現象被稱為「資料挖泥」？"
+   },
+   {
+    "role": "assistant",
+    "content": "不存在但看起來振奮人心的模式，特別的因果關係，根本不相關的、甚至引人誤入歧途的、或是毫無價值的關聯。"
+   }
+  ],
+  "followup": "隨機森林在每次候選分裂中選擇特徵的什麼方法？",
+  "standalone": "隨機森林在每次候選分裂中選擇特徵的什麼方法？",
+  "answer": "隨機森林在學習過程中的每次候選分裂中選擇特徵的隨機子集。",
+  "evidence": "它使用一種改進的學習演演算法，在學習過程中的每次候選分裂中選擇特徵的隨機子集。",
+  "ev_start": 1361,
+  "ev_end": 1400
+ },
+ {
+  "id": "mt034",
+  "kind": "switch",
+  "doc_id": "D14",
+  "title": "資料探勘",
+  "history": [
+   {
+    "role": "user",
+    "content": "線性支援向量機的特殊情況可以透過什麼方法更高效求解？"
+   },
+   {
+    "role": "assistant",
+    "content": "透過用於最佳化其類似問題邏輯斯諦迴歸的同類演演演算法更高效求解；這類演演演算法包括次梯度下降法（如PEGASOS）和坐標下降法（如LIBLINEAR）。"
+   }
+  ],
+  "followup": "什麼是資料探勘？",
+  "standalone": "什麼是資料探勘？",
+  "answer": "資料探勘的實際工作是對大規模資料進行自動或半自動的分析，以提取過去未知的有價值的潛在資訊，例如資料的分組（透過聚類分析）、資料的異常記錄（透過異常檢測）和資料之間的關係（透過關聯式規則挖掘）。",
+  "evidence": "資料探勘的實際工作是對大規模資料進行自動或半自動的分析，以提取過去未知的有價值的潛在資訊，例如資料的分組（透過聚類分析）、資料的異常記錄（透過異常檢測）和資料之間的關係（透過關聯式規則挖掘）。",
+  "ev_start": 968,
+  "ev_end": 1064
+ },
+ {
+  "id": "mt035",
+  "kind": "switch",
+  "doc_id": "D01",
+  "title": "機器學習",
+  "history": [
+   {
+    "role": "user",
+    "content": "自然語言處理中，如何解決字詞有多重意義的問題？"
+   },
+   {
+    "role": "assistant",
+    "content": "必須選出使句意最為通順的解釋。"
+   }
+  ],
+  "followup": "什麼是學習器的核心目標之一？",
+  "standalone": "什麼是學習器的核心目標之一？",
+  "answer": "學習器的核心目標之一是從經驗中進行泛化。",
+  "evidence": "學習器（learner）的核心目標之一是從經驗中進行泛化（generalize）。",
+  "ev_start": 1972,
+  "ev_end": 2013
+ },
+ {
+  "id": "mt036",
+  "kind": "switch",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "history": [
+   {
+    "role": "user",
+    "content": "監督學習的訓練資料是由什麼組成的？"
+   },
+   {
+    "role": "assistant",
+    "content": "訓練資料是由輸入物件（通常是向量）和預期輸出所組成。"
+   }
+  ],
+  "followup": "語音辨識系統的效能受哪些因素影響？",
+  "standalone": "語音辨識系統的效能受哪些因素影響？",
+  "answer": "包括不同的說話人、說話方式、環境噪音、傳輸頻道等等。",
+  "evidence": "語音辨識系統的效能受許多因素的影響，包括不同的說話人、說話方式、環境噪音、傳輸頻道等等。",
+  "ev_start": 7178,
+  "ev_end": 7222
+ },
+ {
+  "id": "mt037",
+  "kind": "switch",
+  "doc_id": "D25",
+  "title": "貝葉斯定理",
+  "history": [
+   {
+    "role": "user",
+    "content": "什麼是線性迴歸？"
+   },
+   {
+    "role": "assistant",
+    "content": "線性迴歸是利用稱為線性迴歸方程式的最小平方函式對一個或多個自變數和應變數之間關係進行建模的一種迴歸分析。"
+   }
+  ],
+  "followup": "在事件B發生的條件下事件A發生的機率是如何定義的？",
+  "standalone": "在事件B發生的條件下事件A發生的機率是如何定義的？",
+  "answer": "在事件B發生的條件下事件A發生的機率是P(A|B)",
+  "evidence": "根據條件機率的定義。在事件B發生的條件下事件A發生的機率是：",
+  "ev_start": 869,
+  "ev_end": 899
+ }
+]

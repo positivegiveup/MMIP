@@ -1,0 +1,152 @@
+[
+ {
+  "id": "q00",
+  "category": "single",
+  "question": "How many identical layers does the Transformer encoder stack contain?",
+  "answer": "The encoder is a stack of N = 6 identical layers."
+ },
+ {
+  "id": "q01",
+  "category": "single",
+  "question": "What is the model dimension d_model used by the base Transformer?",
+  "answer": "d_model = 512; all sub-layers and embedding layers produce outputs of dimension 512."
+ },
+ {
+  "id": "q02",
+  "category": "single",
+  "question": "How many attention heads does the base Transformer use, and what are d_k and d_v per head?",
+  "answer": "h = 8 parallel attention heads, with d_k = d_v = 64."
+ },
+ {
+  "id": "q03",
+  "category": "single",
+  "question": "What is the inner-layer dimensionality of the position-wise feed-forward network?",
+  "answer": "The inner layer has dimensionality d_ff = 2048 (input and output are 512)."
+ },
+ {
+  "id": "q04",
+  "category": "single",
+  "question": "Why are the dot products scaled by 1/sqrt(d_k) in scaled dot-product attention?",
+  "answer": "For large d_k the dot products grow large in magnitude, pushing the softmax into regions with extremely small gradients; scaling by 1/sqrt(d_k) counteracts this."
+ },
+ {
+  "id": "q05",
+  "category": "single",
+  "question": "Which optimizer and hyperparameters were used to train the models?",
+  "answer": "The Adam optimizer with beta1 = 0.9, beta2 = 0.98 and epsilon = 10^-9."
+ },
+ {
+  "id": "q06",
+  "category": "single",
+  "question": "How many warmup steps are used in the learning rate schedule?",
+  "answer": "warmup_steps = 4000: the learning rate increases linearly for the first 4000 steps and then decreases proportionally to the inverse square root of the step number."
+ },
+ {
+  "id": "q07",
+  "category": "single",
+  "question": "What kind of positional encoding does the Transformer use?",
+  "answer": "Sinusoidal positional encodings: sine and cosine functions of different frequencies."
+ },
+ {
+  "id": "q08",
+  "category": "single",
+  "question": "What BLEU score did the big Transformer reach on the WMT 2014 English-to-German task?",
+  "answer": "28.4 BLEU, improving over the previous best results (including ensembles) by over 2 BLEU."
+ },
+ {
+  "id": "q09",
+  "category": "single",
+  "question": "What hardware was used to train the models?",
+  "answer": "One machine with 8 NVIDIA P100 GPUs."
+ },
+ {
+  "id": "q10",
+  "category": "single",
+  "question": "How long did it take to train the base models and for how many steps?",
+  "answer": "The base models were trained for 100,000 steps, about 12 hours (roughly 0.4 seconds per step)."
+ },
+ {
+  "id": "q11",
+  "category": "single",
+  "question": "What dropout rate is used by the base model?",
+  "answer": "P_drop = 0.1, applied to the output of each sub-layer and to the sums of embeddings and positional encodings."
+ },
+ {
+  "id": "q12",
+  "category": "single",
+  "question": "What label smoothing value was employed during training?",
+  "answer": "Label smoothing with epsilon_ls = 0.1, which hurts perplexity but improves accuracy and BLEU."
+ },
+ {
+  "id": "q13",
+  "category": "single",
+  "question": "Which dataset was used for the English constituency parsing experiments?",
+  "answer": "The Wall Street Journal (WSJ) portion of the Penn Treebank, about 40K training sentences."
+ },
+ {
+  "id": "q14",
+  "category": "single",
+  "question": "What training data and vocabulary were used for WMT 2014 English-German?",
+  "answer": "About 4.5 million sentence pairs encoded with byte-pair encoding, with a shared source-target vocabulary of about 37,000 tokens."
+ },
+ {
+  "id": "q15",
+  "category": "multi",
+  "question": "How is the per-head dimension d_k of the base model determined from other hyperparameters, and what is its value?",
+  "answer": "d_k = d_v = d_model / h = 512 / 8 = 64."
+ },
+ {
+  "id": "q16",
+  "category": "multi",
+  "question": "In encoder-decoder attention, where do the queries, keys and values come from?",
+  "answer": "The queries come from the previous decoder layer, while the keys and values come from the output of the encoder."
+ },
+ {
+  "id": "q17",
+  "category": "multi",
+  "question": "How does the decoder preserve the auto-regressive property?",
+  "answer": "Decoder self-attention is masked: softmax inputs corresponding to illegal (future) connections are set to -infinity, and the output embeddings are offset by one position, so predictions depend only on known earlier outputs."
+ },
+ {
+  "id": "q18",
+  "category": "multi",
+  "question": "How do the residual connections constrain the output dimension of the sub-layers?",
+  "answer": "Each sub-layer output is LayerNorm(x + Sublayer(x)); to make the residual additions possible, all sub-layers and embedding layers output vectors of dimension d_model = 512."
+ },
+ {
+  "id": "q19",
+  "category": "multi",
+  "question": "How do self-attention layers compare with recurrent layers in sequential operations and maximum path length?",
+  "answer": "Self-attention needs O(1) sequential operations and has O(1) maximum path length, whereas recurrent layers need O(n) sequential operations and have O(n) maximum path length."
+ },
+ {
+  "id": "q20",
+  "category": "multi",
+  "question": "How are embedding weights shared in the model and what scaling is applied?",
+  "answer": "The same weight matrix is shared between the two embedding layers and the pre-softmax linear transformation, and the embedding weights are multiplied by sqrt(d_model)."
+ },
+ {
+  "id": "q21",
+  "category": "global",
+  "question": "What are the main components of the Transformer architecture described in the paper?",
+  "answer": "An encoder-decoder architecture with stacks of 6 layers: encoder layers have multi-head self-attention and a position-wise feed-forward network; decoder layers add masked self-attention and encoder-decoder attention; residual connections with layer normalization, embeddings with positional encodings, and a final linear + softmax."
+ },
+ {
+  "id": "q22",
+  "category": "global",
+  "question": "What advantages does the paper claim for self-attention over recurrent and convolutional layers?",
+  "answer": "Lower total computational complexity per layer (when n < d), more parallelizable computation, shorter path lengths between long-range dependencies, and potentially more interpretable models."
+ },
+ {
+  "id": "q23",
+  "category": "global",
+  "question": "Which regularization techniques are used when training the Transformer?",
+  "answer": "Residual dropout (applied to sub-layer outputs and embedding sums) and label smoothing."
+ },
+ {
+  "id": "q24",
+  "category": "global",
+  "question": "Summarize the main contribution of the paper and its key experimental results.",
+  "answer": "It proposes the Transformer, a sequence transduction model based solely on attention that dispenses with recurrence and convolutions; it achieves state-of-the-art translation quality on WMT 2014 (28.4 BLEU English-German) with much less training cost and generalizes to English constituency parsing."
+ }
+]

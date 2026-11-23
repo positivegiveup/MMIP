@@ -1,0 +1,353 @@
+[
+ {
+  "community": 0,
+  "size": 23,
+  "nodes": [
+   "attention mechanism",
+   "beam size",
+   "berkeley parser",
+   "cosine",
+   "encoder-decoder attention",
+   "learned positional embeddings",
+   "luong et al.",
+   "pe",
+   "positional encoding",
+   "recall neural network grammar",
+   "recurrent network",
+   "section 22",
+   "section 23",
+   "semi-supervised",
+   "sequence transduction models",
+   "sine",
+   "sinusoidal version",
+   "tensorflow",
+   "transformer",
+   "translation quality",
+   "wmt 2014 english-to-french",
+   "wmt 2014 english-to-german",
+   "α"
+  ],
+  "summary": "The Transformer model, based solely on attention mechanisms, uses learned positional embeddings and sinusoidal positional encoding to add positional information. It evaluates on Sections 22 and 23 of the WSJ dataset and performs well in semi-supervised settings. The model uses a beam size of 21 and achieves new state-of-the-art results on WMT 2014 English-to-French and English-to-German translation tasks, outperforming models like the Recall Neural Network Grammar and Berkeley Parser. The Transformer improves translation quality and sets α to 0.3, using TensorFlow for training and evaluation."
+ },
+ {
+  "community": 1,
+  "size": 18,
+  "nodes": [
+   "additive attention",
+   "attention",
+   "concat(head1, ..., headh)w_o",
+   "dk",
+   "dot-product attention",
+   "dv",
+   "h",
+   "headi",
+   "keys",
+   "multi-head attention",
+   "multihead",
+   "queries",
+   "qw",
+   "scaled dot-product attention",
+   "softmax",
+   "values",
+   "wo",
+   "wq"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, **Multi-Head Attention** (MHA) uses **queries**, **keys**, and **values** which are linearly projected h times with different learned linear projections. Each of the h **headi** processes these projected inputs independently using the **Scaled Dot-Product Attention** or **Additive Attention** methods. The outputs from all heads are concatenated and then projected using **WO** to produce the final output. **dk** and **dv** represent the dimensionality of keys and values, respectively, while **h** denotes the number of attention heads. The **softmax** function normalizes attention scores."
+ },
+ {
+  "community": 2,
+  "size": 15,
+  "nodes": [
+   "4-layer transformer",
+   "base model",
+   "beam search with a beam size of 4 and length penalty α = 0.6",
+   "big models",
+   "bleu",
+   "development set",
+   "input length + 50",
+   "learning rate",
+   "p100 gpu",
+   "sinusoidal positional encoding",
+   "table 2",
+   "train ppl",
+   "transformer (base model)",
+   "wall street journal (wsj)",
+   "warmup_steps"
+  ],
+  "summary": "This report describes the entities and their relationships from the \"Attention Is All You Need\" paper. The base model, a standard Transformer with 12 layers and 512-dimensional embeddings, achieved a BLEU score of 25.8 and was trained on the Wall Street Journal dataset using a P100 GPU. It utilized beam search with a beam size of 4 and length penalty α = 0.6, and its learning rate varied over 4000 warmup steps. The base model's maximum output length during inference was set to input length + 50. Table 2 summarized its performance, including a train PPL of 4.92. Big models, with larger parameters, also used the same setup but achieved higher BLEU scores. Sinusoidal positional encoding was replaced with learned positional embeddings in the base model. Both models were tuned on a development set."
+ },
+ {
+  "community": 3,
+  "size": 12,
+  "nodes": [
+   "8 gpus",
+   "attention heads",
+   "attention key and value dimensions",
+   "attention key size dk",
+   "beam search",
+   "big transformer model",
+   "bleu score",
+   "dropout",
+   "perplexity",
+   "table 3",
+   "wmt 2014 english-french translation task",
+   "wmt 2014 english-german translation task"
+  ],
+  "summary": "The **big transformer model** uses a dropout rate of 0.1 and achieved a BLEU score of 41.0 on the WMT 2014 English-French translation task, trained on 8 GPUs for 3.5 days. **Table 3** details its configuration and shows that varying attention heads, key and value dimensions, and attention key size dk affects model performance. Dropout and label smoothing improve overfitting and perplexity, respectively. The model outperforms previous models on both WMT 2014 English-French and English-German translation tasks. Beam search was used in the experiments."
+ },
+ {
+  "community": 4,
+  "size": 11,
+  "nodes": [
+   "decoder",
+   "encoder",
+   "multi-head self-attention mechanism",
+   "n",
+   "point-wise, fully connected layers",
+   "positional encodings",
+   "positionwise fully connected feed-forward network",
+   "self-attention",
+   "sentence representations",
+   "stacked self-attention",
+   "very long sequences"
+  ],
+  "summary": "In the 'Attention Is All You Need' paper, **Self-Attention** (METHOD) is used in both the **encoder** (COMPONENT) and **decoder** (COMPONENT). The **encoder** (COMPONENT) processes input sequences using **self-attention** and **position-wise fully connected feed-forward networks** (COMPONENT), while the **decoder** (COMPONENT) generates output sequences one element at a time, also utilizing **self-attention** and **position-wise fully connected feed-forward networks**. **Positional encodings** (HYPERPARAMETER) are added to the input embeddings in both components to account for sequence order. In the **decoder**, **N=6** (HYPERPARAMETER) identical layers are stacked, employing **multi-head self-attention mechanisms** (COMPONENT). This setup allows the model to handle **very long sequences** (CONCEPT) effectively."
+ },
+ {
+  "community": 5,
+  "size": 11,
+  "nodes": [
+   "convolutional",
+   "dff",
+   "dmodel",
+   "embedding layers",
+   "ffn",
+   "linear transformations",
+   "pre-softmax linear transformation",
+   "recurrent",
+   "relu activation",
+   "self-attention (restricted)",
+   "weight matrix"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, the model has a dimensionality of \\(d_{\\text{model}} = 512\\). Embedding layers multiply their weights by \\(\\sqrt{d_{\\text{model}}}\\), and share a weight matrix with the pre-softmax linear transformation. Linear transformations, including those in the FFN, have an input/output dimensionality of \\(d_{\\text{model}}\\). The FFN consists of linear transformations with an inner-layer dimensionality of \\(d_{\\text{ff}} = 2048\\). Recurrent and convolutional methods have complexities involving \\(d_{\\text{model}}\\), while self-attention (restricted) has a complexity related to \\(d_{\\text{model}}\\). ReLU activation is applied after linear transformations."
+ },
+ {
+  "community": 6,
+  "size": 10,
+  "nodes": [
+   "convolutional layers",
+   "dilated convolution",
+   "long-range dependencies",
+   "path length",
+   "point-wise feed-forward layer",
+   "recurrent layers",
+   "self-attention layer",
+   "separable convolution",
+   "sequence transduction tasks",
+   "stack of convolutional layers"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, components like self-attention layers and separable convolutions connect all positions with a constant number of operations, reducing path length to O(k·n·d + n·d²). This contrasts with recurrent layers requiring O(n) sequential operations. Shorter paths facilitate learning long-range dependencies, crucial for sequence transduction tasks. Convolutional layers, though more complex, can be simplified through stacks and dilated convolutions, which increase computational efficiency. These components collectively address the challenge of capturing long-range dependencies in sequence transduction tasks."
+ },
+ {
+  "community": 7,
+  "size": 8,
+  "nodes": [
+   "dyer et al. (2016)",
+   "huang & harper (2009)",
+   "luong et al. (2015)",
+   "mcclosky et al. (2006)",
+   "petrov et al. (2006)",
+   "vinyals & kaiser el al. (2014)",
+   "wsj",
+   "zhu et al. (2013)"
+  ],
+  "summary": "This report describes a group of methods from various papers that all perform on the WSJ dataset. Specifically, Dyer et al. (2016), Petrov et al. (2006), Zhu et al. (2013), Vinyals & Kaiser et al. (2014), Huang & Harper (2009), McClosky et al. (2006), and Luong et al. (2015) each apply their respective approaches to the WSJ dataset, which consists of 40K sentences from the Wall Street Journal."
+ },
+ {
+  "community": 8,
+  "size": 5,
+  "nodes": [
+   "gated recurrent neural networks",
+   "language modeling",
+   "long short-term memory",
+   "machine translation",
+   "sequence modeling"
+  ],
+  "summary": "This report describes models used in various tasks. Gated recurrent neural networks (GRUs) and long short-term memory (LSTMs) are types of recurrent neural networks. GRUs and LSTMs are both used for sequence modeling, language modeling, and machine translation. Specifically, GRUs have been applied in all three tasks, while LSTMs have also been used for language modeling and machine translation."
+ },
+ {
+  "community": 9,
+  "size": 5,
+  "nodes": [
+   "sentence pair",
+   "sequence length",
+   "training batch",
+   "wmt 2014 english-french dataset",
+   "wmt 2014 english-german dataset"
+  ],
+  "summary": "The report describes the relationships between entities from the \"Attention Is All You Need\" paper. The WMT 2014 English-French dataset (36M sentences) and the WMT 2014 English-German dataset (about 4.5M sentence pairs) contain sentence pairs. These pairs are batched into training batches based on approximate sequence length (a hyperparameter), which is typically set to group sentences of similar lengths together for efficient training. Each training batch contains multiple sentence pairs."
+ },
+ {
+  "community": 10,
+  "size": 5,
+  "nodes": [
+   "embeddings",
+   "layer normalization",
+   "residual connection",
+   "residual dropout",
+   "sub-layer"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, embeddings (vectors of dimension dmodel) are summed with positional encodings before being processed by sub-layers. Each sub-layer is wrapped with a residual connection, and dropout is applied to its output (Residual Dropout, Pdrop = 0.1). Layer normalization is then applied after each sub-layer. This architecture facilitates learning and improves model performance."
+ },
+ {
+  "community": 11,
+  "size": 4,
+  "nodes": [
+   "computation along the symbol positions",
+   "hidden states ht",
+   "previous hidden state ht−1",
+   "recurrent language models"
+  ],
+  "summary": "In the 'Attention Is All You Need' paper, recurrent language models factor computation along the symbol positions (1st entity), generating a sequence of hidden states \\(h_t\\) (2nd entity) at each time step \\(t\\). Each hidden state \\(h_t\\) depends on the previous hidden state \\(h_{t-1}\\) (3rd entity) and the input for position \\(t\\). This approach aligns with the sequential processing nature of recurrent models, though the paper introduces an attention mechanism that reduces the need for explicit recurrence."
+ },
+ {
+  "community": 12,
+  "size": 4,
+  "nodes": [
+   "adam optimizer",
+   "β1",
+   "β2",
+   "ϵ"
+  ],
+  "summary": "This report describes the entities from the \"Attention Is All You Need\" paper. The Adam optimizer, an optimization algorithm, uses three hyperparameters: β1 = 0.9, β2 = 0.98, and ϵ = 10^-9. These parameters are crucial for the optimizer's performance in training the model."
+ },
+ {
+  "community": 13,
+  "size": 3,
+  "nodes": [
+   "attention is all you need",
+   "google brain",
+   "google research"
+  ],
+  "summary": "The model \"Attention Is All You Need\" was introduced in a paper by researchers from Google Brain and Google Research. Both organizations granted permission to reproduce the tables and figures from the paper, highlighting their collaborative effort. Google Research and Google Brain each contributed to the research, with the former granting permission to use the published content."
+ },
+ {
+  "community": 14,
+  "size": 3,
+  "nodes": [
+   "k",
+   "q",
+   "v"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, Q (Query matrix), K (Key matrix), and V (Value matrix) are key components in the self-attention mechanism. Q computes with K to calculate the compatibility scores, while Q also computes with V to generate the weighted sum of values. Specifically, the key matrix K has a fixed kernel size of 3 (a hyperparameter)."
+ },
+ {
+  "community": 15,
+  "size": 2,
+  "nodes": [
+   "arxiv:1706.03762v7",
+   "cs.cl"
+  ],
+  "summary": "This report describes the relationship between the paper \"Attention Is All You Need\" (arXiv:1706.03762v7) and the field of computational linguistics (cs.CL). Specifically, the paper, which introduced transformer models, is fundamentally related to computational linguistics, as it advances techniques for natural language processing tasks within this domain."
+ },
+ {
+  "community": 16,
+  "size": 2,
+  "nodes": [
+   "representation dimensionality d",
+   "sequence length n"
+  ],
+  "summary": "This report describes the key hyperparameters from the \"Attention Is All You Need\" paper. The sequence length \\( n \\) (HYPERPARAMETER), which denotes the length of the input sequence, is smaller than the representation dimensionality \\( d \\) (HYPERPARAMETER), which represents the dimensionality of the input representation. For instance, if \\( n = 50 \\) and \\( d = 512 \\), the sequence length is shorter than the representation dimensionality, allowing for more complex feature representations within each position in the sequence."
+ },
+ {
+  "community": 17,
+  "size": 2,
+  "nodes": [
+   "dropout rate pdrop = 0.1",
+   "transformer (big)"
+  ],
+  "summary": "This report describes the relationship between a specific Transformer model configuration and its associated hyperparameter. The Transformer (big) model, configured for the WMT 2014 English-to-German task, utilized a dropout rate \\(P_{\\text{drop}} = 0.1\\). This model achieved a BLEU score of 28.4 and had 2.3 × 10^19 FLOPs."
+ },
+ {
+  "community": 18,
+  "size": 2,
+  "nodes": [
+   "positional embedding",
+   "sinusoids"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, positional embedding is a type of positional encoding that replaces the original sinusoids used for representing the position of tokens in the input sequence. This change allows the model to learn more complex positional relationships, enhancing its ability to capture long-range dependencies. Specifically, the authors replaced the fixed sinusoidal positional encodings with learned positional embeddings, improving performance on various natural language processing tasks."
+ },
+ {
+  "community": 19,
+  "size": 2,
+  "nodes": [
+   "dyer et al.",
+   "multi-task"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, Dyer et al. (the authors) achieved a performance of 93.0% using a multi-task approach. This method allowed them to handle multiple objectives or datasets simultaneously, contributing to their high performance score."
+ },
+ {
+  "community": 20,
+  "size": 1,
+  "nodes": [
+   "english constituency parsing"
+  ],
+  "summary": "This group of entities from the \"Attention Is All You Need\" paper represents an English constituency parsing task, which is a natural language processing task involving parsing sentences into their constituent parts. The task aims to identify the grammatical structure of sentences, such as phrases and their relationships. This task is closely related to the paper's focus on using self-attention mechanisms to process sequences without relying on recurrence or convolutions, demonstrating its applicability in complex NLP tasks like constituency parsing."
+ },
+ {
+  "community": 21,
+  "size": 1,
+  "nodes": [
+   "parallelization"
+  ],
+  "summary": "This report describes the concept of parallelization in the context of the \"Attention Is All You Need\" paper. Parallelization involves executing multiple computations simultaneously, enhancing efficiency and reducing training times. In the paper, parallelization is crucial for handling large-scale models, allowing up to 8 GPUs to be utilized for training, thereby significantly speeding up the process."
+ },
+ {
+  "community": 22,
+  "size": 1,
+  "nodes": [
+   "r"
+  ],
+  "summary": "In the \"Attention Is All You Need\" paper, \\( r \\) (a hyperparameter) defines the size of the neighborhood considered in restricted self-attention. This means that during the attention mechanism, each query only attends to a subset of the key-value pairs within a local window of size \\( r \\), rather than all pairs. This reduces computational complexity while maintaining effective long-range dependencies through multi-head attention mechanisms."
+ },
+ {
+  "community": 23,
+  "size": 1,
+  "nodes": [
+   "sequence transduction encoder"
+  ],
+  "summary": "This group of entities represents a task in the \"Attention Is All You Need\" paper: sequence transduction encoder (task involving transforming one sequence to another). The task is facilitated by an encoder-decoder architecture where the encoder processes the input sequence through multiple layers (e.g., 6 layers), converting it into a sequence of hidden states. These states are then decoded into the target sequence by the decoder, leveraging self-attention mechanisms across all layers (e.g., 8 attention heads per layer) to capture long-range dependencies efficiently."
+ },
+ {
+  "community": 24,
+  "size": 1,
+  "nodes": [
+   "deep-att + posunk [39]"
+  ],
+  "summary": "This report describes two configurations of the \"Attention Is All You Need\" model: Deep-Att + PosUnk [39]. The first configuration has 1.0 × 10²⁰ FLOPs and achieves a BLEU score of 39.2, while the second configuration, with 8.0 × 10²⁰ FLOPs, improves to a BLEU score of 40.4. Both models incorporate Positional Unknowns (PosUnk) to enhance positional encoding."
+ },
+ {
+  "community": 25,
+  "size": 1,
+  "nodes": [
+   "gnmt + rl [38]"
+  ],
+  "summary": "This report compares two models from the \"Attention Is All You Need\" paper: GNMT with Reinforcement Learning (GNMT + RL). The first model has a BLEU score of 24.6 and 2.3 × 10^19 FLOPs, while the second model improves to a BLEU score of 26.30 with 1.8 × 10^20 FLOPs, indicating enhanced performance through reinforcement learning."
+ },
+ {
+  "community": 26,
+  "size": 1,
+  "nodes": [
+   "newstest2013"
+  ],
+  "summary": "The `newstest2013` dataset is a concrete evaluation set (1,000 sentence pairs) used to assess the performance of models trained on the development set. This dataset contains news articles in English and their German translations, facilitating the evaluation of neural machine translation systems."
+ },
+ {
+  "community": 27,
+  "size": 1,
+  "nodes": [
+   "rnn sequence-to-sequence models"
+  ],
+  "summary": "This report compares RNN sequence-to-sequence models with the Transformer architecture from the \"Attention Is All You Need\" paper. On the WSJ training set, the Transformer outperformed RNN models by a margin of 3.7 BLEU points, demonstrating the superiority of the attention mechanism in handling sequential data."
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "id": "vm000",
+  "modality": "speech",
+  "clip_id": "v06_35d223_c000",
+  "video_id": "Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p",
+  "clip_idx": 0,
+  "history": [
+   {
+    "role": "user",
+    "content": "在今天的Excel教程中，講師使用了哪個函式來找出最高值？"
+   },
+   {
+    "role": "assistant",
+    "content": "Max函式"
+   }
+  ],
+  "followup": "講師會如何應用這個函式？",
+  "standalone": "講師會如何應用Max函式來找出最高值？",
+  "answer": "講師會先選擇包含所有資料的範圍，然後在Excel的公式編輯器中輸入Max函式，最後按Enter鍵來計算最高值。"
+ },
+ {
+  "id": "vm001",
+  "modality": "speech",
+  "clip_id": "v05_f1bbe4_c002",
+  "video_id": "Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p",
+  "clip_idx": 2,
+  "history": [
+   {
+    "role": "user",
+    "content": "在Excel中，如何快速計算平均值而不必手動輸入公式？"
+   },
+   {
+    "role": "assistant",
+    "content": "可以使用Home標籤下的AutoSum下拉選單中的Average功能。"
+   }
+  ],
+  "followup": "那它下一步要按哪裡？",
+  "standalone": "在Excel中，如何使用AutoSum下拉選單計算平均值？",
+  "answer": "選擇Home標籤下的AutoSum下拉選單，選擇Average後，會自動選取連續的數值範圍。"
+ },
+ {
+  "id": "vm002",
+  "modality": "visual",
+  "clip_id": "v02_95ea7e_c012",
+  "video_id": "How to Scan Documents to PDF in Google Drive (Free & Easy Method) - Pro Support (1080p, h264)",
+  "clip_idx": 12,
+  "history": [
+   {
+    "role": "user",
+    "content": "在第一張圖片中顯示的是什麼樣的內容？"
+   },
+   {
+    "role": "assistant",
+    "content": "第一張圖片顯示了一個手機螢幕，上面有一個應用程式介面，顯示如何將檔案掃描為PDF並儲存在Google Drive中。"
+   }
+  ],
+  "followup": "那它下一步要按哪裡？",
+  "standalone": "在第一張圖片中顯示的內容是什麼樣的？",
+  "answer": "第一張圖片顯示了一個手機螢幕，上面有一個應用程式介面，顯示如何將檔案掃描為PDF並儲存在Google Drive中。"
+ },
+ {
+  "id": "vm003",
+  "modality": "visual",
+  "clip_id": "v00_424e88_c000",
+  "video_id": "Change the format of the excel table, if the cell contains specific piece of text, lesson 47",
+  "clip_idx": 0,
+  "history": [
+   {
+    "role": "user",
+    "content": "在Excel表格中，如何透過特定文字來改變單元格的格式？"
+   },
+   {
+    "role": "assistant",
+    "content": "可以使用條件格式功能來實現這一目標。"
+   }
+  ],
+  "followup": "如果我已經設定了條件格式，下一步應該怎麼做？",
+  "standalone": "在Excel中，如何進一步應用已設定的條件格式？",
+  "answer": "下一步可以選擇應用到其他範圍或儲存設定。"
+ },
+ {
+  "id": "vm004",
+  "modality": "speech",
+  "clip_id": "v07_e8a7e2_c007",
+  "video_id": "Explain RAG in 1 minute_720p",
+  "clip_idx": 7,
+  "history": [
+   {
+    "role": "user",
+    "content": "在這個故事中，誰是主角？"
+   },
+   {
+    "role": "assistant",
+    "content": "主角是一個勇敢的騎士，他總是站在戰爭的第一線。"
+   }
+  ],
+  "followup": "這個視覺化設計中，哪個部分最關鍵？",
+  "standalone": "這個視覺化設計中最關鍵的部分是哪個？",
+  "answer": "最關鍵的部分可能是標題或核心概念，例如 'Explain RAG (Retrieval Augmented...)' 或者 'chunking', 'embedding', 'indexing', 'similarity search', 'semantic search', 'rerank', 'knowledge base', 'RAG'。"
+ },
+ {
+  "id": "vm005",
+  "modality": "speech",
+  "clip_id": "v09_11d1f8_c001",
+  "video_id": "OneNote For Mac  How to Record Audio 1 Minute Tutorial",
+  "clip_idx": 1,
+  "history": [
+   {
+    "role": "user",
+    "content": "在影片中，首先需要點選哪個選項來開始錄音？"
+   },
+   {
+    "role": "assistant",
+    "content": "首先需要點選插入選項來開始錄音。"
+   }
+  ],
+  "followup": "那下一步要按哪裡？",
+  "standalone": "在插入選項後，下一步應該按哪裡？",
+  "answer": "下一步應該按音訊錄製按鈕來開始錄音。"
+ },
+ {
+  "id": "vm006",
+  "modality": "speech",
+  "clip_id": "v06_35d223_c003",
+  "video_id": "Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p",
+  "clip_idx": 3,
+  "history": [
+   {
+    "role": "user",
+    "content": "如果不想使用右上角的自動求和功能，可以怎樣手動輸入這個函式？"
+   },
+   {
+    "role": "assistant",
+    "content": "可以輸入B2到B7之間的求和公式，結果是50。"
+   }
+  ],
+  "followup": "那它下一步要按哪裡？",
+  "standalone": "如果已經輸入了B2到B7之間的求和公式，下一步應該怎麼做？",
+  "answer": "下一步可以按Enter鍵來確認輸入的公式。"
+ }
+]

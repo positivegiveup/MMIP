@@ -1,0 +1,153 @@
+variant,kind,qid,hit,mrr,correctness
+no_rewrite (raw follow-up),pronoun,mt000,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt001,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt002,1.0,1.0,0.8
+no_rewrite (raw follow-up),pronoun,mt003,0.0,0.0,0.4
+no_rewrite (raw follow-up),pronoun,mt004,0.0,0.0,0.4
+no_rewrite (raw follow-up),pronoun,mt005,1.0,0.3333333333333333,0.8
+no_rewrite (raw follow-up),pronoun,mt006,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt007,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt008,1.0,1.0,1.0
+no_rewrite (raw follow-up),pronoun,mt009,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt010,1.0,0.2,0.2
+no_rewrite (raw follow-up),pronoun,mt011,0.0,0.0,0.8
+no_rewrite (raw follow-up),pronoun,mt012,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt013,1.0,1.0,1.0
+no_rewrite (raw follow-up),pronoun,mt014,1.0,0.5,1.0
+no_rewrite (raw follow-up),pronoun,mt015,1.0,0.5,0.8
+no_rewrite (raw follow-up),pronoun,mt016,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt017,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt018,1.0,1.0,1.0
+no_rewrite (raw follow-up),pronoun,mt019,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt020,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt021,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt022,0.0,0.0,0.4
+no_rewrite (raw follow-up),pronoun,mt023,0.0,0.0,0.8
+no_rewrite (raw follow-up),pronoun,mt024,0.0,0.0,0.2
+no_rewrite (raw follow-up),pronoun,mt025,0.0,0.0,1.0
+no_rewrite (raw follow-up),switch,mt026,1.0,1.0,1.0
+no_rewrite (raw follow-up),switch,mt027,1.0,0.3333333333333333,1.0
+no_rewrite (raw follow-up),switch,mt028,1.0,0.5,1.0
+no_rewrite (raw follow-up),switch,mt029,1.0,0.5,1.0
+no_rewrite (raw follow-up),switch,mt030,1.0,1.0,1.0
+no_rewrite (raw follow-up),switch,mt031,1.0,1.0,1.0
+no_rewrite (raw follow-up),switch,mt032,1.0,1.0,0.8
+no_rewrite (raw follow-up),switch,mt033,1.0,0.3333333333333333,1.0
+no_rewrite (raw follow-up),switch,mt034,1.0,0.3333333333333333,0.8
+no_rewrite (raw follow-up),switch,mt035,1.0,1.0,1.0
+no_rewrite (raw follow-up),switch,mt036,1.0,1.0,1.0
+no_rewrite (raw follow-up),switch,mt037,1.0,1.0,1.0
+history_concat,pronoun,mt000,1.0,1.0,0.8
+history_concat,pronoun,mt001,1.0,0.2,0.8
+history_concat,pronoun,mt002,1.0,1.0,0.8
+history_concat,pronoun,mt003,0.0,0.0,0.4
+history_concat,pronoun,mt004,1.0,0.16666666666666666,0.2
+history_concat,pronoun,mt005,1.0,0.5,0.8
+history_concat,pronoun,mt006,0.0,0.0,0.4
+history_concat,pronoun,mt007,1.0,1.0,0.8
+history_concat,pronoun,mt008,1.0,1.0,1.0
+history_concat,pronoun,mt009,1.0,0.14285714285714285,0.2
+history_concat,pronoun,mt010,1.0,1.0,1.0
+history_concat,pronoun,mt011,1.0,0.5,0.8
+history_concat,pronoun,mt012,1.0,1.0,0.8
+history_concat,pronoun,mt013,1.0,0.16666666666666666,1.0
+history_concat,pronoun,mt014,1.0,0.3333333333333333,0.8
+history_concat,pronoun,mt015,1.0,0.5,1.0
+history_concat,pronoun,mt016,0.0,0.0,0.2
+history_concat,pronoun,mt017,1.0,0.3333333333333333,0.8
+history_concat,pronoun,mt018,1.0,0.5,1.0
+history_concat,pronoun,mt019,1.0,0.3333333333333333,0.2
+history_concat,pronoun,mt020,1.0,0.5,0.2
+history_concat,pronoun,mt021,1.0,1.0,0.2
+history_concat,pronoun,mt022,0.0,0.0,0.2
+history_concat,pronoun,mt023,1.0,0.5,0.4
+history_concat,pronoun,mt024,1.0,1.0,0.8
+history_concat,pronoun,mt025,1.0,1.0,1.0
+history_concat,switch,mt026,0.0,0.0,0.4
+history_concat,switch,mt027,0.0,0.0,0.8
+history_concat,switch,mt028,0.0,0.0,0.2
+history_concat,switch,mt029,1.0,0.14285714285714285,1.0
+history_concat,switch,mt030,0.0,0.0,0.8
+history_concat,switch,mt031,1.0,0.25,1.0
+history_concat,switch,mt032,0.0,0.0,0.2
+history_concat,switch,mt033,0.0,0.0,1.0
+history_concat,switch,mt034,0.0,0.0,0.8
+history_concat,switch,mt035,1.0,0.16666666666666666,1.0
+history_concat,switch,mt036,0.0,0.0,0.2
+history_concat,switch,mt037,0.0,0.0,0.2
+llm_rewrite,pronoun,mt000,0.0,0.0,0.2
+llm_rewrite,pronoun,mt001,1.0,1.0,0.8
+llm_rewrite,pronoun,mt002,1.0,1.0,0.8
+llm_rewrite,pronoun,mt003,1.0,0.16666666666666666,0.4
+llm_rewrite,pronoun,mt004,0.0,0.0,0.2
+llm_rewrite,pronoun,mt005,1.0,0.5,0.8
+llm_rewrite,pronoun,mt006,0.0,0.0,0.4
+llm_rewrite,pronoun,mt007,1.0,0.3333333333333333,0.2
+llm_rewrite,pronoun,mt008,1.0,1.0,1.0
+llm_rewrite,pronoun,mt009,1.0,0.16666666666666666,0.2
+llm_rewrite,pronoun,mt010,1.0,1.0,1.0
+llm_rewrite,pronoun,mt011,1.0,0.16666666666666666,1.0
+llm_rewrite,pronoun,mt012,1.0,0.25,0.8
+llm_rewrite,pronoun,mt013,1.0,1.0,1.0
+llm_rewrite,pronoun,mt014,1.0,0.5,0.8
+llm_rewrite,pronoun,mt015,1.0,0.5,1.0
+llm_rewrite,pronoun,mt016,0.0,0.0,0.2
+llm_rewrite,pronoun,mt017,1.0,1.0,0.8
+llm_rewrite,pronoun,mt018,1.0,1.0,1.0
+llm_rewrite,pronoun,mt019,1.0,0.5,0.2
+llm_rewrite,pronoun,mt020,1.0,0.3333333333333333,0.2
+llm_rewrite,pronoun,mt021,1.0,1.0,0.2
+llm_rewrite,pronoun,mt022,0.0,0.0,0.4
+llm_rewrite,pronoun,mt023,1.0,0.25,0.8
+llm_rewrite,pronoun,mt024,1.0,1.0,0.8
+llm_rewrite,pronoun,mt025,1.0,0.3333333333333333,1.0
+llm_rewrite,switch,mt026,1.0,1.0,1.0
+llm_rewrite,switch,mt027,1.0,0.3333333333333333,1.0
+llm_rewrite,switch,mt028,1.0,0.14285714285714285,0.8
+llm_rewrite,switch,mt029,1.0,0.5,1.0
+llm_rewrite,switch,mt030,1.0,1.0,1.0
+llm_rewrite,switch,mt031,1.0,1.0,1.0
+llm_rewrite,switch,mt032,1.0,1.0,0.8
+llm_rewrite,switch,mt033,1.0,0.3333333333333333,1.0
+llm_rewrite,switch,mt034,1.0,0.3333333333333333,0.8
+llm_rewrite,switch,mt035,1.0,1.0,1.0
+llm_rewrite,switch,mt036,1.0,1.0,1.0
+llm_rewrite,switch,mt037,1.0,1.0,1.0
+oracle_standalone,pronoun,mt000,0.0,0.0,0.2
+oracle_standalone,pronoun,mt001,1.0,1.0,0.8
+oracle_standalone,pronoun,mt002,1.0,1.0,0.8
+oracle_standalone,pronoun,mt003,1.0,0.3333333333333333,0.4
+oracle_standalone,pronoun,mt004,0.0,0.0,0.4
+oracle_standalone,pronoun,mt005,1.0,0.5,0.8
+oracle_standalone,pronoun,mt006,0.0,0.0,0.8
+oracle_standalone,pronoun,mt007,1.0,0.3333333333333333,1.0
+oracle_standalone,pronoun,mt008,1.0,1.0,1.0
+oracle_standalone,pronoun,mt009,0.0,0.0,0.2
+oracle_standalone,pronoun,mt010,1.0,1.0,1.0
+oracle_standalone,pronoun,mt011,1.0,0.16666666666666666,1.0
+oracle_standalone,pronoun,mt012,1.0,0.25,0.8
+oracle_standalone,pronoun,mt013,1.0,1.0,1.0
+oracle_standalone,pronoun,mt014,1.0,1.0,0.8
+oracle_standalone,pronoun,mt015,1.0,0.5,0.8
+oracle_standalone,pronoun,mt016,0.0,0.0,0.2
+oracle_standalone,pronoun,mt017,1.0,1.0,0.8
+oracle_standalone,pronoun,mt018,1.0,1.0,1.0
+oracle_standalone,pronoun,mt019,1.0,0.5,0.2
+oracle_standalone,pronoun,mt020,1.0,0.5,0.2
+oracle_standalone,pronoun,mt021,1.0,1.0,0.2
+oracle_standalone,pronoun,mt022,0.0,0.0,0.4
+oracle_standalone,pronoun,mt023,1.0,0.25,0.8
+oracle_standalone,pronoun,mt024,1.0,1.0,0.8
+oracle_standalone,pronoun,mt025,1.0,0.3333333333333333,1.0
+oracle_standalone,switch,mt026,1.0,1.0,1.0
+oracle_standalone,switch,mt027,1.0,0.3333333333333333,1.0
+oracle_standalone,switch,mt028,1.0,0.5,1.0
+oracle_standalone,switch,mt029,1.0,0.5,1.0
+oracle_standalone,switch,mt030,1.0,1.0,1.0
+oracle_standalone,switch,mt031,1.0,1.0,1.0
+oracle_standalone,switch,mt032,1.0,1.0,0.8
+oracle_standalone,switch,mt033,1.0,0.3333333333333333,1.0
+oracle_standalone,switch,mt034,1.0,0.3333333333333333,0.8
+oracle_standalone,switch,mt035,1.0,1.0,1.0
+oracle_standalone,switch,mt036,1.0,1.0,1.0
+oracle_standalone,switch,mt037,1.0,1.0,1.0

@@ -1,0 +1,3207 @@
+[
+ {
+  "chunk_id": 0,
+  "entities": [
+   {
+    "name": "Attention Is All You Need",
+    "type": "MODEL",
+    "description": "The name of the model introduced in the paper."
+   },
+   {
+    "name": "Google Brain",
+    "type": "HARDWARE",
+    "description": "The organization that contributed to the research."
+   },
+   {
+    "name": "Google Research",
+    "type": "HARDWARE",
+    "description": "The organization that contributed to the research."
+   },
+   {
+    "name": "arXiv:1706.03762v7",
+    "type": "DATASET",
+    "description": "The reference to the paper's arXiv submission."
+   },
+   {
+    "name": "cs.CL",
+    "type": "TASK",
+    "description": "The field of computational linguistics as the task domain."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Attention Is All You Need",
+    "target": "Google Brain",
+    "relation": "GRANTS PERMISSION",
+    "description": "Google Brain grants permission to reproduce the tables and figures in the paper."
+   },
+   {
+    "source": "Attention Is All You Need",
+    "target": "Google Research",
+    "relation": "GRANTS PERMISSION",
+    "description": "Google Research grants permission to reproduce the tables and figures in the paper."
+   },
+   {
+    "source": "arXiv:1706.03762v7",
+    "target": "cs.CL",
+    "relation": "RELATES_TO",
+    "description": "The paper is related to the field of computational linguistics."
+   }
+  ]
+ },
+ {
+  "chunk_id": 1,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A new simple network architecture based solely on attention mechanisms."
+   },
+   {
+    "name": "attention mechanism",
+    "type": "CONCEPT",
+    "description": "A method used in the Transformer model to connect the encoder and decoder."
+   },
+   {
+    "name": "sequence transduction models",
+    "type": "MODEL",
+    "description": "Models based on complex recurrent or convolutional neural networks that include an encoder and a decoder."
+   },
+   {
+    "name": "WMT 2014 English-German translation task",
+    "type": "TASK",
+    "description": "A machine translation task where the model translates from English to German."
+   },
+   {
+    "name": "WMT 2014 English-French translation task",
+    "type": "TASK",
+    "description": "A machine translation task where the model translates from English to French."
+   },
+   {
+    "name": "English constituency parsing",
+    "type": "TASK",
+    "description": "A natural language processing task where the model parses sentences into their constituent parts."
+   },
+   {
+    "name": "8 GPUs",
+    "type": "HARDWARE",
+    "description": "Hardware used for training the model on the WMT 2014 English-to-French translation task."
+   },
+   {
+    "name": "28.4 BLEU",
+    "type": "METRIC",
+    "description": "The BLEU score achieved by the Transformer on the WMT 2014 English-German translation task."
+   },
+   {
+    "name": "41.8 BLEU",
+    "type": "METRIC",
+    "description": "The BLEU score achieved by the Transformer on the WMT 2014 English-French translation task after 3.5 days of training."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "attention mechanism",
+    "relation": "based on",
+    "description": "The Transformer model is based solely on attention mechanisms."
+   },
+   {
+    "source": "sequence transduction models",
+    "target": "attention mechanism",
+    "relation": "include",
+    "description": "Sequence transduction models include an attention mechanism to connect the encoder and decoder."
+   },
+   {
+    "source": "Transformer",
+    "target": "WMT 2014 English-German translation task",
+    "relation": "achieves",
+    "description": "The Transformer model achieves 28.4 BLEU on the WMT 2014 English-German translation task."
+   },
+   {
+    "source": "Transformer",
+    "target": "WMT 2014 English-French translation task",
+    "relation": "establishes",
+    "description": "The Transformer model establishes a new single-model state-of-the-art BLEU score of 41.8 on the WMT 2014 English-French translation task."
+   },
+   {
+    "source": "WMT 2014 English-French translation task",
+    "target": "8 GPUs",
+    "relation": "trained on",
+    "description": "The WMT 2014 English-French translation task was trained for 3.5 days on eight GPUs."
+   }
+  ]
+ },
+ {
+  "chunk_id": 2,
+  "entities": [],
+  "relations": []
+ },
+ {
+  "chunk_id": 3,
+  "entities": [
+   {
+    "name": "long short-term memory",
+    "type": "MODEL",
+    "description": "a type of recurrent neural network"
+   },
+   {
+    "name": "gated recurrent neural networks",
+    "type": "MODEL",
+    "description": "a type of recurrent neural network"
+   },
+   {
+    "name": "sequence modeling",
+    "type": "TASK",
+    "description": "a task involving modeling sequences of data"
+   },
+   {
+    "name": "language modeling",
+    "type": "TASK",
+    "description": "a task of predicting the next word in a sequence of words"
+   },
+   {
+    "name": "machine translation",
+    "type": "TASK",
+    "description": "a task of translating text from one language to another"
+   },
+   {
+    "name": "recurrent neural networks",
+    "type": "MODEL",
+    "description": "a class of neural networks designed to recognize patterns in sequences of data"
+   }
+  ],
+  "relations": [
+   {
+    "source": "long short-term memory",
+    "target": "sequence modeling",
+    "relation": "is used for",
+    "description": "long short-term memory has been used for sequence modeling"
+   },
+   {
+    "source": "gated recurrent neural networks",
+    "target": "sequence modeling",
+    "relation": "is used for",
+    "description": "gated recurrent neural networks have been used for sequence modeling"
+   },
+   {
+    "source": "long short-term memory",
+    "target": "language modeling",
+    "relation": "is used for",
+    "description": "long short-term memory has been used for language modeling"
+   },
+   {
+    "source": "gated recurrent neural networks",
+    "target": "language modeling",
+    "relation": "is used for",
+    "description": "gated recurrent neural networks have been used for language modeling"
+   },
+   {
+    "source": "long short-term memory",
+    "target": "machine translation",
+    "relation": "is used for",
+    "description": "long short-term memory has been used for machine translation"
+   },
+   {
+    "source": "gated recurrent neural networks",
+    "target": "machine translation",
+    "relation": "is used for",
+    "description": "gated recurrent neural networks have been used for machine translation"
+   }
+  ]
+ },
+ {
+  "chunk_id": 4,
+  "entities": [
+   {
+    "name": "recurrent language models",
+    "type": "MODEL",
+    "description": "A type of neural network designed to process sequential data."
+   },
+   {
+    "name": "encoder-decoder architectures",
+    "type": "MODEL",
+    "description": "A model architecture commonly used in sequence-to-sequence tasks, where an encoder processes the input sequence and a decoder generates the output sequence."
+   },
+   {
+    "name": "hidden states ht",
+    "type": "HYPERPARAMETER",
+    "description": "The internal representation of the model at each step of the sequence, where h is the state index and t is the time step."
+   },
+   {
+    "name": "input for position t",
+    "type": "COMPONENT",
+    "description": "The input data at a specific position in the sequence during the computation of hidden states."
+   },
+   {
+    "name": "previous hidden state ht−1",
+    "type": "HYPERPARAMETER",
+    "description": "The hidden state from the previous time step, used to compute the current hidden state ht."
+   },
+   {
+    "name": "computation along the symbol positions",
+    "type": "METHOD",
+    "description": "A method of processing input and output sequences in a sequential manner, aligning positions with steps in computation time."
+   },
+   {
+    "name": "parallelization",
+    "type": "CONCEPT",
+    "description": "The process of executing multiple computations simultaneously to improve efficiency and speed up training times."
+   },
+   {
+    "name": "memory constraints",
+    "type": "HARDWARE",
+    "description": "Limitations on the amount of memory available for storing data or intermediate results during model training."
+   },
+   {
+    "name": "batching across examples",
+    "type": "METHOD",
+    "description": "A technique in machine learning where multiple training examples are processed together to optimize memory usage and computational efficiency."
+   }
+  ],
+  "relations": [
+   {
+    "source": "recurrent language models",
+    "target": "computation along the symbol positions",
+    "relation": "factor",
+    "description": "Recurrent models typically factor computation along the symbol positions of the input and output sequences."
+   },
+   {
+    "source": "computation along the symbol positions",
+    "target": "hidden states ht",
+    "relation": "generate",
+    "description": "They generate a sequence of hidden states ht as a function of the previous hidden state ht−1 and the input for position t."
+   },
+   {
+    "source": "hidden states ht",
+    "target": "previous hidden state ht−1",
+    "relation": "depend on",
+    "description": "The current hidden state ht depends on the previous hidden state ht−1 and the input for position t."
+   },
+   {
+    "source": "computation along the symbol positions",
+    "target": "sequential nature",
+    "relation": "inherent",
+    "description": "This inherently sequential nature precludes parallelization within training examples."
+   },
+   {
+    "source": "sequential nature",
+    "target": "longer sequence lengths",
+    "relation": "becomes critical",
+    "description": "At longer sequence lengths, the inherent sequential nature becomes critical due to memory constraints limiting batching across examples."
+   }
+  ]
+ },
+ {
+  "chunk_id": 5,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A model architecture that relies entirely on an attention mechanism to draw global dependencies between input and output."
+   },
+   {
+    "name": "recurrent network",
+    "type": "COMPONENT",
+    "description": "A type of neural network that uses sequential computation to model dependencies in input or output sequences."
+   },
+   {
+    "name": "attention mechanism",
+    "type": "COMPONENT",
+    "description": "A component that allows modeling of dependencies without regard to their distance in the input or output sequences."
+   },
+   {
+    "name": "P100 GPU",
+    "type": "HARDWARE",
+    "description": "A specific type of graphics processing unit used for training the Transformer model."
+   },
+   {
+    "name": "translation quality",
+    "type": "METRIC",
+    "description": "A measure of how well a model translates text from one language to another."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "attention mechanism",
+    "relation": "uses",
+    "description": "The Transformer model uses an attention mechanism to draw global dependencies between input and output."
+   },
+   {
+    "source": "Transformer",
+    "target": "recurrent network",
+    "relation": "replaces",
+    "description": "The Transformer model replaces the use of a recurrent network with an attention mechanism."
+   },
+   {
+    "source": "Transformer",
+    "target": "P100 GPU",
+    "relation": "trained on",
+    "description": "The Transformer model was trained for twelve hours on eight P100 GPUs."
+   },
+   {
+    "source": "Transformer",
+    "target": "translation quality",
+    "relation": "improves",
+    "description": "The Transformer model reaches a new state of the art in translation quality after being trained for twelve hours on eight P100 GPUs."
+   }
+  ]
+ },
+ {
+  "chunk_id": 6,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A model that reduces the number of operations required to relate signals from two arbitrary input or output positions to a constant number."
+   },
+   {
+    "name": "Extended Neural GPU",
+    "type": "MODEL",
+    "description": "A model that uses convolutional neural networks as basic building blocks and computes hidden representations in parallel for all input and output positions."
+   },
+   {
+    "name": "ByteNet",
+    "type": "MODEL",
+    "description": "A model that uses convolutional neural networks as basic building blocks and computes hidden representations in parallel for all input and output positions."
+   },
+   {
+    "name": "ConvS2S",
+    "type": "MODEL",
+    "description": "A model that uses convolutional neural networks as basic building blocks and computes hidden representations in parallel for all input and output positions."
+   },
+   {
+    "name": "P100 GPUs",
+    "type": "HARDWARE",
+    "description": "Graphics processing units used for training the model."
+   },
+   {
+    "name": "Multi-Head Attention",
+    "type": "METHOD",
+    "description": "A method used to counteract the effect of averaging attention-weighted positions in the Transformer model."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "Multi-Head Attention",
+    "relation": "uses",
+    "description": "The Transformer model uses Multi-Head Attention to counteract the effect of averaging attention-weighted positions."
+   },
+   {
+    "source": "Extended Neural GPU",
+    "target": "Convolutional neural networks",
+    "relation": "uses",
+    "description": "The Extended Neural GPU model uses convolutional neural networks as its basic building blocks."
+   },
+   {
+    "source": "ByteNet",
+    "target": "Convolutional neural networks",
+    "relation": "uses",
+    "description": "The ByteNet model uses convolutional neural networks as its basic building blocks."
+   },
+   {
+    "source": "ConvS2S",
+    "target": "Convolutional neural networks",
+    "relation": "uses",
+    "description": "The ConvS2S model uses convolutional neural networks as its basic building blocks."
+   },
+   {
+    "source": "Transformer",
+    "target": "translation quality",
+    "relation": "improves",
+    "description": "The Transformer model can reach a new state of the art in translation quality after being trained for as little as twelve hours on eight P100 GPUs."
+   }
+  ]
+ },
+ {
+  "chunk_id": 7,
+  "entities": [
+   {
+    "name": "Multi-Head Attention",
+    "type": "MODEL",
+    "description": "A mechanism that uses multiple attention heads to process information."
+   },
+   {
+    "name": "Self-Attention",
+    "type": "METHOD",
+    "description": "An attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence."
+   },
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution."
+   },
+   {
+    "name": "End-to-end memory networks",
+    "type": "MODEL",
+    "description": "A model based on a recurrent attention mechanism for tasks like simple-language question answering and language modeling."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Multi-Head Attention",
+    "target": "Self-Attention",
+    "relation": "counteract",
+    "description": "We counteract the effective resolution due to averaging attention-weighted positions with Multi-Head Attention."
+   },
+   {
+    "source": "Self-Attention",
+    "target": "Transformer",
+    "relation": "motivate",
+    "description": "The Transformer is motivated by self-attention and discussed in detail in the following sections."
+   }
+  ]
+ },
+ {
+  "chunk_id": 8,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A neural network model with an encoder-decoder structure and stacked self-attention layers."
+   },
+   {
+    "name": "encoder",
+    "type": "COMPONENT",
+    "description": "A component that maps an input sequence to a sequence of continuous representations."
+   },
+   {
+    "name": "decoder",
+    "type": "COMPONENT",
+    "description": "A component that generates an output sequence one element at a time based on the encoder's output."
+   },
+   {
+    "name": "self-attention",
+    "type": "HYPERPARAMETER",
+    "description": "A mechanism used in the Transformer model to weigh the importance of different elements in the input sequence."
+   },
+   {
+    "name": "point-wise, fully connected layers",
+    "type": "COMPONENT",
+    "description": "Layers used in both the encoder and decoder of the Transformer model."
+   },
+   {
+    "name": "stacked self-attention",
+    "type": "METHOD",
+    "description": "A method used in the Transformer model where multiple self-attention layers are stacked together."
+   },
+   {
+    "name": "encoder-decoder structure",
+    "type": "TASK",
+    "description": "A model architecture commonly used in sequence transduction tasks, consisting of an encoder and a decoder."
+   },
+   {
+    "name": "auto-regressive",
+    "type": "CONCEPT",
+    "description": "A property of the model where it generates the next element in the sequence based on the previously generated elements."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "encoder",
+    "relation": "uses",
+    "description": "The Transformer model uses an encoder component."
+   },
+   {
+    "source": "Transformer",
+    "target": "decoder",
+    "relation": "uses",
+    "description": "The Transformer model uses a decoder component."
+   },
+   {
+    "source": "encoder",
+    "target": "input sequence",
+    "relation": "maps_to",
+    "description": "The encoder maps an input sequence to a sequence of continuous representations."
+   },
+   {
+    "source": "decoder",
+    "target": "output sequence",
+    "relation": "generates",
+    "description": "The decoder generates an output sequence one element at a time."
+   },
+   {
+    "source": "self-attention",
+    "target": "encoder",
+    "relation": "used_in",
+    "description": "Self-attention is used in the encoder of the Transformer model."
+   },
+   {
+    "source": "self-attention",
+    "target": "decoder",
+    "relation": "used_in",
+    "description": "Self-attention is used in the decoder of the Transformer model."
+   },
+   {
+    "source": "point-wise, fully connected layers",
+    "target": "encoder",
+    "relation": "used_in",
+    "description": "Point-wise, fully connected layers are used in the encoder of the Transformer model."
+   },
+   {
+    "source": "point-wise, fully connected layers",
+    "target": "decoder",
+    "relation": "used_in",
+    "description": "Point-wise, fully connected layers are used in the decoder of the Transformer model."
+   },
+   {
+    "source": "stacked self-attention",
+    "target": "self-attention",
+    "relation": "is",
+    "description": "Stacked self-attention refers to multiple self-attention layers being stacked together in the Transformer model."
+   }
+  ]
+ },
+ {
+  "chunk_id": 9,
+  "entities": [
+   {
+    "name": "multi-head self-attention mechanism",
+    "type": "COMPONENT",
+    "description": "a component in the encoder and decoder layers"
+   },
+   {
+    "name": "positionwise fully connected feed-forward network",
+    "type": "COMPONENT",
+    "description": "a component in the encoder and decoder layers"
+   },
+   {
+    "name": "residual connection",
+    "type": "CONCEPT",
+    "description": "a concept used to facilitate these residual connections"
+   },
+   {
+    "name": "layer normalization",
+    "type": "CONCEPT",
+    "description": "a concept used in the model"
+   },
+   {
+    "name": "encoder",
+    "type": "COMPONENT",
+    "description": "the component that processes input sequences"
+   },
+   {
+    "name": "decoder",
+    "type": "COMPONENT",
+    "description": "the component that generates output sequences"
+   },
+   {
+    "name": "N = 6",
+    "type": "HYPERPARAMETER",
+    "description": "the number of identical layers in the encoder"
+   },
+   {
+    "name": "dmodel = 512",
+    "type": "HYPERPARAMETER",
+    "description": "the dimension of the output of each sub-layer"
+   }
+  ],
+  "relations": [
+   {
+    "source": "multi-head self-attention mechanism",
+    "target": "encoder",
+    "relation": "in",
+    "description": "each layer of the encoder has this mechanism"
+   },
+   {
+    "source": "positionwise fully connected feed-forward network",
+    "target": "encoder",
+    "relation": "in",
+    "description": "each layer of the encoder has this network"
+   },
+   {
+    "source": "residual connection",
+    "target": "sub-layers",
+    "relation": "around",
+    "description": "residual connection is around each sub-layer"
+   },
+   {
+    "source": "layer normalization",
+    "target": "sub-layers",
+    "relation": "after",
+    "description": "layer normalization is after each sub-layer"
+   },
+   {
+    "source": "encoder",
+    "target": "stack",
+    "relation": "composed of",
+    "description": "the encoder is composed of a stack of N = 6 identical layers"
+   }
+  ]
+ },
+ {
+  "chunk_id": 10,
+  "entities": [
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "dimension of the model's output, set to 512"
+   },
+   {
+    "name": "N",
+    "type": "HYPERPARAMETER",
+    "description": "number of layers in the decoder, set to 6"
+   },
+   {
+    "name": "multi-head attention",
+    "type": "METHOD",
+    "description": "a method used in the decoder to perform attention over the encoder's output"
+   },
+   {
+    "name": "self-attention",
+    "type": "METHOD",
+    "description": "a method modified in the decoder to prevent positions from attending to subsequent positions"
+   },
+   {
+    "name": "residual connections",
+    "type": "CONCEPT",
+    "description": "connections around each sub-layer in the model and decoder"
+   },
+   {
+    "name": "layer normalization",
+    "type": "METHOD",
+    "description": "a normalization technique applied after each sub-layer in the model and decoder"
+   }
+  ],
+  "relations": [
+   {
+    "source": "dmodel",
+    "target": "MODEL",
+    "relation": "produces outputs of dimension",
+    "description": "all sub-layers in the model and embedding layers produce outputs of dimension dmodel = 512"
+   },
+   {
+    "source": "N",
+    "target": "DECODER",
+    "relation": "composed of",
+    "description": "the decoder is composed of a stack of N = 6 identical layers"
+   },
+   {
+    "source": "multi-head attention",
+    "target": "DECODER",
+    "relation": "performs",
+    "description": "the decoder inserts a third sub-layer that performs multi-head attention over the output of the encoder stack"
+   },
+   {
+    "source": "self-attention",
+    "target": "DECODER",
+    "relation": "modified in",
+    "description": "the self-attention sub-layer in the decoder stack is modified to prevent positions from attending to subsequent positions"
+   },
+   {
+    "source": "residual connections",
+    "target": "SUB-LAYER",
+    "relation": "around each of",
+    "description": "residual connections are around each of the sub-layers in the model and decoder"
+   },
+   {
+    "source": "layer normalization",
+    "target": "SUB-LAYER",
+    "relation": "applied after each",
+    "description": "layer normalization is applied after each sub-layer in the model and decoder"
+   }
+  ]
+ },
+ {
+  "chunk_id": 11,
+  "entities": [
+   {
+    "name": "Scaled Dot-Product Attention",
+    "type": "METHOD",
+    "description": "A specific type of attention mechanism where the output is computed as a weighted sum of the values."
+   },
+   {
+    "name": "Multi-Head Attention",
+    "type": "METHOD",
+    "description": "A method that consists of several attention layers running in parallel."
+   },
+   {
+    "name": "queries",
+    "type": "COMPONENT",
+    "description": "Input components used in the attention mechanism."
+   },
+   {
+    "name": "keys",
+    "type": "COMPONENT",
+    "description": "Input components used in the attention mechanism."
+   },
+   {
+    "name": "values",
+    "type": "COMPONENT",
+    "description": "Input components used in the attention mechanism."
+   },
+   {
+    "name": "output",
+    "type": "COMPONENT",
+    "description": "The result of the attention computation."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Scaled Dot-Product Attention",
+    "target": "queries",
+    "relation": "uses",
+    "description": "The Scaled Dot-Product Attention mechanism uses queries as input components."
+   },
+   {
+    "source": "Scaled Dot-Product Attention",
+    "target": "keys",
+    "relation": "uses",
+    "description": "The Scaled Dot-Product Attention mechanism uses keys as input components."
+   },
+   {
+    "source": "Scaled Dot-Product Attention",
+    "target": "values",
+    "relation": "uses",
+    "description": "The Scaled Dot-Product Attention mechanism uses values as input components."
+   },
+   {
+    "source": "Multi-Head Attention",
+    "target": "attention layers",
+    "relation": "consists_of",
+    "description": "Multi-Head Attention consists of several attention layers running in parallel."
+   }
+  ]
+ },
+ {
+  "chunk_id": 12,
+  "entities": [
+   {
+    "name": "Additive Attention",
+    "type": "METHOD",
+    "description": "A type of attention mechanism that uses a feed-forward network with a single hidden layer."
+   },
+   {
+    "name": "Dot-Product Attention",
+    "type": "METHOD",
+    "description": "A type of attention mechanism that computes the compatibility function using matrix multiplication without additional layers."
+   },
+   {
+    "name": "Multi-Head Attention",
+    "type": "METHOD",
+    "description": "An extension of the dot-product attention mechanism that allows the model to jointly attend to information from different representation subspaces."
+   },
+   {
+    "name": "Q",
+    "type": "COMPONENT",
+    "description": "Query matrix in the attention mechanism."
+   },
+   {
+    "name": "K",
+    "type": "COMPONENT",
+    "description": "Key matrix in the attention mechanism."
+   },
+   {
+    "name": "V",
+    "type": "COMPONENT",
+    "description": "Value matrix in the attention mechanism."
+   },
+   {
+    "name": "softmax",
+    "type": "METHOD",
+    "description": "A method used to convert a vector of values into a probability distribution."
+   },
+   {
+    "name": "dk",
+    "type": "HYPERPARAMETER",
+    "description": "Dimensionality of the key vectors in the attention mechanism."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Dot-Product Attention",
+    "target": "Multi-Head Attention",
+    "relation": "is part of",
+    "description": "Multi-Head Attention extends the dot-product attention mechanism."
+   },
+   {
+    "source": "Additive Attention",
+    "target": "Multi-Head Attention",
+    "relation": "is part of",
+    "description": "Multi-Head Attention extends the additive attention mechanism."
+   },
+   {
+    "source": "Q",
+    "target": "K",
+    "relation": "computes with",
+    "description": "The compatibility function is computed between Q and K in the attention mechanism."
+   },
+   {
+    "source": "Q",
+    "target": "V",
+    "relation": "computes with",
+    "description": "The output is computed based on the interaction between Q and V in the attention mechanism."
+   },
+   {
+    "source": "dk",
+    "target": "Dot-Product Attention",
+    "relation": "affects",
+    "description": "For large values of dk, the dot products grow large in magnitude, affecting the performance of the attention mechanism."
+   },
+   {
+    "source": "dk",
+    "target": "Additive Attention",
+    "relation": "affects",
+    "description": "For large values of dk, additive attention outperforms dot-product attention without scaling."
+   },
+   {
+    "source": "softmax",
+    "target": "Dot-Product Attention",
+    "relation": "applied to",
+    "description": "The softmax function is applied to the dot products in the dot-product attention mechanism to normalize them into probabilities."
+   },
+   {
+    "source": "softmax",
+    "target": "Additive Attention",
+    "relation": "applied to",
+    "description": "The softmax function is applied to the compatibility scores in the additive attention mechanism to normalize them into probabilities."
+   }
+  ]
+ },
+ {
+  "chunk_id": 13,
+  "entities": [
+   {
+    "name": "Multi-Head Attention",
+    "type": "COMPONENT",
+    "description": "A method for the model to jointly attend to information from different representation subspaces at different positions."
+   },
+   {
+    "name": "dot products",
+    "type": "HYPERPARAMETER",
+    "description": "The dot products between queries and keys scaled by 1/√dk."
+   },
+   {
+    "name": "queries",
+    "type": "COMPONENT",
+    "description": "Input vectors that are linearly projected h times with different learned linear projections."
+   },
+   {
+    "name": "keys",
+    "type": "COMPONENT",
+    "description": "Input vectors that are linearly projected h times with different learned linear projections."
+   },
+   {
+    "name": "values",
+    "type": "COMPONENT",
+    "description": "Input vectors that are linearly projected h times with different learned linear projections."
+   },
+   {
+    "name": "attention function",
+    "type": "METHOD",
+    "description": "A function used to compute the attention scores between queries and keys."
+   },
+   {
+    "name": "Concat(head1, ..., headh)W_O",
+    "type": "MODEL",
+    "description": "The final output after concatenating the heads and applying a linear projection."
+   },
+   {
+    "name": "headi",
+    "type": "COMPONENT",
+    "description": "Each individual attention head computed in parallel on the projected queries, keys, and values."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Multi-Head Attention",
+    "target": "queries",
+    "relation": "projects",
+    "description": "The queries are linearly projected h times with different learned linear projections."
+   },
+   {
+    "source": "Multi-Head Attention",
+    "target": "keys",
+    "relation": "projects",
+    "description": "The keys are linearly projected h times with different learned linear projections."
+   },
+   {
+    "source": "Multi-Head Attention",
+    "target": "values",
+    "relation": "projects",
+    "description": "The values are linearly projected h times with different learned linear projections."
+   },
+   {
+    "source": "queries",
+    "target": "keys",
+    "relation": "computes attention scores with",
+    "description": "The attention function computes the attention scores between the queries and keys."
+   },
+   {
+    "source": "queries",
+    "target": "values",
+    "relation": "computes attention scores with",
+    "description": "The attention function computes the attention scores between the queries and values."
+   },
+   {
+    "source": "headi",
+    "target": "queries",
+    "relation": "applies to",
+    "description": "Each head is computed in parallel on the projected queries, keys, and values."
+   },
+   {
+    "source": "headi",
+    "target": "keys",
+    "relation": "applies to",
+    "description": "Each head is computed in parallel on the projected queries, keys, and values."
+   },
+   {
+    "source": "headi",
+    "target": "values",
+    "relation": "applies to",
+    "description": "Each head is computed in parallel on the projected queries, keys, and values."
+   },
+   {
+    "source": "Concat(head1, ..., headh)W_O",
+    "target": "headi",
+    "relation": "concatenates",
+    "description": "The final output is obtained by concatenating the heads and applying a linear projection."
+   }
+  ]
+ },
+ {
+  "chunk_id": 14,
+  "entities": [
+   {
+    "name": "MultiHead",
+    "type": "MODEL",
+    "description": "A model using multiple attention heads"
+   },
+   {
+    "name": "headi",
+    "type": "COMPONENT",
+    "description": "An individual attention head in MultiHead model"
+   },
+   {
+    "name": "Attention",
+    "type": "METHOD",
+    "description": "A method used in attention mechanism"
+   },
+   {
+    "name": "QW",
+    "type": "HYPERPARAMETER",
+    "description": "Parameter matrix for query projection in attention mechanism"
+   },
+   {
+    "name": "WQ",
+    "type": "HYPERPARAMETER",
+    "description": "Parameter matrix for query projection in attention mechanism"
+   },
+   {
+    "name": "WO",
+    "type": "HYPERPARAMETER",
+    "description": "Parameter matrix for output projection in attention mechanism"
+   },
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "Dimensionality of the model"
+   },
+   {
+    "name": "dv",
+    "type": "HYPERPARAMETER",
+    "description": "Dimensionality of the value vector in attention mechanism"
+   },
+   {
+    "name": "h",
+    "type": "HYPERPARAMETER",
+    "description": "Number of parallel attention layers or heads"
+   },
+   {
+    "name": "dk",
+    "type": "HYPERPARAMETER",
+    "description": "Dimensionality of each attention head"
+   },
+   {
+    "name": "encoder-decoder attention",
+    "type": "TASK",
+    "description": "A task where the queries come from the previous decoder layer and the memory keys and values come from the encoder output"
+   },
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A model that uses multi-head attention in three different ways"
+   }
+  ],
+  "relations": [
+   {
+    "source": "MultiHead",
+    "target": "headi",
+    "relation": "comprises",
+    "description": "MultiHead model comprises multiple individual attention heads"
+   },
+   {
+    "source": "headi",
+    "target": "Attention",
+    "relation": "uses",
+    "description": "Each individual attention head uses the Attention method"
+   },
+   {
+    "source": "QW",
+    "target": "headi",
+    "relation": "projects",
+    "description": "Parameter matrix QW projects the query for each attention head"
+   },
+   {
+    "source": "WQ",
+    "target": "headi",
+    "relation": "projects",
+    "description": "Parameter matrix WQ projects the query for each attention head"
+   },
+   {
+    "source": "WO",
+    "target": "headi",
+    "relation": "projects",
+    "description": "Parameter matrix WO projects the output for each attention head"
+   },
+   {
+    "source": "dmodel",
+    "target": "headi",
+    "relation": "dimensionality_of",
+    "description": "The dimensionality of the model is dmodel"
+   },
+   {
+    "source": "dv",
+    "target": "headi",
+    "relation": "dimensionality_of",
+    "description": "The dimensionality of the value vector in attention mechanism is dv"
+   },
+   {
+    "source": "h",
+    "target": "headi",
+    "relation": "number_of",
+    "description": "There are h parallel attention layers or heads"
+   },
+   {
+    "source": "dk",
+    "target": "headi",
+    "relation": "dimensionality_of_each",
+    "description": "The dimensionality of each attention head is dk"
+   },
+   {
+    "source": "MultiHead",
+    "target": "Transformer",
+    "relation": "used_in",
+    "description": "MultiHead model is used in the Transformer model"
+   },
+   {
+    "source": "encoder-decoder attention",
+    "target": "Transformer",
+    "relation": "task_performed_by",
+    "description": "Encoder-decoder attention is one of the tasks performed by the Transformer model"
+   }
+  ]
+ },
+ {
+  "chunk_id": 15,
+  "entities": [
+   {
+    "name": "encoder",
+    "type": "COMPONENT",
+    "description": "A component in sequence-to-sequence models."
+   },
+   {
+    "name": "decoder",
+    "type": "COMPONENT",
+    "description": "A component in sequence-to-sequence models."
+   },
+   {
+    "name": "self-attention",
+    "type": "METHOD",
+    "description": "A method used in both encoder and decoder components."
+   },
+   {
+    "name": "scaled dot-product attention",
+    "type": "METHOD",
+    "description": "A method used in self-attention layers to compute attention scores."
+   },
+   {
+    "name": "auto-regressive property",
+    "type": "CONCEPT",
+    "description": "A concept related to the sequential nature of the decoder."
+   }
+  ],
+  "relations": [
+   {
+    "source": "self-attention",
+    "target": "encoder",
+    "relation": "used in",
+    "description": "Self-attention layers are used in the encoder component."
+   },
+   {
+    "source": "self-attention",
+    "target": "decoder",
+    "relation": "used in",
+    "description": "Self-attention layers are used in the decoder component."
+   },
+   {
+    "source": "encoder",
+    "target": "previous layer",
+    "relation": "attends to",
+    "description": "Each position in the encoder can attend to all positions in the previous layer of the encoder."
+   },
+   {
+    "source": "decoder",
+    "target": "decoder",
+    "relation": "attends to",
+    "description": "Each position in the decoder can attend to all positions in the decoder up to and including that position."
+   },
+   {
+    "source": "decoder",
+    "target": "scaled dot-product attention",
+    "relation": "uses",
+    "description": "Scaled dot-product attention is used inside the decoder to mask out illegal connections."
+   }
+  ]
+ },
+ {
+  "chunk_id": 16,
+  "entities": [
+   {
+    "name": "FFN",
+    "type": "MODEL",
+    "description": ""
+   },
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "dimensionality of input and output is dmodel = 512"
+   },
+   {
+    "name": "dff",
+    "type": "HYPERPARAMETER",
+    "description": "inner-layer has dimensionality dff = 2048"
+   },
+   {
+    "name": "linear transformations",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "ReLU activation",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "convolutions",
+    "type": "COMPONENT",
+    "description": "Another way of describing this is as two convolutions with kernel size 1"
+   },
+   {
+    "name": "embeddings",
+    "type": "COMPONENT",
+    "description": "used to convert the input tokens and output tokens to vectors of dimension dmodel"
+   },
+   {
+    "name": "softmax",
+    "type": "COMPONENT",
+    "description": "used to convert the decoder output to predicted next-token probabilities"
+   },
+   {
+    "name": "weight matrix",
+    "type": "COMPONENT",
+    "description": "shared the same weight matrix between the two embedding layers and the pre-softmax linear transformation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "FFN",
+    "target": "linear transformations",
+    "relation": "consists of",
+    "description": ""
+   },
+   {
+    "source": "linear transformations",
+    "target": "ReLU activation",
+    "relation": "with",
+    "description": ""
+   },
+   {
+    "source": "linear transformations",
+    "target": "dmodel",
+    "relation": "=",
+    "description": "dimensionality of input and output is dmodel = 512"
+   },
+   {
+    "source": "linear transformations",
+    "target": "dff",
+    "relation": "=",
+    "description": "inner-layer has dimensionality dff = 2048"
+   },
+   {
+    "source": "embeddings",
+    "target": "input tokens",
+    "relation": "converts to",
+    "description": "vectors of dimension dmodel"
+   },
+   {
+    "source": "embeddings",
+    "target": "output tokens",
+    "relation": "converts to",
+    "description": "vectors of dimension dmodel"
+   },
+   {
+    "source": "softmax",
+    "target": "decoder output",
+    "relation": "converts to",
+    "description": "predicted next-token probabilities"
+   },
+   {
+    "source": "weight matrix",
+    "target": "embedding layers",
+    "relation": "shared with",
+    "description": ""
+   },
+   {
+    "source": "weight matrix",
+    "target": "pre-softmax linear transformation",
+    "relation": "shared with",
+    "description": ""
+   }
+  ]
+ },
+ {
+  "chunk_id": 17,
+  "entities": [
+   {
+    "name": "embedding layers",
+    "type": "COMPONENT",
+    "description": "The component where weights are multiplied by √dmodel."
+   },
+   {
+    "name": "pre-softmax linear transformation",
+    "type": "COMPONENT",
+    "description": "A component similar to [30] used in the model."
+   },
+   {
+    "name": "self-attention",
+    "type": "METHOD",
+    "description": "A method with complexity O(n2 · d) and maximum path length O(1)."
+   },
+   {
+    "name": "recurrent",
+    "type": "METHOD",
+    "description": "A method with complexity O(n · d2) and maximum path length O(n)."
+   },
+   {
+    "name": "convolutional",
+    "type": "METHOD",
+    "description": "A method with complexity O(k · n · d2) and maximum path length O(1)."
+   },
+   {
+    "name": "self-attention (restricted)",
+    "type": "METHOD",
+    "description": "A method with complexity O(r · n · d) and maximum path length O(1)."
+   },
+   {
+    "name": "positional encodings",
+    "type": "HYPERPARAMETER",
+    "description": "Information added to the input embeddings to account for the order of the sequence."
+   },
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "The dimension of the embeddings and positional encodings, which are summed together."
+   },
+   {
+    "name": "n",
+    "type": "HYPERPARAMETER",
+    "description": "The sequence length."
+   },
+   {
+    "name": "d",
+    "type": "HYPERPARAMETER",
+    "description": "The representation dimension."
+   },
+   {
+    "name": "k",
+    "type": "HYPERPARAMETER",
+    "description": "The kernel size of convolutions."
+   },
+   {
+    "name": "r",
+    "type": "HYPERPARAMETER",
+    "description": "The size of the neighborhood in restricted self-attention."
+   },
+   {
+    "name": "encoder",
+    "type": "COMPONENT",
+    "description": "The component of the model that processes the input sequence."
+   },
+   {
+    "name": "decoder",
+    "type": "COMPONENT",
+    "description": "The component of the model that generates the output sequence."
+   }
+  ],
+  "relations": [
+   {
+    "source": "embedding layers",
+    "target": "dmodel",
+    "relation": "multiply by",
+    "description": "Weights in the embedding layers are multiplied by √dmodel."
+   },
+   {
+    "source": "self-attention",
+    "target": "dmodel",
+    "relation": "complexity",
+    "description": "Self-attention has a complexity of O(n2 · d)."
+   },
+   {
+    "source": "recurrent",
+    "target": "dmodel",
+    "relation": "complexity",
+    "description": "Recurrent has a complexity of O(n · d2)."
+   },
+   {
+    "source": "convolutional",
+    "target": "dmodel",
+    "relation": "complexity",
+    "description": "Convolutional has a complexity of O(k · n · d2)."
+   },
+   {
+    "source": "self-attention (restricted)",
+    "target": "dmodel",
+    "relation": "complexity",
+    "description": "Self-attention (restricted) has a complexity of O(r · n · d)."
+   },
+   {
+    "source": "positional encodings",
+    "target": "dmodel",
+    "relation": "sum with",
+    "description": "Positional encodings are added to the input embeddings and have the same dimension dmodel as the embeddings."
+   },
+   {
+    "source": "encoder",
+    "target": "positional encodings",
+    "relation": "add",
+    "description": "Positional encodings are added to the input embeddings at the bottom of the encoder stack."
+   },
+   {
+    "source": "decoder",
+    "target": "positional encodings",
+    "relation": "add",
+    "description": "Positional encodings are added to the input embeddings at the bottom of the decoder stack."
+   }
+  ]
+ },
+ {
+  "chunk_id": 18,
+  "entities": [
+   {
+    "name": "sine",
+    "type": "CONCEPT",
+    "description": "A type of trigonometric function used for positional encoding."
+   },
+   {
+    "name": "cosine",
+    "type": "CONCEPT",
+    "description": "A type of trigonometric function used for positional encoding."
+   },
+   {
+    "name": "positional encoding",
+    "type": "METHOD",
+    "description": "A method to add positional information to the input embeddings in a transformer model."
+   },
+   {
+    "name": "learned positional embeddings",
+    "type": "METHOD",
+    "description": "A method to add positional information to the input embeddings in a transformer model, where the embeddings are learned during training."
+   },
+   {
+    "name": "sinusoidal version",
+    "type": "METHOD",
+    "description": "A specific method of positional encoding using sine and cosine functions."
+   },
+   {
+    "name": "PE",
+    "type": "COMPONENT",
+    "description": "The positional encoding component in the transformer model."
+   },
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the model's embedding and positional encoding vectors."
+   },
+   {
+    "name": "pos",
+    "type": "HYPERPARAMETER",
+    "description": "The position index in the positional encoding formula."
+   },
+   {
+    "name": "i",
+    "type": "HYPERPARAMETER",
+    "description": "The dimension index in the positional encoding formula."
+   },
+   {
+    "name": "offset k",
+    "type": "HYPERPARAMETER",
+    "description": "A fixed offset used in the positional encoding formula to represent the relative positions."
+   },
+   {
+    "name": "Table 3 row (E)",
+    "type": "RESULT",
+    "description": "A result from an experiment comparing different positional encoding methods."
+   }
+  ],
+  "relations": [
+   {
+    "source": "sine",
+    "target": "positional encoding",
+    "relation": "used in",
+    "description": "Sine functions are used in the positional encoding method."
+   },
+   {
+    "source": "cosine",
+    "target": "positional encoding",
+    "relation": "used in",
+    "description": "Cosine functions are used in the positional encoding method."
+   },
+   {
+    "source": "learned positional embeddings",
+    "target": "positional encoding",
+    "relation": "compared to",
+    "description": "Learned positional embeddings were compared to the positional encoding method in the experiment."
+   },
+   {
+    "source": "sinusoidal version",
+    "target": "positional encoding",
+    "relation": "chosen over",
+    "description": "The sinusoidal version was chosen over learned positional embeddings in the experiment."
+   },
+   {
+    "source": "PE",
+    "target": "positional encoding",
+    "relation": "part of",
+    "description": "PE is part of the positional encoding method."
+   },
+   {
+    "source": "dmodel",
+    "target": "embedding",
+    "relation": "same dimension as",
+    "description": "The dimension of the positional encoding is the same as the embedding dimension, both being dmodel."
+   },
+   {
+    "source": "pos",
+    "target": "position",
+    "relation": "represents",
+    "description": "Pos represents the position index in the positional encoding formula."
+   },
+   {
+    "source": "i",
+    "target": "dimension",
+    "relation": "represents",
+    "description": "I represents the dimension index in the positional encoding formula."
+   },
+   {
+    "source": "offset k",
+    "target": "relative positions",
+    "relation": "represents",
+    "description": "Offset k is used to represent relative positions in the positional encoding formula."
+   },
+   {
+    "source": "Table 3 row (E)",
+    "target": "results",
+    "relation": "produced",
+    "description": "Table 3 row (E) shows the results of the experiment comparing different positional encoding methods."
+   }
+  ]
+ },
+ {
+  "chunk_id": 19,
+  "entities": [
+   {
+    "name": "sinusoidal version",
+    "type": "MODEL",
+    "description": "a type of positional encoding"
+   },
+   {
+    "name": "self-attention layers",
+    "type": "COMPONENT",
+    "description": "layers used for sequence transduction"
+   },
+   {
+    "name": "recurrent layers",
+    "type": "COMPONENT",
+    "description": "commonly used layers for sequence processing"
+   },
+   {
+    "name": "convolutional layers",
+    "type": "COMPONENT",
+    "description": "commonly used layers for sequence processing"
+   },
+   {
+    "name": "symbol representations",
+    "type": "HYPERPARAMETER",
+    "description": "input sequences (x1, ..., xn)"
+   },
+   {
+    "name": "hidden layer",
+    "type": "COMPONENT",
+    "description": "a component in an encoder or decoder"
+   },
+   {
+    "name": "sequence transduction encoder",
+    "type": "TASK",
+    "description": "a task involving sequence-to-sequence transformation"
+   },
+   {
+    "name": "sequence transduction decoder",
+    "type": "TASK",
+    "description": "a task involving sequence-to-sequence transformation"
+   },
+   {
+    "name": "computational complexity",
+    "type": "METRIC",
+    "description": "total computational complexity per layer"
+   },
+   {
+    "name": "parallelization",
+    "type": "CONCEPT",
+    "description": "ability to perform computations in parallel"
+   }
+  ],
+  "relations": [
+   {
+    "source": "sinusoidal version",
+    "target": "MODEL",
+    "relation": "chose",
+    "description": "we chose the sinusoidal version for its ability to extrapolate to longer sequences"
+   },
+   {
+    "source": "self-attention layers",
+    "target": "COMPONENT",
+    "relation": "compare",
+    "description": "we compare self-attention layers to recurrent and convolutional layers"
+   },
+   {
+    "source": "recurrent layers",
+    "target": "COMPONENT",
+    "relation": "compare",
+    "description": "we compare self-attention layers to recurrent and convolutional layers"
+   },
+   {
+    "source": "convolutional layers",
+    "target": "COMPONENT",
+    "relation": "compare",
+    "description": "we compare self-attention layers to recurrent and convolutional layers"
+   },
+   {
+    "source": "computational complexity",
+    "target": "METRIC",
+    "relation": "consider",
+    "description": "one of the desiderata is the computational complexity per layer"
+   },
+   {
+    "source": "parallelization",
+    "target": "CONCEPT",
+    "relation": "consider",
+    "description": "another desideratum is the amount of computation that can be parallelized"
+   }
+  ]
+ },
+ {
+  "chunk_id": 20,
+  "entities": [
+   {
+    "name": "self-attention layer",
+    "type": "COMPONENT",
+    "description": "a component that connects all positions with a constant number of sequentially executed operations"
+   },
+   {
+    "name": "recurrent layer",
+    "type": "COMPONENT",
+    "description": "a component that requires O(n) sequential operations"
+   },
+   {
+    "name": "path length",
+    "type": "HYPERPARAMETER",
+    "description": "the measure of the minimum number of sequential operations required for computation"
+   },
+   {
+    "name": "long-range dependencies",
+    "type": "CONCEPT",
+    "description": "dependencies between positions in the input and output sequences that are far apart"
+   },
+   {
+    "name": "sequence transduction tasks",
+    "type": "TASK",
+    "description": "tasks involving transformation of one sequence into another"
+   },
+   {
+    "name": "input positions",
+    "type": "HYPERPARAMETER",
+    "description": "positions in the input sequence"
+   },
+   {
+    "name": "output positions",
+    "type": "HYPERPARAMETER",
+    "description": "positions in the output sequence"
+   },
+   {
+    "name": "sequential operations",
+    "type": "HYPERPARAMETER",
+    "description": "operations that must be performed sequentially"
+   }
+  ],
+  "relations": [
+   {
+    "source": "self-attention layer",
+    "target": "path length",
+    "relation": "connects all positions",
+    "description": "a self-attention layer connects all positions with a constant number of sequentially executed operations"
+   },
+   {
+    "source": "recurrent layer",
+    "target": "path length",
+    "relation": "requires O(n) sequential operations",
+    "description": "a recurrent layer requires O(n) sequential operations"
+   },
+   {
+    "source": "path length",
+    "target": "long-range dependencies",
+    "relation": "affects learning",
+    "description": "the shorter these paths between any combination of positions in the input and output sequences, the easier it is to learn long-range dependencies"
+   },
+   {
+    "source": "long-range dependencies",
+    "target": "sequence transduction tasks",
+    "relation": "is a key challenge",
+    "description": "learning long-range dependencies is a key challenge in many sequence transduction tasks"
+   }
+  ]
+ },
+ {
+  "chunk_id": 21,
+  "entities": [
+   {
+    "name": "self-attention",
+    "type": "MODEL",
+    "description": "A model layer that uses self-attention mechanism."
+   },
+   {
+    "name": "recurrent layers",
+    "type": "MODEL",
+    "description": "A type of model layer that processes data sequentially."
+   },
+   {
+    "name": "sequence length n",
+    "type": "HYPERPARAMETER",
+    "description": "The length of the input sequence."
+   },
+   {
+    "name": "representation dimensionality d",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the input representation."
+   },
+   {
+    "name": "sentence representations",
+    "type": "DATASET",
+    "description": "Representations of sentences used in machine translation models."
+   },
+   {
+    "name": "word-piece",
+    "type": "METHOD",
+    "description": "A method for subword tokenization."
+   },
+   {
+    "name": "byte-pair",
+    "type": "METHOD",
+    "description": "A method for subword tokenization."
+   },
+   {
+    "name": "state-of-the-art models",
+    "type": "MODEL",
+    "description": "Models that are currently the best performing in their task."
+   },
+   {
+    "name": "very long sequences",
+    "type": "CONCEPT",
+    "description": "Sequences that are longer than typical input lengths for models."
+   }
+  ],
+  "relations": [
+   {
+    "source": "self-attention",
+    "target": "recurrent layers",
+    "relation": "faster than",
+    "description": "Self-attention layers are faster than recurrent layers when sequence length n is smaller than the representation dimensionality d."
+   },
+   {
+    "source": "sequence length n",
+    "target": "representation dimensionality d",
+    "relation": "smaller than",
+    "description": "Sequence length n is smaller than the representation dimensionality d."
+   },
+   {
+    "source": "self-attention",
+    "target": "sentence representations",
+    "relation": "uses",
+    "description": "State-of-the-art models in machine translations use sentence representations such as word-piece and byte-pair."
+   },
+   {
+    "source": "self-attention",
+    "target": "very long sequences",
+    "relation": "could be restricted to",
+    "description": "Self-attention could be restricted to considering only a neighborhood of size r in the input sequence for tasks involving very long sequences."
+   }
+  ]
+ },
+ {
+  "chunk_id": 22,
+  "entities": [
+   {
+    "name": "self-attention layer",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "point-wise feed-forward layer",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "convolutional layer",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "recurrent layer",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "separable convolution",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "dilated convolution",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "stack of convolutional layers",
+    "type": "COMPONENT",
+    "description": ""
+   },
+   {
+    "name": "n",
+    "type": "HYPERPARAMETER",
+    "description": ""
+   },
+   {
+    "name": "k",
+    "type": "HYPERPARAMETER",
+    "description": ""
+   },
+   {
+    "name": "r",
+    "type": "HYPERPARAMETER",
+    "description": ""
+   }
+  ],
+  "relations": [
+   {
+    "source": "convolutional layer",
+    "target": "separable convolution",
+    "relation": "reduced complexity to",
+    "description": "O(k · n · d + n · d2)"
+   },
+   {
+    "source": "convolutional layer",
+    "target": "recurrent layer",
+    "relation": "more expensive than",
+    "description": "by a factor of k"
+   },
+   {
+    "source": "stack of convolutional layers",
+    "target": "dilated convolution",
+    "relation": "requires",
+    "description": "O(logk(n)) in the case of dilated convolutions [18]"
+   },
+   {
+    "source": "stack of convolutional layers",
+    "target": "convolutional layer",
+    "relation": "increases the length of the longest paths between",
+    "description": "any two positions in the network"
+   }
+  ]
+ },
+ {
+  "chunk_id": 23,
+  "entities": [
+   {
+    "name": "separable convolution",
+    "type": "MODEL",
+    "description": "a combination of a self-attention layer and a point-wise feed-forward layer"
+   },
+   {
+    "name": "self-attention layer",
+    "type": "COMPONENT",
+    "description": "a component of separable convolution"
+   },
+   {
+    "name": "point-wise feed-forward layer",
+    "type": "COMPONENT",
+    "description": "a component of separable convolution"
+   },
+   {
+    "name": "WMT 2014 English-German dataset",
+    "type": "DATASET",
+    "description": "a dataset consisting of about 4.5 million sentence pairs"
+   },
+   {
+    "name": "WMT 2014 English-French dataset",
+    "type": "DATASET",
+    "description": "a dataset consisting of 36M sentences"
+   },
+   {
+    "name": "byte-pair encoding",
+    "type": "METHOD",
+    "description": "a method for encoding sentences"
+   },
+   {
+    "name": "sentence pair",
+    "type": "CONCEPT",
+    "description": "a pair of sentences in the dataset"
+   },
+   {
+    "name": "sequence length",
+    "type": "HYPERPARAMETER",
+    "description": "a parameter used for batching sentences"
+   },
+   {
+    "name": "training batch",
+    "type": "CONCEPT",
+    "description": "a set of sentence pairs used for training"
+   }
+  ],
+  "relations": [
+   {
+    "source": "separable convolution",
+    "target": "self-attention layer",
+    "relation": "comprises",
+    "description": "separable convolution is composed of a self-attention layer"
+   },
+   {
+    "source": "separable convolution",
+    "target": "point-wise feed-forward layer",
+    "relation": "comprises",
+    "description": "separable convolution is composed of a point-wise feed-forward layer"
+   },
+   {
+    "source": "WMT 2014 English-German dataset",
+    "target": "sentence pair",
+    "relation": "contains",
+    "description": "the WMT 2014 English-German dataset contains sentence pairs"
+   },
+   {
+    "source": "WMT 2014 English-French dataset",
+    "target": "sentence pair",
+    "relation": "contains",
+    "description": "the WMT 2014 English-French dataset contains sentence pairs"
+   },
+   {
+    "source": "sentence pair",
+    "target": "sequence length",
+    "relation": "batched_by",
+    "description": "sentences are batched together by approximate sequence length"
+   },
+   {
+    "source": "training batch",
+    "target": "sentence pair",
+    "relation": "contains",
+    "description": "each training batch contains a set of sentence pairs"
+   }
+  ]
+ },
+ {
+  "chunk_id": 24,
+  "entities": [
+   {
+    "name": "Adam optimizer",
+    "type": "METHOD",
+    "description": "an optimization algorithm"
+   },
+   {
+    "name": "NVIDIA P100 GPUs",
+    "type": "HARDWARE",
+    "description": "a type of GPU used for training"
+   },
+   {
+    "name": "base models",
+    "type": "MODEL",
+    "description": "models with standard hyperparameters"
+   },
+   {
+    "name": "big models",
+    "type": "MODEL",
+    "description": "models with larger parameters or more complex architecture"
+   },
+   {
+    "name": "warmup_steps",
+    "type": "HYPERPARAMETER",
+    "description": "4000 training steps for linear learning rate increase"
+   },
+   {
+    "name": "learning rate",
+    "type": "HYPERPARAMETER",
+    "description": "varied over the course of training"
+   },
+   {
+    "name": "step_num",
+    "type": "HYPERPARAMETER",
+    "description": "the current training step number"
+   },
+   {
+    "name": "β1",
+    "type": "HYPERPARAMETER",
+    "description": "0.9, a parameter for the Adam optimizer"
+   },
+   {
+    "name": "β2",
+    "type": "HYPERPARAMETER",
+    "description": "0.98, a parameter for the Adam optimizer"
+   },
+   {
+    "name": "ϵ",
+    "type": "HYPERPARAMETER",
+    "description": "10^-9, a parameter for the Adam optimizer"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Adam optimizer",
+    "target": "β1",
+    "relation": "uses",
+    "description": "the Adam optimizer uses β1 as a parameter"
+   },
+   {
+    "source": "Adam optimizer",
+    "target": "β2",
+    "relation": "uses",
+    "description": "the Adam optimizer uses β2 as a parameter"
+   },
+   {
+    "source": "Adam optimizer",
+    "target": "ϵ",
+    "relation": "uses",
+    "description": "the Adam optimizer uses ϵ as a parameter"
+   },
+   {
+    "source": "base models",
+    "target": "NVIDIA P100 GPUs",
+    "relation": "trained_on",
+    "description": "base models were trained on NVIDIA P100 GPUs"
+   },
+   {
+    "source": "base models",
+    "target": "learning rate",
+    "relation": "has",
+    "description": "base models have a learning rate that varies over training steps"
+   },
+   {
+    "source": "big models",
+    "target": "NVIDIA P100 GPUs",
+    "relation": "trained_on",
+    "description": "big models were trained on NVIDIA P100 GPUs"
+   },
+   {
+    "source": "big models",
+    "target": "learning rate",
+    "relation": "has",
+    "description": "big models have a learning rate that varies over training steps"
+   },
+   {
+    "source": "learning rate",
+    "target": "warmup_steps",
+    "relation": "varies_over",
+    "description": "the learning rate varies over the course of training based on warmup_steps"
+   }
+  ]
+ },
+ {
+  "chunk_id": 25,
+  "entities": [
+   {
+    "name": "warmup_steps",
+    "type": "HYPERPARAMETER",
+    "description": "warmup_steps = 4000"
+   },
+   {
+    "name": "ByteNet [18]",
+    "type": "MODEL",
+    "description": "BLEU score: 23.75, FLOPs: 1.0 · 1020"
+   },
+   {
+    "name": "Deep-Att + PosUnk [39]",
+    "type": "MODEL",
+    "description": "BLEU score: 39.2, FLOPs: 1.0 · 1020"
+   },
+   {
+    "name": "GNMT + RL [38]",
+    "type": "MODEL",
+    "description": "BLEU score: 24.6, FLOPs: 2.3 · 1019"
+   },
+   {
+    "name": "ConvS2S [9]",
+    "type": "MODEL",
+    "description": "BLEU score: 25.16, FLOPs: 9.6 · 1018"
+   },
+   {
+    "name": "MoE [32]",
+    "type": "MODEL",
+    "description": "BLEU score: 26.03, FLOPs: 2.0 · 1019"
+   },
+   {
+    "name": "Deep-Att + PosUnk Ensemble [39]",
+    "type": "MODEL",
+    "description": "BLEU score: 40.4, FLOPs: 8.0 · 1020"
+   },
+   {
+    "name": "GNMT + RL Ensemble [38]",
+    "type": "MODEL",
+    "description": "BLEU score: 26.30, FLOPs: 1.8 · 1020"
+   },
+   {
+    "name": "ConvS2S Ensemble [9]",
+    "type": "MODEL",
+    "description": "BLEU score: 26.36, FLOPs: 7.7 · 1019"
+   },
+   {
+    "name": "Transformer (base model)",
+    "type": "MODEL",
+    "description": "BLEU score: 27.3, FLOPs: 3.3 · 1018"
+   },
+   {
+    "name": "Transformer (big)",
+    "type": "MODEL",
+    "description": "BLEU score: 28.4, FLOPs: 2.3 · 1019"
+   },
+   {
+    "name": "Residual Dropout",
+    "type": "HYPERPARAMETER",
+    "description": "Pdrop = 0.1"
+   },
+   {
+    "name": "sub-layer",
+    "type": "COMPONENT",
+    "description": "applied dropout to the output of each sub-layer"
+   },
+   {
+    "name": "embeddings",
+    "type": "COMPONENT",
+    "description": "sums of the embeddings and the positional encodings"
+   }
+  ],
+  "relations": [
+   {
+    "source": "warmup_steps",
+    "target": "Transformer (base model)",
+    "relation": "used for",
+    "description": "warmup_steps = 4000"
+   },
+   {
+    "source": "ByteNet [18]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 23.75, FLOPs: 1.0 · 1020"
+   },
+   {
+    "source": "Deep-Att + PosUnk [39]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 39.2, FLOPs: 1.0 · 1020"
+   },
+   {
+    "source": "GNMT + RL [38]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 24.6, FLOPs: 2.3 · 1019"
+   },
+   {
+    "source": "ConvS2S [9]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 25.16, FLOPs: 9.6 · 1018"
+   },
+   {
+    "source": "MoE [32]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 26.03, FLOPs: 2.0 · 1019"
+   },
+   {
+    "source": "Deep-Att + PosUnk Ensemble [39]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 40.4, FLOPs: 8.0 · 1020"
+   },
+   {
+    "source": "GNMT + RL Ensemble [38]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 26.30, FLOPs: 1.8 · 1020"
+   },
+   {
+    "source": "ConvS2S Ensemble [9]",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 26.36, FLOPs: 7.7 · 1019"
+   },
+   {
+    "source": "Transformer (base model)",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 27.3, FLOPs: 3.3 · 1018"
+   },
+   {
+    "source": "Transformer (big)",
+    "target": "EN-DE",
+    "relation": "achieves",
+    "description": "BLEU score: 28.4, FLOPs: 2.3 · 1019"
+   },
+   {
+    "source": "Residual Dropout",
+    "target": "sub-layer",
+    "relation": "applied to",
+    "description": "applied dropout to the output of each sub-layer"
+   },
+   {
+    "source": "embeddings",
+    "target": "sub-layer",
+    "relation": "sums with",
+    "description": "sums of the embeddings and the positional encodings"
+   }
+  ]
+ },
+ {
+  "chunk_id": 26,
+  "entities": [
+   {
+    "name": "multi-head attention",
+    "type": "COMPONENT",
+    "description": "a component of the transformer model"
+   },
+   {
+    "name": "P100 GPU",
+    "type": "HARDWARE",
+    "description": "a type of GPU used for training"
+   },
+   {
+    "name": "WMT 2014 English-German translation task",
+    "type": "TASK",
+    "description": "a specific translation task"
+   },
+   {
+    "name": "WMT 2014 English-French translation task",
+    "type": "TASK",
+    "description": "another specific translation task"
+   },
+   {
+    "name": "base model",
+    "type": "MODEL",
+    "description": "the basic version of the transformer model"
+   },
+   {
+    "name": "big transformer model",
+    "type": "MODEL",
+    "description": "a larger version of the transformer model"
+   },
+   {
+    "name": "label smoothing",
+    "type": "HYPERPARAMETER",
+    "description": "a technique used during training with value ϵls = 0.1"
+   },
+   {
+    "name": "dropout",
+    "type": "HYPERPARAMETER",
+    "description": "a technique used to prevent overfitting with rate Pdrop = 0.1"
+   },
+   {
+    "name": "perplexity",
+    "type": "METRIC",
+    "description": "a measure of how well the model predicts the validation set"
+   },
+   {
+    "name": "BLEU score",
+    "type": "METRIC",
+    "description": "a metric for evaluating machine translation quality"
+   },
+   {
+    "name": "Transformer (big)",
+    "type": "MODEL",
+    "description": "a specific model configuration for the WMT 2014 English-to-German task"
+   },
+   {
+    "name": "Table 2",
+    "type": "CONCEPT",
+    "description": "a table listing model configurations and performance"
+   },
+   {
+    "name": "Table 3",
+    "type": "CONCEPT",
+    "description": "a table detailing the configuration of the big transformer model"
+   }
+  ],
+  "relations": [
+   {
+    "source": "base model",
+    "target": "dropout",
+    "relation": "uses",
+    "description": "the base model uses a dropout rate of Pdrop = 0.1"
+   },
+   {
+    "source": "big transformer model",
+    "target": "dropout",
+    "relation": "uses",
+    "description": "the big transformer model uses a dropout rate of Pdrop = 0.1"
+   },
+   {
+    "source": "big transformer model",
+    "target": "WMT 2014 English-German translation task",
+    "relation": "outperforms",
+    "description": "the big transformer model outperforms the best previously reported models on the WMT 2014 English-German translation task"
+   },
+   {
+    "source": "big transformer model",
+    "target": "WMT 2014 English-French translation task",
+    "relation": "achieves",
+    "description": "the big model achieves a BLEU score of 41.0 on the WMT 2014 English-French translation task"
+   },
+   {
+    "source": "big transformer model",
+    "target": "perplexity",
+    "relation": "improves",
+    "description": "label smoothing improves perplexity by making the model more unsure"
+   },
+   {
+    "source": "big transformer model",
+    "target": "BLEU score",
+    "relation": "improves",
+    "description": "label smoothing improves the BLEU score"
+   },
+   {
+    "source": "big transformer model",
+    "target": "training cost",
+    "relation": "reduces",
+    "description": "our base model surpasses all previously published models and ensembles at a fraction of the training cost of any of the competitive models"
+   },
+   {
+    "source": "big transformer model",
+    "target": "state-of-the-art BLEU score",
+    "relation": "establishes",
+    "description": "the big transformer model establishes a new state-of-the-art BLEU score of 28.4 on the WMT 2014 English-to-German translation task"
+   }
+  ]
+ },
+ {
+  "chunk_id": 27,
+  "entities": [
+   {
+    "name": "Transformer (big)",
+    "type": "MODEL",
+    "description": "A large-scale Transformer model trained for English-to-French translation."
+   },
+   {
+    "name": "base model",
+    "type": "MODEL",
+    "description": "A single model obtained by averaging the last 5 checkpoints for base models."
+   },
+   {
+    "name": "big model",
+    "type": "MODEL",
+    "description": "A large-scale Transformer model trained for English-to-French translation, using more checkpoints for averaging."
+   },
+   {
+    "name": "dropout rate Pdrop = 0.1",
+    "type": "HYPERPARAMETER",
+    "description": "The dropout rate used for the base model, set to 0.1."
+   },
+   {
+    "name": "beam search with a beam size of 4 and length penalty α = 0.6",
+    "type": "METHOD",
+    "description": "Beam search method used for decoding with specified parameters."
+   },
+   {
+    "name": "input length + 50",
+    "type": "HYPERPARAMETER",
+    "description": "Maximum output length during inference, set to input length plus 50."
+   },
+   {
+    "name": "Table 2",
+    "type": "DATASET",
+    "description": "A table summarizing the results and comparing translation quality and training costs to other model architectures."
+   },
+   {
+    "name": "English-to-French",
+    "type": "TASK",
+    "description": "Translation task from English to French."
+   },
+   {
+    "name": "English-to-German",
+    "type": "TASK",
+    "description": "Translation task from English to German."
+   },
+   {
+    "name": "development set",
+    "type": "DATASET",
+    "description": "A dataset used for experimentation and hyperparameter tuning."
+   },
+   {
+    "name": "sustained single-precision floating-point capacity",
+    "type": "CONCEPT",
+    "description": "The capacity of GPUs to perform floating-point operations sustainably in single precision."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer (big)",
+    "target": "dropout rate Pdrop = 0.1",
+    "relation": "used",
+    "description": "The Transformer (big) model used a dropout rate of 0.1."
+   },
+   {
+    "source": "base model",
+    "target": "beam search with a beam size of 4 and length penalty α = 0.6",
+    "relation": "used",
+    "description": "The base model used beam search with a beam size of 4 and length penalty α = 0.6."
+   },
+   {
+    "source": "base model",
+    "target": "input length + 50",
+    "relation": "set as maximum output length",
+    "description": "The base model set the maximum output length during inference to input length + 50."
+   },
+   {
+    "source": "big model",
+    "target": "input length + 50",
+    "relation": "set as maximum output length",
+    "description": "The big model set the maximum output length during inference to input length + 50."
+   },
+   {
+    "source": "base model",
+    "target": "development set",
+    "relation": "tuned on",
+    "description": "The base model was tuned on the development set."
+   },
+   {
+    "source": "big model",
+    "target": "development set",
+    "relation": "tuned on",
+    "description": "The big model was tuned on the development set."
+   },
+   {
+    "source": "Table 2",
+    "target": "base model",
+    "relation": "summarizes result of",
+    "description": "Table 2 summarizes the result of the base model."
+   },
+   {
+    "source": "Table 2",
+    "target": "big model",
+    "relation": "summarizes result of",
+    "description": "Table 2 summarizes the result of the big model."
+   },
+   {
+    "source": "Table 2",
+    "target": "other model architectures",
+    "relation": "compares to",
+    "description": "Table 2 compares the translation quality and training costs to other model architectures from the literature."
+   },
+   {
+    "source": "training time",
+    "target": "sustained single-precision floating-point capacity",
+    "relation": "multiplied by",
+    "description": "The number of floating point operations used to train a model is estimated by multiplying the training time, the number of GPUs used, and the sustained single-precision floating-point capacity of each GPU."
+   },
+   {
+    "source": "number of GPUs used",
+    "target": "sustained single-precision floating-point capacity",
+    "relation": "multiplied by",
+    "description": "The number of floating point operations used to train a model is estimated by multiplying the training time, the number of GPUs used, and the sustained single-precision floating-point capacity of each GPU."
+   },
+   {
+    "source": "sustained single-precision floating-point capacity",
+    "target": "training time",
+    "relation": "multiplied by",
+    "description": "The number of floating point operations used to train a model is estimated by multiplying the training time, the number of GPUs used, and the sustained single-precision floating-point capacity of each GPU."
+   }
+  ]
+ },
+ {
+  "chunk_id": 28,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A type of neural network architecture"
+   },
+   {
+    "name": "K80",
+    "type": "HARDWARE",
+    "description": "A type of GPU with 2.8 TFLOPS"
+   },
+   {
+    "name": "K40",
+    "type": "HARDWARE",
+    "description": "A type of GPU with 3.7 TFLOPS"
+   },
+   {
+    "name": "M40",
+    "type": "HARDWARE",
+    "description": "A type of GPU with 6.0 TFLOPS"
+   },
+   {
+    "name": "P100",
+    "type": "HARDWARE",
+    "description": "A type of GPU with 9.5 TFLOPS"
+   },
+   {
+    "name": "newstest2013",
+    "type": "DATASET",
+    "description": "A dataset used for evaluation"
+   },
+   {
+    "name": "English-to-German translation",
+    "type": "TASK",
+    "description": "The task of translating text from English to German"
+   },
+   {
+    "name": "base model",
+    "type": "MODEL",
+    "description": "The default model configuration"
+   },
+   {
+    "name": "dmodel",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the model's input and output embeddings"
+   },
+   {
+    "name": "dff",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the intermediate feedforward layer"
+   },
+   {
+    "name": "h",
+    "type": "HYPERPARAMETER",
+    "description": "The number of heads in multi-head attention"
+   },
+   {
+    "name": "dk",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the key vectors in multi-head attention"
+   },
+   {
+    "name": "dv",
+    "type": "HYPERPARAMETER",
+    "description": "The dimensionality of the value vectors in multi-head attention"
+   },
+   {
+    "name": "Pdrop",
+    "type": "HYPERPARAMETER",
+    "description": "The dropout probability for the model"
+   },
+   {
+    "name": "ϵls",
+    "type": "HYPERPARAMETER",
+    "description": "The learning rate for the model"
+   },
+   {
+    "name": "train PPL",
+    "type": "METRIC",
+    "description": "The perplexity of the model during training"
+   },
+   {
+    "name": "BLEU",
+    "type": "METRIC",
+    "description": "A metric for evaluating the quality of machine translation"
+   }
+  ],
+  "relations": [
+   {
+    "source": "base model",
+    "target": "train PPL",
+    "relation": "measured",
+    "description": "The base model has a train PPL of 4.92"
+   },
+   {
+    "source": "base model",
+    "target": "BLEU",
+    "relation": "measured",
+    "description": "The base model has a BLEU score of 25.8"
+   },
+   {
+    "source": "base model",
+    "target": "params",
+    "relation": "has",
+    "description": "The base model has 65 million parameters"
+   },
+   {
+    "source": "1",
+    "target": "train PPL",
+    "relation": "measured",
+    "description": "Model 1 has a train PPL of 4.91"
+   },
+   {
+    "source": "1",
+    "target": "BLEU",
+    "relation": "measured",
+    "description": "Model 1 has a BLEU score of 25.8"
+   },
+   {
+    "source": "1",
+    "target": "params",
+    "relation": "has",
+    "description": "Model 1 has 32 million parameters"
+   },
+   {
+    "source": "2",
+    "target": "train PPL",
+    "relation": "measured",
+    "description": "Model 2 has a train PPL of 4.88"
+   },
+   {
+    "source": "2",
+    "target": "BLEU",
+    "relation": "measured",
+    "description": "Model 2 has a BLEU score of 25.5"
+   },
+   {
+    "source": "2",
+    "target": "params",
+    "relation": "has",
+    "description": "Model 2 has 168 million parameters"
+   },
+   {
+    "source": "B",
+    "target": "train PPL",
+    "relation": "measured",
+    "description": "Model B has a train PPL of 4.91"
+   },
+   {
+    "source": "B",
+    "target": "BLEU",
+    "relation": "measured",
+    "description": "Model B has a BLEU score of 25.4"
+   },
+   {
+    "source": "B",
+    "target": "params",
+    "relation": "has",
+    "description": "Model B has 53 million parameters"
+   },
+   {
+    "source": "0.0",
+    "target": "train PPL",
+    "relation": "measured",
+    "description": "Model 0.0 has a train PPL of 4.67"
+   },
+   {
+    "source": "0.0",
+    "target": "BLEU",
+    "relation": "measured",
+    "description": "Model 0.0 has a BLEU score of 25.3"
+   },
+   {
+    "source": "0.0",
+    "target": "params",
+    "relation": "has",
+    "description": "Model 0.0 has 213 million parameters"
+   },
+   {
+    "source": "K80",
+    "target": "TFLOPS",
+    "relation": "has",
+    "description": "K80 has 2.8 TFLOPS"
+   },
+   {
+    "source": "K40",
+    "target": "TFLOPS",
+    "relation": "has",
+    "description": "K40 has 3.7 TFLOPS"
+   },
+   {
+    "source": "M40",
+    "target": "TFLOPS",
+    "relation": "has",
+    "description": "M40 has 6.0 TFLOPS"
+   },
+   {
+    "source": "P100",
+    "target": "TFLOPS",
+    "relation": "has",
+    "description": "P100 has 9.5 TFLOPS"
+   },
+   {
+    "source": "newstest2013",
+    "target": "used",
+    "relation": "for",
+    "description": "newstest2013 is used for evaluation"
+   }
+  ]
+ },
+ {
+  "chunk_id": 29,
+  "entities": [
+   {
+    "name": "positional embedding",
+    "type": "COMPONENT",
+    "description": "a type of positional encoding"
+   },
+   {
+    "name": "sinusoids",
+    "type": "COMPONENT",
+    "description": "a type of positional encoding"
+   },
+   {
+    "name": "beam search",
+    "type": "METHOD",
+    "description": "a decoding method for sequence generation"
+   },
+   {
+    "name": "newstest2013",
+    "type": "DATASET",
+    "description": "a dataset used for development set"
+   },
+   {
+    "name": "Table 3",
+    "type": "CONCEPT",
+    "description": "a table presenting experimental results"
+   },
+   {
+    "name": "attention heads",
+    "type": "HYPERPARAMETER",
+    "description": "the number of attention heads in the model"
+   },
+   {
+    "name": "attention key and value dimensions",
+    "type": "HYPERPARAMETER",
+    "description": "dimensions of the attention keys and values"
+   },
+   {
+    "name": "attention key size dk",
+    "type": "HYPERPARAMETER",
+    "description": "size of the attention key dimension"
+   },
+   {
+    "name": "dropout",
+    "type": "HYPERPARAMETER",
+    "description": "a regularization technique to prevent overfitting"
+   },
+   {
+    "name": "sinusoidal positional encoding",
+    "type": "COMPONENT",
+    "description": "a type of positional encoding using sine functions"
+   },
+   {
+    "name": "learned positional embeddings",
+    "type": "COMPONENT",
+    "description": "a type of positional encoding learned during training"
+   },
+   {
+    "name": "base model",
+    "type": "MODEL",
+    "description": "the original model without any modifications"
+   }
+  ],
+  "relations": [
+   {
+    "source": "positional embedding",
+    "target": "sinusoids",
+    "relation": "replace",
+    "description": "replaced sinusoids with learned positional embeddings"
+   },
+   {
+    "source": "beam search",
+    "target": "Table 3",
+    "relation": "used in",
+    "description": "used beam search in the experiments presented in Table 3"
+   },
+   {
+    "source": "attention heads",
+    "target": "Table 3",
+    "relation": "varied in",
+    "description": "varied the number of attention heads in Table 3"
+   },
+   {
+    "source": "attention key and value dimensions",
+    "target": "Table 3",
+    "relation": "varied in",
+    "description": "varied the attention key and value dimensions in Table 3"
+   },
+   {
+    "source": "attention key size dk",
+    "target": "Table 3",
+    "relation": "observed effect on",
+    "description": "observed that reducing the attention key size dk hurts model quality in Table 3"
+   },
+   {
+    "source": "dropout",
+    "target": "Table 3",
+    "relation": "observed effect of",
+    "description": "observed that dropout is very helpful in avoiding overfitting in Table 3"
+   },
+   {
+    "source": "sinusoidal positional encoding",
+    "target": "base model",
+    "relation": "replaced by",
+    "description": "replaced sinusoidal positional encoding with learned positional embeddings in the base model"
+   }
+  ]
+ },
+ {
+  "chunk_id": 30,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A type of neural network architecture"
+   },
+   {
+    "name": "positional encoding",
+    "type": "COMPONENT",
+    "description": "A method to add positional information to the input embeddings"
+   },
+   {
+    "name": "learned positional embeddings",
+    "type": "COMPONENT",
+    "description": "Positional embeddings that are learned during training"
+   },
+   {
+    "name": "base model",
+    "type": "MODEL",
+    "description": "The original or default model configuration"
+   },
+   {
+    "name": "4-layer transformer",
+    "type": "MODEL",
+    "description": "A transformer model with 4 layers and d_model = 1024"
+   },
+   {
+    "name": "Wall Street Journal (WSJ)",
+    "type": "DATASET",
+    "description": "Portion of the Penn Treebank used for training"
+   },
+   {
+    "name": "Penn Treebank",
+    "type": "DATASET",
+    "description": "A widely used corpus of English language data"
+   },
+   {
+    "name": "RNN sequence-to-sequence models",
+    "type": "METHOD",
+    "description": "Recurrent Neural Network models used for sequence-to-sequence tasks"
+   },
+   {
+    "name": "English constituency parsing",
+    "type": "TASK",
+    "description": "A natural language processing task that involves parsing sentences into their constituent parts"
+   },
+   {
+    "name": "BerkleyParser corpora",
+    "type": "DATASET",
+    "description": "Corpora used for semi-supervised training"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "positional encoding",
+    "relation": "uses",
+    "description": "The Transformer uses positional encoding to add positional information"
+   },
+   {
+    "source": "Transformer",
+    "target": "learned positional embeddings",
+    "relation": "uses",
+    "description": "The Transformer uses learned positional embeddings for positional information"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "base model",
+    "relation": "is variant of",
+    "description": "The 4-layer transformer is a variant of the base model"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "d_model = 1024",
+    "relation": "has hyperparameter",
+    "description": "The 4-layer transformer has d_model set to 1024"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "Wall Street Journal (WSJ)",
+    "relation": "trained on",
+    "description": "The 4-layer transformer was trained on the Wall Street Journal portion of the Penn Treebank"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "semi-supervised setting",
+    "relation": "trained in",
+    "description": "The 4-layer transformer was also trained in a semi-supervised setting"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "vocabulary of 16K tokens",
+    "relation": "uses",
+    "description": "The 4-layer transformer uses a vocabulary of 16K tokens for the WSJ only setting"
+   },
+   {
+    "source": "4-layer transformer",
+    "target": "vocabulary of 32K tokens",
+    "relation": "uses",
+    "description": "The 4-layer transformer uses a vocabulary of 32K tokens for the semi-supervised setting"
+   },
+   {
+    "source": "RNN sequence-to-sequence models",
+    "target": "state-of-the-art results",
+    "relation": "have difficulty achieving",
+    "description": "RNN sequence-to-sequence models have difficulty attaining state-of-the-art results in small-data regimes"
+   }
+  ]
+ },
+ {
+  "chunk_id": 31,
+  "entities": [
+   {
+    "name": "WSJ",
+    "type": "DATASET",
+    "description": "The Wall Street Journal dataset"
+   },
+   {
+    "name": "Section 22",
+    "type": "DATASET",
+    "description": "A specific section of the WSJ dataset used for experiments"
+   },
+   {
+    "name": "Section 23",
+    "type": "DATASET",
+    "description": "A specific section of the WSJ dataset used for evaluation"
+   },
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A neural network architecture for sequence to sequence learning"
+   },
+   {
+    "name": "multi-head attention",
+    "type": "COMPONENT",
+    "description": "A component of the Transformer model"
+   },
+   {
+    "name": "dropout",
+    "type": "HYPERPARAMETER",
+    "description": "A hyperparameter used to prevent overfitting"
+   },
+   {
+    "name": "learning rate",
+    "type": "HYPERPARAMETER",
+    "description": "A hyperparameter controlling the step size at each iteration while moving toward a minimum of a loss function"
+   },
+   {
+    "name": "beam size",
+    "type": "HYPERPARAMETER",
+    "description": "A hyperparameter used in beam search decoding"
+   },
+   {
+    "name": "Vinyals & Kaiser el al. (2014)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "Petrov et al. (2006)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "Zhu et al. (2013)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "Dyer et al. (2016)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "Huang & Harper (2009)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "McClosky et al. (2006)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "Luong et al. (2015)",
+    "type": "METHOD",
+    "description": "A method or approach described in the referenced paper"
+   },
+   {
+    "name": "multi-task",
+    "type": "TASK",
+    "description": "A task involving multiple objectives or datasets"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "WSJ",
+    "relation": "generalizes well to",
+    "description": "The Transformer model performs well on the WSJ dataset"
+   },
+   {
+    "source": "Transformer",
+    "target": "Section 23",
+    "relation": "evaluates on",
+    "description": "The Transformer model is evaluated on Section 23 of the WSJ dataset"
+   },
+   {
+    "source": "Vinyals & Kaiser el al. (2014)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Vinyals & Kaiser el al. (2014) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Petrov et al. (2006)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Petrov et al. (2006) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Zhu et al. (2013)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Zhu et al. (2013) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Dyer et al. (2016)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Dyer et al. (2016) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Huang & Harper (2009)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Huang & Harper (2009) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "McClosky et al. (2006)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "McClosky et al. (2006) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Luong et al. (2015)",
+    "target": "WSJ",
+    "relation": "performs on",
+    "description": "Luong et al. (2015) perform their method on the WSJ dataset"
+   },
+   {
+    "source": "Transformer",
+    "target": "Section 22",
+    "relation": "performs on",
+    "description": "The Transformer model is used to perform experiments on Section 22 of the WSJ dataset"
+   }
+  ]
+ },
+ {
+  "chunk_id": 32,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "a sequence transduction model based entirely on attention"
+   },
+   {
+    "name": "multi-task",
+    "type": "METHOD",
+    "description": "a method involving multiple tasks"
+   },
+   {
+    "name": "semi-supervised",
+    "type": "TASK",
+    "description": "a task involving both labeled and unlabeled data"
+   },
+   {
+    "name": "WSJ",
+    "type": "DATASET",
+    "description": "a dataset consisting of 40K sentences from the Wall Street Journal"
+   },
+   {
+    "name": "Recall Neural Network Grammar",
+    "type": "MODEL",
+    "description": "a model achieving 93.3 performance"
+   },
+   {
+    "name": "Berkeley Parser",
+    "type": "MODEL",
+    "description": "a parser outperformed by the Transformer"
+   },
+   {
+    "name": "Recurrent Neural Network Grammar",
+    "type": "MODEL",
+    "description": "a model achieving 93.3 performance"
+   },
+   {
+    "name": "RNN sequence-to-sequence models",
+    "type": "MODEL",
+    "description": "models outperformed by the Transformer on the WSJ training set"
+   },
+   {
+    "name": "multi-head attention",
+    "type": "COMPONENT",
+    "description": "a component replacing recurrent layers in the Transformer model"
+   },
+   {
+    "name": "beam size",
+    "type": "HYPERPARAMETER",
+    "description": "a hyperparameter set to 21 for the Transformer model"
+   },
+   {
+    "name": "α",
+    "type": "HYPERPARAMETER",
+    "description": "a hyperparameter set to 0.3 for the Transformer model"
+   },
+   {
+    "name": "Luong et al.",
+    "type": "CONCEPT",
+    "description": "the authors of a model achieving 92.7 performance"
+   },
+   {
+    "name": "Dyer et al.",
+    "type": "CONCEPT",
+    "description": "the authors of a model achieving 93.0 performance"
+   },
+   {
+    "name": "Yao et al.",
+    "type": "CONCEPT",
+    "description": "the authors of a model achieving 93.3 performance"
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "multi-head attention",
+    "relation": "replaces",
+    "description": "the Transformer model replaces recurrent layers with multi-headed self-attention"
+   },
+   {
+    "source": "Transformer",
+    "target": "beam size",
+    "relation": "uses",
+    "description": "the Transformer model uses a beam size of 21"
+   },
+   {
+    "source": "Transformer",
+    "target": "α",
+    "relation": "sets",
+    "description": "the Transformer model sets α to 0.3"
+   },
+   {
+    "source": "Transformer",
+    "target": "semi-supervised",
+    "relation": "performs",
+    "description": "the Transformer model performs well in the semi-supervised setting"
+   },
+   {
+    "source": "Transformer",
+    "target": "WSJ",
+    "relation": "trained on",
+    "description": "the Transformer model is trained on the WSJ dataset"
+   },
+   {
+    "source": "Transformer",
+    "target": "Recall Neural Network Grammar",
+    "relation": "outperforms",
+    "description": "the Transformer model outperforms the Recurrent Neural Network Grammar model"
+   },
+   {
+    "source": "Transformer",
+    "target": "Berkeley Parser",
+    "relation": "outperforms",
+    "description": "the Transformer model outperforms the Berkeley Parser model"
+   },
+   {
+    "source": "multi-task",
+    "target": "Dyer et al.",
+    "relation": "achieved by",
+    "description": "Dyer et al. achieved 93.0 performance with the multi-task method"
+   },
+   {
+    "source": "semi-supervised",
+    "target": "Luong et al.",
+    "relation": "achieved by",
+    "description": "Luong et al. achieved 92.7 performance with the semi-supervised method"
+   },
+   {
+    "source": "generative",
+    "target": "Yao et al.",
+    "relation": "achieved by",
+    "description": "Yao et al. achieved 93.3 performance with the generative method"
+   }
+  ]
+ },
+ {
+  "chunk_id": 33,
+  "entities": [
+   {
+    "name": "Transformer",
+    "type": "MODEL",
+    "description": "A model based entirely on attention, replacing the recurrent layers most commonly used in encoder-decoder architectures with multi-headed self-attention."
+   },
+   {
+    "name": "multi-head attention",
+    "type": "COMPONENT",
+    "description": "A component used in the Transformer model, replacing the recurrent layers most commonly used in encoder-decoder architectures."
+   },
+   {
+    "name": "WMT 2014 English-to-German",
+    "type": "TASK",
+    "description": "A translation task where the Transformer achieved a new state of the art."
+   },
+   {
+    "name": "WMT 2014 English-to-French",
+    "type": "TASK",
+    "description": "A translation task where the Transformer achieved a new state of the art."
+   },
+   {
+    "name": "TensorFlow",
+    "type": "HARDWARE",
+    "description": "The code used to train and evaluate the models is available at https://github.com/tensorflow/tensor2tensor."
+   }
+  ],
+  "relations": [
+   {
+    "source": "Transformer",
+    "target": "multi-head attention",
+    "relation": "uses",
+    "description": "The Transformer model uses multi-headed self-attention as a component."
+   },
+   {
+    "source": "Transformer",
+    "target": "WMT 2014 English-to-German",
+    "relation": "achieves new state of the art",
+    "description": "On the WMT 2014 English-to-German translation task, the Transformer achieves a new state of the art."
+   },
+   {
+    "source": "Transformer",
+    "target": "WMT 2014 English-to-French",
+    "relation": "achieves new state of the art",
+    "description": "On the WMT 2014 English-to-French translation task, the Transformer achieves a new state of the art."
+   },
+   {
+    "source": "Transformer",
+    "target": "TensorFlow",
+    "relation": "uses",
+    "description": "The code used to train and evaluate the Transformer models is available on TensorFlow's GitHub repository."
+   }
+  ]
+ }
+]

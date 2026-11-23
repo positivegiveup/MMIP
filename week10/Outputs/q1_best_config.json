@@ -1,0 +1,6 @@
+{
+ "chunk_size": 150,
+ "overlap": 50,
+ "k": 8,
+ "technique": "grounded_strict"
+}

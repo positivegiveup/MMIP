@@ -1,0 +1,358 @@
+[
+ {
+  "question": "有沒有影片是在教怎麼在 Excel 裡計算平均值或最大值？",
+  "rewritten": "有沒有影片是在教怎麼在 Excel 裡計算平均值或最大值？",
+  "answer": "是的，影片中有教怎麼在 Excel 裡計算平均值或最大值。[V1] 和 [V2] 分別介紹了如何使用 Excel 中的 AVERAGE 函數和 MAX 函數。[V1] 在 00:00–00:10 時間段介紹了 AVERAGE 函數，[V2] 在 00:00–00:10 時間段介紹了 MAX 函數。",
+  "refs": [
+   {
+    "rank": 1,
+    "score": 2.3707854747772217,
+    "z_text": 2.3507049083709717,
+    "z_vis": 2.4009058475494385,
+    "idx": 34,
+    "clip": {
+     "clip_id": "v05_f1bbe4_c000",
+     "clip_idx": 0,
+     "vid_idx": 5,
+     "video_id": "Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_3.jpg"
+     ],
+     "transcript": "Hello, I'm Chris Menard. Today's Excel video is going to be really short. Here is the average function in Excel. Equal Average tab, highlight the numbers.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個綠色背景的螢幕，上面有Excel的標誌和文字“EXCEL REFERENCE AVERAGE FUNCTION”。(2) 一位留著鬍子的男士站在螢幕前，似乎在解釋Excel中的AVERAGE函數。(3) 螢幕上顯示的文字包括“EXCEL REFERENCE”、“AVERAGE”和“FUNCTION”。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 2,
+    "score": 2.288762092590332,
+    "z_text": 2.2717080116271973,
+    "z_vis": 2.314343214035034,
+    "idx": 44,
+    "clip": {
+     "clip_id": "v06_35d223_c000",
+     "clip_idx": 0,
+     "vid_idx": 6,
+     "video_id": "Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_3.jpg"
+     ],
+     "transcript": "In today's Excel video, I'm going to show you how to use the Max function to find the highest value. I've got a list of orders over here. I want to find the highest value.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個綠色背景的螢幕，上面有Excel的標誌和文字“EXCEL REFERENCE MAX FUNCTION”。右下角有一個人物在說話。\n\n(2) 人物正在解釋Excel中的MAX函數。\n\n(3) 畫面上可見的重要文字包括“EXCEL REFERENCE”、“MAX”和“FUNCTION”。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 3,
+    "score": 1.9224951267242432,
+    "z_text": 2.105111598968506,
+    "z_vis": 1.6485704183578491,
+    "idx": 38,
+    "clip": {
+     "clip_id": "v05_f1bbe4_c004",
+     "clip_idx": 4,
+     "vid_idx": 5,
+     "video_id": "Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 40.0,
+     "end": 50.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c004_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c004_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c004_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c004_3.jpg"
+     ],
+     "transcript": "So first of all, that's going to give you the number 100, and I've actually seen them use the sum function. I have a total of five countries. They take the number five and divide by it.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個Excel工作表，包含國家和訂單數量的數據。\n\n(2) 講者在演示如何計算平均值，他正在使用Excel中的公式編輯器輸入公式。\n\n(3) 公式編輯器中顯示了公式：`=SUM(B2:B7)/7`，表示計算B2到B7範圍的總和並除以7。"
+    },
+    "cited": false
+   }
+  ],
+  "latency": 2.9068866800516844
+ },
+ {
+  "question": "那個函數要怎麼輸入？",
+  "rewritten": "Excel 中的 AVERAGE 函數和 MAX 函數要怎麼輸入？",
+  "answer": "[AVERAGE 函數] 要輸入 AVERAGE 函數，首先選擇要計算平均值的範圍，例如 B2:B6。然後在公式編輯器中輸入 =AVERAGE(B2:B6)，最後按 Enter 鍵即可得到結果。[V1] 00:10–00:20\n\n[Max 函數] 要輸入 MAX 函數，選擇要查找最大值的範圍，例如 C2:C6。然後在公式編輯器中輸入 =MAX(C2:C6)，最後按 Enter 鍵即可得到結果。[V2] 00:10–00:20",
+  "refs": [
+   {
+    "rank": 1,
+    "score": 2.386155128479004,
+    "z_text": 2.396355628967285,
+    "z_vis": 2.370854377746582,
+    "idx": 34,
+    "clip": {
+     "clip_id": "v05_f1bbe4_c000",
+     "clip_idx": 0,
+     "vid_idx": 5,
+     "video_id": "Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c000_3.jpg"
+     ],
+     "transcript": "Hello, I'm Chris Menard. Today's Excel video is going to be really short. Here is the average function in Excel. Equal Average tab, highlight the numbers.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個綠色背景的螢幕，上面有Excel的標誌和文字“EXCEL REFERENCE AVERAGE FUNCTION”。(2) 一位留著鬍子的男士站在螢幕前，似乎在解釋Excel中的AVERAGE函數。(3) 螢幕上顯示的文字包括“EXCEL REFERENCE”、“AVERAGE”和“FUNCTION”。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 2,
+    "score": 2.327314615249634,
+    "z_text": 2.196045398712158,
+    "z_vis": 2.5242180824279785,
+    "idx": 44,
+    "clip": {
+     "clip_id": "v06_35d223_c000",
+     "clip_idx": 0,
+     "vid_idx": 6,
+     "video_id": "Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel MAX Function _ Find the maximum of a range of numbers _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v06_35d223_c000_3.jpg"
+     ],
+     "transcript": "In today's Excel video, I'm going to show you how to use the Max function to find the highest value. I've got a list of orders over here. I want to find the highest value.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個綠色背景的螢幕，上面有Excel的標誌和文字“EXCEL REFERENCE MAX FUNCTION”。右下角有一個人物在說話。\n\n(2) 人物正在解釋Excel中的MAX函數。\n\n(3) 畫面上可見的重要文字包括“EXCEL REFERENCE”、“MAX”和“FUNCTION”。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 3,
+    "score": 2.1017038822174072,
+    "z_text": 2.2840068340301514,
+    "z_vis": 1.828249216079712,
+    "idx": 35,
+    "clip": {
+     "clip_id": "v05_f1bbe4_c001",
+     "clip_idx": 1,
+     "vid_idx": 5,
+     "video_id": "Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Excel AVERAGE Function _ How to use AVERAGE function _ Excel One Minute Quick Reference_720p.mp4",
+     "start": 10.0,
+     "end": 20.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c001_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c001_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c001_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v05_f1bbe4_c001_3.jpg"
+     ],
+     "transcript": "If you include a blank, it's okay. I got the answer of 20. There's my formula bar.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個Excel工作表，包含國家和訂單數量的數據。(2) 滑鼠光標在B9單元格中，顯示AVERAGE函數的使用方法。(3) 重要文字：AVERAGE(number1, number2, ...)"
+    },
+    "cited": false
+   }
+  ],
+  "latency": 4.209332249127328
+ },
+ {
+  "question": "有哪支影片在講解 RAG？它主要在解決什麼問題？",
+  "rewritten": "有哪支影片在講解 RAG？它主要在解決什麼問題？",
+  "answer": "影片「Explain RAG in 1 minute_720p」在講解 RAG。它主要在解決如何通過查詢用戶問題來找到與之密切相關的信息，並通過知識庫中的信息生成上下文豐富的回應。[V1]",
+  "refs": [
+   {
+    "rank": 1,
+    "score": 2.715510845184326,
+    "z_text": 2.677237033843994,
+    "z_vis": 2.772921323776245,
+    "idx": 57,
+    "clip": {
+     "clip_id": "v07_e8a7e2_c006",
+     "clip_idx": 6,
+     "vid_idx": 7,
+     "video_id": "Explain RAG in 1 minute_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Explain RAG in 1 minute_720p.mp4",
+     "start": 60.0,
+     "end": 70.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c006_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c006_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c006_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c006_3.jpg"
+     ],
+     "transcript": "Similarity scores between the query embeddings and text chunk embeddings are calculated, which are used for searching information highly relevant to the user query. The generation process of the RAG system then combines retrieved information with the user query to form the augmented query which is parsed to the LLM to",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個關於RAG（Retrieval Augmented Generation）系統的視覺化設計，背景為深色，有圖形和文字說明。(2) 沒有顯示人物或滑鼠操作。(3) 重要文字包括：DATAVISUALDESIGN.SUBSTACK.COM、Explain RAG (Retrieval Augmented...)、which are used for searching information highly relevant to the user query、chunking、embedding、indexing、similarity search、\"semantic search\"、\"rerank\"、\"knowledge base\"、RAG。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 2,
+    "score": 2.637712001800537,
+    "z_text": 2.589630603790283,
+    "z_vis": 2.7098336219787598,
+    "idx": 58,
+    "clip": {
+     "clip_id": "v07_e8a7e2_c007",
+     "clip_idx": 7,
+     "vid_idx": 7,
+     "video_id": "Explain RAG in 1 minute_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Explain RAG in 1 minute_720p.mp4",
+     "start": 70.0,
+     "end": 79.1,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c007_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c007_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c007_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c007_3.jpg"
+     ],
+     "transcript": "generate the context-rich response.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個關於RAG（Retrieval Augmented Generation）的視覺化設計，背景為深色，有圖形和文字說明。(2) 沒有顯示人物、滑鼠或使用者的操作動作。(3) 重要文字包括：'DATAVISUALDESIGN.SUBSTACK.COM', 'Explain RAG (Retrieval Augmented...)', 'the user query to form the augmented query which is passed to the LLM to generate', 'chunking', 'embedding', 'indexing', 'similarity search', 'semantic search', 'rerank', 'knowledge base', 'RAG'。"
+    },
+    "cited": false
+   },
+   {
+    "rank": 3,
+    "score": 2.5490293502807617,
+    "z_text": 2.442640781402588,
+    "z_vis": 2.7086122035980225,
+    "idx": 51,
+    "clip": {
+     "clip_id": "v07_e8a7e2_c000",
+     "clip_idx": 0,
+     "vid_idx": 7,
+     "video_id": "Explain RAG in 1 minute_720p",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/Explain RAG in 1 minute_720p.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v07_e8a7e2_c000_3.jpg"
+     ],
+     "transcript": "A RAG system can be decomposed into retrieval and generation stage. The objective of retrieval process is to find contents within the knowledge base that are closely related to the user query, by chunking external knowledge,",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示了一個關於RAG系統的視覺化設計，背景為深色，有圖形和文字說明。(2) 沒有顯示任何人物或滑鼠操作。(3) 重要文字包括：DATAVISUALDESIGN.SUBSTACK.COM、Explain RAG (Retrieval Augmented...)、A RAG system can be decomposed into retrieval and generation stage.、chunking、embedding、indexing、similarity search、\"semantic search\"、\"rerank\"、\"knowledge base\"、RAG。"
+    },
+    "cited": false
+   }
+  ],
+  "latency": 2.541281120851636
+ },
+ {
+  "question": "另外有沒有影片是在示範螢幕錄影的操作？第一步要做什麼？",
+  "rewritten": "有沒有影片是在示範螢幕錄影的操作？第一步要做什麼？",
+  "answer": "影片「How to Record Your iPhone Screen in Under 60 Seconds  #Shorts」在示範螢幕錄影的操作。第一步是進入設定應用程式並選擇控制中心。[V1] 00:00–00:10",
+  "refs": [
+   {
+    "rank": 1,
+    "score": 2.0126192569732666,
+    "z_text": 2.503178596496582,
+    "z_vis": 1.2767798900604248,
+    "idx": 59,
+    "clip": {
+     "clip_id": "v08_554859_c000",
+     "clip_idx": 0,
+     "vid_idx": 8,
+     "video_id": "How to Record Your iPhone Screen in Under 60 Seconds  #Shorts",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/How to Record Your iPhone Screen in Under 60 Seconds  #Shorts.mp4",
+     "start": 0.0,
+     "end": 10.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c000_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c000_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c000_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c000_3.jpg"
+     ],
+     "transcript": "Here's how you can record the screen on your iPhone. Open Settings. Scroll down to Control Center. Scroll down to Screen Recording.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示一個人坐在椅子上，面前有一張桌子，手機放在桌子上。(2) 用戶正在操作手機，進入設置應用程序並選擇控制中心。(3) 重要文字包括：音樂、時鐘、Outlook、Twitter、家庭、迪士尼、谷歌瀏覽器、家庭、低電力模式、放大鏡、備忘錄、QR碼閱讀器、屏幕錄製、聲音識別、計時器、文本大小、語音備忘錄和錢包。"
+    },
+    "cited": true
+   },
+   {
+    "rank": 2,
+    "score": 1.9721167087554932,
+    "z_text": 2.0956692695617676,
+    "z_vis": 1.7867876291275024,
+    "idx": 17,
+    "clip": {
+     "clip_id": "v02_95ea7e_c012",
+     "clip_idx": 12,
+     "vid_idx": 2,
+     "video_id": "How to Scan Documents to PDF in Google Drive (Free & Easy Method) - Pro Support (1080p, h264)",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/no_voice/How to Scan Documents to PDF in Google Drive (Free & Easy Method) - Pro Support (1080p, h264).mp4",
+     "start": 120.0,
+     "end": 128.0,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v02_95ea7e_c012_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v02_95ea7e_c012_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v02_95ea7e_c012_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v02_95ea7e_c012_3.jpg"
+     ],
+     "transcript": "",
+     "video_has_speech": false,
+     "has_speech": false,
+     "caption": "這段影片顯示了如何將文件掃描為PDF並上傳至Google Drive的教程。第一張圖展示了手機屏幕上的PDF文件，第二、三張圖是教程結束時的感謝視頻觀看者並提示訂閱的畫面，第四張圖則是更簡單的感謝觀看者的畫面。"
+    },
+    "cited": false
+   },
+   {
+    "rank": 3,
+    "score": 1.6618461608886719,
+    "z_text": 2.066535234451294,
+    "z_vis": 1.0548123121261597,
+    "idx": 62,
+    "clip": {
+     "clip_id": "v08_554859_c003",
+     "clip_idx": 3,
+     "vid_idx": 8,
+     "video_id": "How to Record Your iPhone Screen in Under 60 Seconds  #Shorts",
+     "video_path": "/cluster/home/m315832001/class/MMIP/week10/Data/q2_videos/voice/How to Record Your iPhone Screen in Under 60 Seconds  #Shorts.mp4",
+     "start": 30.0,
+     "end": 42.10873333333333,
+     "frames": [
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c003_0.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c003_1.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c003_2.jpg",
+      "/cluster/home/m315832001/class/MMIP/week10/Data/q2_cache/frames/v08_554859_c003_3.jpg"
+     ],
+     "transcript": "You can find your screen recording in the Followers app. From here, you can hit the share button and send it to your grandma to show her how to use her phone.",
+     "video_has_speech": true,
+     "has_speech": true,
+     "caption": "(1) 圖片顯示了手機屏幕上的控制中心界面和消息应用程序界面。\n\n(2) 操作者在控制中心界面上点击了“屏幕录制”按钮，随后切换到消息应用程序界面，在输入框中输入“Grandma”。\n\n(3) 控制中心界面上显示“Screen Recording”、“Music”等选项。消息应用程序界面显示“New MMS”标题，输入框中有“Grandma”字样。"
+    },
+    "cited": false
+   }
+  ],
+  "latency": 2.290218092035502
+ }
+]

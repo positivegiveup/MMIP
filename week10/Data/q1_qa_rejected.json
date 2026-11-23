@@ -1,0 +1,292 @@
+[
+ {
+  "question": "人工神經網路的輸出是否線性？",
+  "answer": "不感興趣",
+  "evidence": "也就是說透過激勵函式求的數值根據極限值來判斷是否要啟用該神經元，換句話說我們對一個神經元網路的輸出是否線性不感興趣。",
+  "doc_id": "D03",
+  "title": "人工神經網路",
+  "ev_start": 4424,
+  "ev_end": 4482,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是影格？",
+  "answer": "影格是一段被認為是平穩的分析區間。",
+  "evidence": "這一段被認為是平穩的分析區間稱之為影格",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "ev_start": 2232,
+  "ev_end": 2251,
+  "reason": "not standalone"
+ },
+ {
+  "question": "誰在1637年預言了圖靈測試？",
+  "answer": "笛卡爾",
+  "evidence": "笛卡爾在1637年《談談方法》中預言了圖靈測試。",
+  "doc_id": "D20",
+  "title": "圖靈測試",
+  "ev_start": 428,
+  "ev_end": 452,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼演演算法被描述為當前語音辨識搜尋中最有效的演演算法？",
+  "answer": "Viterbi演演演算法",
+  "evidence": "這一時齊Viterbi-Beam演演算法是當前語音辨識搜尋中最有效的演演算法。",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "ev_start": 6109,
+  "ev_end": 6148,
+  "reason": "not standalone"
+ },
+ {
+  "question": "在反向傳播演演算法中，更新權重時需要對梯度的哪個方面取反？",
+  "answer": "梯度的方向",
+  "evidence": "梯度的方向指明瞭誤差擴大的方向，因此在更新權重的時候需要對其取反，從而減小權重引起的誤差。",
+  "doc_id": "D22",
+  "title": "反向傳播演算法",
+  "ev_start": 846,
+  "ev_end": 891,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是類神經網路模型的「容量」？",
+  "answer": "類神經網路模型的「容量」大致相當於他們記住（而非正確分類）輸入資料的能力。",
+  "evidence": "類神經網路模型有一個屬性，稱為「容量」，這大致相當於他們記住（而非正確分類）輸入資料的能力。",
+  "doc_id": "D03",
+  "title": "人工神經網路",
+  "ev_start": 5597,
+  "ev_end": 5643,
+  "reason": "not standalone"
+ },
+ {
+  "question": "電腦視覺領域中有哪些基於機器學習的方法？",
+  "answer": "一些基於機器學習的方法有參考部分生物機制。",
+  "evidence": "同時電腦視覺領域中，一些基於機器學習的方法也有參考部分生物機制。",
+  "doc_id": "D11",
+  "title": "計算機視覺",
+  "ev_start": 1662,
+  "ev_end": 1694,
+  "reason": "not standalone"
+ },
+ {
+  "question": "在決策樹中，所有從根到葉節點的路徑是如何連線的？",
+  "answer": "在決策樹中所有從根到葉節點的路徑都是透過「與」（AND）運算連線。",
+  "evidence": "在決策樹中所有從根到葉節點的路徑都是透過「與」（AND）運算連線。",
+  "doc_id": "D15",
+  "title": "決策樹",
+  "ev_start": 2678,
+  "ev_end": 2711,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是知識圖譜中三元組的基本形式？",
+  "answer": "三元組的基本形式主要包括實體1、關係、實體2和概念、屬性、屬性值等。",
+  "evidence": "三元組的基本形式主要包括實體1、關係、實體2和概念、屬性、屬性值等。",
+  "doc_id": "D19",
+  "title": "知識圖譜",
+  "ev_start": 693,
+  "ev_end": 727,
+  "reason": "not standalone"
+ },
+ {
+  "question": "GPT-6 能夠解決哪些領域的問題？",
+  "answer": "GPT-6 能夠解決人類未解開的數學難題。",
+  "evidence": "甚至不少人類未解開的數學難題GPT-6也能解決",
+  "doc_id": "D21",
+  "title": "ChatGPT",
+  "ev_start": 2713,
+  "ev_end": 2736,
+  "reason": "not supported"
+ },
+ {
+  "question": "隨機森林可以被延伸應用在哪種資料上？",
+  "answer": "未標記的資料",
+  "evidence": "使用上述。它可被延伸應用在未標記的資料上，這類資料通常是使用非監督式聚類。",
+  "doc_id": "D28",
+  "title": "隨機森林",
+  "ev_start": 3603,
+  "ev_end": 3640,
+  "reason": "not standalone"
+ },
+ {
+  "question": "DeepSeek-R1在哪些任務中取得了與OpenAI o1-1217相近的表現？",
+  "answer": "推理任務",
+  "evidence": "研究團隊報告稱，DeepSeek-R1在所評測的推理任務中取得了與OpenAI o1-1217相近的表現。",
+  "doc_id": "D05",
+  "title": "大型語言模型",
+  "ev_start": 3271,
+  "ev_end": 3324,
+  "reason": "not standalone"
+ },
+ {
+  "question": "區塊對角最大概似線性迴歸在什麼情況下能提升更大的精準度？",
+  "answer": "在更少量的調整測資下",
+  "evidence": "區塊對角最大概似線性迴歸（block-diagonal Maximum Likelihood Linear Regression(MLLR)）可以再更少量的調整測資下提升更大的精準度",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "ev_start": 8465,
+  "ev_end": 8556,
+  "reason": "not standalone"
+ },
+ {
+  "question": "如果雨天還有風的話，就不會有人打了。",
+  "answer": "不會有人打高爾夫。",
+  "evidence": "最終我們還發現，如果雨天還有風的話，就不會有人打了。",
+  "doc_id": "D15",
+  "title": "決策樹",
+  "ev_start": 1729,
+  "ev_end": 1755,
+  "reason": "not standalone"
+ },
+ {
+  "question": "反向傳播學習的收斂性不能保證嗎？",
+  "answer": "是的",
+  "evidence": "從反向傳播學習獲得的收斂很慢。\n在反向傳播學習的收斂性不能保證。",
+  "doc_id": "D22",
+  "title": "反向傳播演算法",
+  "ev_start": 4003,
+  "ev_end": 4035,
+  "reason": "not supported"
+ },
+ {
+  "question": "什麼時期的研究人員開始構建網際網路規模的語言資料集來訓練統計語言模型？",
+  "answer": "21世紀",
+  "evidence": "在21世紀，隨著網際網路的普及，一些研究人員構建了網際網路規模的語言資料集（「網路語料庫」），並在此基礎上訓練統計語言模型。",
+  "doc_id": "D05",
+  "title": "大型語言模型",
+  "ev_start": 942,
+  "ev_end": 1004,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是 RNN 的基本構造？",
+  "answer": "基本的 RNN 是由人工神經元組織成的連續的層的網路。",
+  "evidence": "基本的 RNN 是由人工神經元組織成的連續的層的網路。",
+  "doc_id": "D07",
+  "title": "迴圈神經網路",
+  "ev_start": 2079,
+  "ev_end": 2106,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是基於圖的模型中的準團？",
+  "answer": "放寬完全連通性的要求（一部分邊可能會遺失）被稱為準團。",
+  "evidence": "與 HCS 聚類演演算法一樣，放寬完全連通性的要求（一部分邊可能會遺失）被稱為」準團」。",
+  "doc_id": "D17",
+  "title": "聚類分析",
+  "ev_start": 661,
+  "ev_end": 705,
+  "reason": "not standalone"
+ },
+ {
+  "question": "深度學習如何提高臉部辨識的效率？",
+  "answer": "使用某些特定的表示方法更容易從例項中學習任務，例如，臉部辨識或面部表情辨識。",
+  "evidence": "觀測值（例如一幅影象）可以使用多種方式來表示，如每個畫素強度值的向量，或者更抽象地表示成一系列邊、特定形狀的區域等。而使用某些特定的表示方法更容易從例項中學習任務（例如，臉部辨識或面部表情辨識）。",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "ev_start": 172,
+  "ev_end": 270,
+  "reason": "not standalone"
+ },
+ {
+  "question": "迴圈神經網路如何計算機率p(yt)?",
+  "answer": "p(yt)=g(yt−1,ht→,c→)",
+  "evidence": "以上機率可以透過隱藏狀態來計算：p(yt)=g(yt−1,ht→,c→)，c→是所有隱藏狀態的編碼，總含了所有隱藏狀態，比如可以是簡單的最終隱藏狀態ht→，也可以是非線性方程的輸出f(ht,...,h1)。",
+  "doc_id": "D07",
+  "title": "迴圈神經網路",
+  "ev_start": 1234,
+  "ev_end": 1337,
+  "reason": "not standalone"
+ },
+ {
+  "question": "如果靈敏度為99%，特異度為99.5%，檢測結果陽性的員工真正吸毒的機率是多少？",
+  "answer": "49.9%",
+  "evidence": "但如果靈敏度仍然是99%，而特異度卻提高到99.5%（即不吸毒的人中，約0.5%會被誤檢為陽性），則檢測結果陽性的員工，真正吸毒的機率可以提高到49.9%。",
+  "doc_id": "D25",
+  "title": "貝葉斯定理",
+  "ev_start": 3500,
+  "ev_end": 3578,
+  "reason": "not standalone"
+ },
+ {
+  "question": "在三層神經網路中，反向傳播演演算法的第一步是什麼？",
+  "answer": "計算輸出單元的誤差 (prediction - actual)",
+  "evidence": "計算輸出單元的誤差 (prediction - actual)\n計算 Δwh  對於所有隱藏層到輸出層的權值                           // 反向傳遞",
+  "doc_id": "D22",
+  "title": "反向傳播演算法",
+  "ev_start": 2006,
+  "ev_end": 2094,
+  "reason": "not standalone"
+ },
+ {
+  "question": "在隨機森林中，如何定義兩個點xi和x'是鄰居？",
+  "answer": "如果xi與x'屬於同一個包含k'個點的葉結點，則W(xi,x′)=1k′，否則為0。",
+  "evidence": "對於樹，如果xi與x'屬於同一個包含k'個點的葉結點，則W(xi,x′)=1k′，否則為0。",
+  "doc_id": "D28",
+  "title": "隨機森林",
+  "ev_start": 2628,
+  "ev_end": 2674,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是senone？",
+  "answer": "聚類的結果稱為senone。",
+  "evidence": "聚類的結果稱為senone。",
+  "doc_id": "D12",
+  "title": "語音識別",
+  "ev_start": 5139,
+  "ev_end": 5153,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是支援向量？",
+  "answer": "這些 x→i 叫做支援向量。",
+  "evidence": "此幾何描述的一個顯而易見卻重要的結果是，最大間隔超平面完全是由最靠近它的那些 x→i 確定的。這些 x→i 叫做支援向量。",
+  "doc_id": "D16",
+  "title": "支援向量機",
+  "ev_start": 2386,
+  "ev_end": 2447,
+  "reason": "not standalone"
+ },
+ {
+  "question": "聚類分析的最大優勢是什麼？",
+  "answer": "該演演演算法的最大優勢在於簡潔和快速。",
+  "evidence": "該演演算法的最大優勢在於簡潔和快速。",
+  "doc_id": "D17",
+  "title": "聚類分析",
+  "ev_start": 5637,
+  "ev_end": 5655,
+  "reason": "not standalone"
+ },
+ {
+  "question": "哪些殘疾使用者將ChatGPT稱為「生命線」？",
+  "answer": "患有慢性偏頭痛的殘疾女性Mary McRae將GPT-4o稱為「生命線」。",
+  "evidence": "2026年2月，加拿大媒體《卡爾加里先驅報》報道了患有慢性偏頭痛的殘疾女性Mary McRae的案例，她將GPT-4o稱為「生命線」，用於深夜傾訴、社互動動指導和創意寫作。",
+  "doc_id": "D21",
+  "title": "ChatGPT",
+  "ev_start": 7416,
+  "ev_end": 7502,
+  "reason": "not standalone"
+ },
+ {
+  "question": "什麼是 w→ 的定義？",
+  "answer": "w→=∑i=1nciyix→i.",
+  "evidence": "這裡，變數 ci 定義為滿足w→=∑i=1nciyix→i.",
+  "doc_id": "D16",
+  "title": "支援向量機",
+  "ev_start": 3933,
+  "ev_end": 3963,
+  "reason": "not standalone"
+ },
+ {
+  "question": "深度學習模型中的神經元是如何處理資訊並傳遞給下一層級的？",
+  "answer": "每層神經元在其所處的環境中取得一部分資訊，經過處理後向更深的層級傳遞。",
+  "evidence": "在這些層次中，每層神經元在其所處的環境中取得一部分資訊，經過處理後向更深的層級傳遞。",
+  "doc_id": "D02",
+  "title": "深度學習",
+  "ev_start": 6103,
+  "ev_end": 6145,
+  "reason": "not standalone"
+ }
+]

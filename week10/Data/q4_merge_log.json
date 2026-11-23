@@ -1,0 +1,57 @@
+[
+ [
+  "P100 GPU",
+  "P100 GPUs",
+  0.9463379383087158
+ ],
+ [
+  "P100 GPU",
+  "NVIDIA P100 GPUs",
+  0.9717826843261719
+ ],
+ [
+  "residual connection",
+  "residual connections",
+  0.9729881882667542
+ ],
+ [
+  "self-attention layer",
+  "self-attention layers",
+  0.9706976413726807
+ ],
+ [
+  "recurrent layers",
+  "recurrent layer",
+  0.9638802409172058
+ ],
+ [
+  "convolutional layers",
+  "convolutional layer",
+  0.9789291620254517
+ ],
+ [
+  "sequence transduction encoder",
+  "sequence transduction decoder",
+  0.9577587246894836
+ ],
+ [
+  "base model",
+  "base models",
+  0.9583300948143005
+ ],
+ [
+  "big models",
+  "big model",
+  0.9747388958930969
+ ],
+ [
+  "Deep-Att + PosUnk [39]",
+  "Deep-Att + PosUnk Ensemble [39]",
+  0.9529433846473694
+ ],
+ [
+  "GNMT + RL [38]",
+  "GNMT + RL Ensemble [38]",
+  0.9396942853927612
+ ]
+]

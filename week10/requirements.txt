@@ -1,0 +1,19 @@
+torch            # install the CUDA build matching your driver
+transformers>=4.56
+accelerate
+sentence-transformers
+faster-whisper   # bundles PyAV -> decodes mp4 without a system ffmpeg
+opencv-python
+pillow
+numpy
+pandas
+matplotlib
+scikit-learn
+requests
+gradio>=5       # code supports both Gradio 5 and 6
+opencc-python-reimplemented
+networkx>=3.0
+pymupdf
+pypdf
+ipywidgets
+# system tool (for UI clip cutting):  conda install -c conda-forge ffmpeg

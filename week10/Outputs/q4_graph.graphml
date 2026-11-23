@@ -1,0 +1,1590 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d4" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d3" for="node" attr.name="mentions" attr.type="long"/>
+<key id="d2" for="node" attr.name="description" attr.type="string"/>
+<key id="d1" for="node" attr.name="type" attr.type="string"/>
+<key id="d0" for="node" attr.name="name" attr.type="string"/>
+<graph edgedefault="undirected"><node id="attention is all you need">
+  <data key="d0">Attention Is All You Need</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">The name of the model introduced in the paper.</data>
+  <data key="d3">1</data>
+</node>
+<node id="google brain">
+  <data key="d0">Google Brain</data>
+  <data key="d1">HARDWARE</data>
+  <data key="d2">The organization that contributed to the research.</data>
+  <data key="d3">1</data>
+</node>
+<node id="google research">
+  <data key="d0">Google Research</data>
+  <data key="d1">HARDWARE</data>
+  <data key="d2">The organization that contributed to the research.</data>
+  <data key="d3">1</data>
+</node>
+<node id="arxiv:1706.03762v7">
+  <data key="d0">arXiv:1706.03762v7</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">The reference to the paper's arXiv submission.</data>
+  <data key="d3">1</data>
+</node>
+<node id="cs.cl">
+  <data key="d0">cs.CL</data>
+  <data key="d1">TASK</data>
+  <data key="d2">The field of computational linguistics as the task domain.</data>
+  <data key="d3">1</data>
+</node>
+<node id="transformer">
+  <data key="d0">Transformer</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">A new simple network architecture based solely on attention mechanisms. | A model architecture that relies entirely on an attention mechanism to draw global dependencies between input and output. | A model that reduces the number of operations required to relate signals from two arbitrary input or output positions to a constant number. | A transduction model relying entirely on self-attention to compute representations of its input and output without using sequence-aligned RNNs or convolution. | A neural network model with an encoder-decoder structure and stacked self-attention layers. | A model that uses multi-head attention in three different ways | A type of neural network architecture | A neural network architecture for sequence to sequence learning | a sequence transduction model base</data>
+  <data key="d3">11</data>
+</node>
+<node id="attention mechanism">
+  <data key="d0">attention mechanism</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">A method used in the Transformer model to connect the encoder and decoder. | A component that allows modeling of dependencies without regard to their distance in the input or output sequences.</data>
+  <data key="d3">2</data>
+</node>
+<node id="sequence transduction models">
+  <data key="d0">sequence transduction models</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">Models based on complex recurrent or convolutional neural networks that include an encoder and a decoder.</data>
+  <data key="d3">1</data>
+</node>
+<node id="wmt 2014 english-german translation task">
+  <data key="d0">WMT 2014 English-German translation task</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A machine translation task where the model translates from English to German. | a specific translation task</data>
+  <data key="d3">2</data>
+</node>
+<node id="wmt 2014 english-french translation task">
+  <data key="d0">WMT 2014 English-French translation task</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A machine translation task where the model translates from English to French. | another specific translation task</data>
+  <data key="d3">2</data>
+</node>
+<node id="english constituency parsing">
+  <data key="d0">English constituency parsing</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A natural language processing task where the model parses sentences into their constituent parts. | A natural language processing task that involves parsing sentences into their constituent parts</data>
+  <data key="d3">2</data>
+</node>
+<node id="8 gpus">
+  <data key="d0">8 GPUs</data>
+  <data key="d1">HARDWARE</data>
+  <data key="d2">Hardware used for training the model on the WMT 2014 English-to-French translation task.</data>
+  <data key="d3">1</data>
+</node>
+<node id="long short-term memory">
+  <data key="d0">long short-term memory</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">a type of recurrent neural network</data>
+  <data key="d3">1</data>
+</node>
+<node id="gated recurrent neural networks">
+  <data key="d0">gated recurrent neural networks</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">a type of recurrent neural network</data>
+  <data key="d3">1</data>
+</node>
+<node id="sequence modeling">
+  <data key="d0">sequence modeling</data>
+  <data key="d1">TASK</data>
+  <data key="d2">a task involving modeling sequences of data</data>
+  <data key="d3">1</data>
+</node>
+<node id="language modeling">
+  <data key="d0">language modeling</data>
+  <data key="d1">TASK</data>
+  <data key="d2">a task of predicting the next word in a sequence of words</data>
+  <data key="d3">1</data>
+</node>
+<node id="machine translation">
+  <data key="d0">machine translation</data>
+  <data key="d1">TASK</data>
+  <data key="d2">a task of translating text from one language to another</data>
+  <data key="d3">1</data>
+</node>
+<node id="recurrent language models">
+  <data key="d0">recurrent language models</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">A type of neural network designed to process sequential data.</data>
+  <data key="d3">1</data>
+</node>
+<node id="hidden states ht">
+  <data key="d0">hidden states ht</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The internal representation of the model at each step of the sequence, where h is the state index and t is the time step.</data>
+  <data key="d3">1</data>
+</node>
+<node id="previous hidden state ht−1">
+  <data key="d0">previous hidden state ht−1</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The hidden state from the previous time step, used to compute the current hidden state ht.</data>
+  <data key="d3">1</data>
+</node>
+<node id="computation along the symbol positions">
+  <data key="d0">computation along the symbol positions</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method of processing input and output sequences in a sequential manner, aligning positions with steps in computation time.</data>
+  <data key="d3">1</data>
+</node>
+<node id="parallelization">
+  <data key="d0">parallelization</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">The process of executing multiple computations simultaneously to improve efficiency and speed up training times. | ability to perform computations in parallel</data>
+  <data key="d3">2</data>
+</node>
+<node id="recurrent network">
+  <data key="d0">recurrent network</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A type of neural network that uses sequential computation to model dependencies in input or output sequences.</data>
+  <data key="d3">1</data>
+</node>
+<node id="p100 gpu">
+  <data key="d0">P100 GPU</data>
+  <data key="d1">HARDWARE</data>
+  <data key="d2">A specific type of graphics processing unit used for training the Transformer model. | a type of GPU used for training | Graphics processing units used for training the model.</data>
+  <data key="d3">4</data>
+</node>
+<node id="translation quality">
+  <data key="d0">translation quality</data>
+  <data key="d1">METRIC</data>
+  <data key="d2">A measure of how well a model translates text from one language to another.</data>
+  <data key="d3">1</data>
+</node>
+<node id="multi-head attention">
+  <data key="d0">Multi-Head Attention</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A method used to counteract the effect of averaging attention-weighted positions in the Transformer model. | A mechanism that uses multiple attention heads to process information. | a method used in the decoder to perform attention over the encoder's output | A method that consists of several attention layers running in parallel. | An extension of the dot-product attention mechanism that allows the model to jointly attend to information from different representation subspaces. | A method for the model to jointly attend to information from different representation subspaces at different positions. | a component of the transformer model | A component of the Transformer model | a component replacing recurrent layers in the Transformer model | A component used in the Transformer model, replaci</data>
+  <data key="d3">10</data>
+</node>
+<node id="self-attention">
+  <data key="d0">Self-Attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">An attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence. | A mechanism used in the Transformer model to weigh the importance of different elements in the input sequence. | a method modified in the decoder to prevent positions from attending to subsequent positions | A method used in both encoder and decoder components. | A method with complexity O(n2 · d) and maximum path length O(1). | A model layer that uses self-attention mechanism.</data>
+  <data key="d3">6</data>
+</node>
+<node id="encoder">
+  <data key="d0">encoder</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A component that maps an input sequence to a sequence of continuous representations. | the component that processes input sequences | A component in sequence-to-sequence models. | The component of the model that processes the input sequence.</data>
+  <data key="d3">4</data>
+</node>
+<node id="decoder">
+  <data key="d0">decoder</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A component that generates an output sequence one element at a time based on the encoder's output. | the component that generates output sequences | A component in sequence-to-sequence models. | The component of the model that generates the output sequence.</data>
+  <data key="d3">4</data>
+</node>
+<node id="point-wise, fully connected layers">
+  <data key="d0">point-wise, fully connected layers</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Layers used in both the encoder and decoder of the Transformer model.</data>
+  <data key="d3">1</data>
+</node>
+<node id="stacked self-attention">
+  <data key="d0">stacked self-attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method used in the Transformer model where multiple self-attention layers are stacked together.</data>
+  <data key="d3">1</data>
+</node>
+<node id="multi-head self-attention mechanism">
+  <data key="d0">multi-head self-attention mechanism</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a component in the encoder and decoder layers</data>
+  <data key="d3">1</data>
+</node>
+<node id="positionwise fully connected feed-forward network">
+  <data key="d0">positionwise fully connected feed-forward network</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a component in the encoder and decoder layers</data>
+  <data key="d3">1</data>
+</node>
+<node id="residual connection">
+  <data key="d0">residual connection</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a concept used to facilitate these residual connections | connections around each sub-layer in the model and decoder</data>
+  <data key="d3">2</data>
+</node>
+<node id="layer normalization">
+  <data key="d0">layer normalization</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a concept used in the model | a normalization technique applied after each sub-layer in the model and decoder</data>
+  <data key="d3">2</data>
+</node>
+<node id="dmodel">
+  <data key="d0">dmodel</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">dimension of the model's output, set to 512 | Dimensionality of the model | dimensionality of input and output is dmodel = 512 | The dimension of the embeddings and positional encodings, which are summed together. | The dimensionality of the model's embedding and positional encoding vectors. | The dimensionality of the model's input and output embeddings</data>
+  <data key="d3">6</data>
+</node>
+<node id="n">
+  <data key="d0">N</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">number of layers in the decoder, set to 6 | The sequence length.</data>
+  <data key="d3">3</data>
+</node>
+<node id="scaled dot-product attention">
+  <data key="d0">Scaled Dot-Product Attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A specific type of attention mechanism where the output is computed as a weighted sum of the values. | A method used in self-attention layers to compute attention scores.</data>
+  <data key="d3">2</data>
+</node>
+<node id="queries">
+  <data key="d0">queries</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Input components used in the attention mechanism. | Input vectors that are linearly projected h times with different learned linear projections.</data>
+  <data key="d3">2</data>
+</node>
+<node id="keys">
+  <data key="d0">keys</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Input components used in the attention mechanism. | Input vectors that are linearly projected h times with different learned linear projections.</data>
+  <data key="d3">2</data>
+</node>
+<node id="values">
+  <data key="d0">values</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Input components used in the attention mechanism. | Input vectors that are linearly projected h times with different learned linear projections.</data>
+  <data key="d3">2</data>
+</node>
+<node id="additive attention">
+  <data key="d0">Additive Attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A type of attention mechanism that uses a feed-forward network with a single hidden layer.</data>
+  <data key="d3">1</data>
+</node>
+<node id="dot-product attention">
+  <data key="d0">Dot-Product Attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A type of attention mechanism that computes the compatibility function using matrix multiplication without additional layers.</data>
+  <data key="d3">1</data>
+</node>
+<node id="q">
+  <data key="d0">Q</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Query matrix in the attention mechanism.</data>
+  <data key="d3">1</data>
+</node>
+<node id="k">
+  <data key="d0">K</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Key matrix in the attention mechanism. | The kernel size of convolutions.</data>
+  <data key="d3">3</data>
+</node>
+<node id="v">
+  <data key="d0">V</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Value matrix in the attention mechanism.</data>
+  <data key="d3">1</data>
+</node>
+<node id="softmax">
+  <data key="d0">softmax</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method used to convert a vector of values into a probability distribution. | used to convert the decoder output to predicted next-token probabilities</data>
+  <data key="d3">2</data>
+</node>
+<node id="dk">
+  <data key="d0">dk</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Dimensionality of the key vectors in the attention mechanism. | Dimensionality of each attention head | The dimensionality of the key vectors in multi-head attention</data>
+  <data key="d3">3</data>
+</node>
+<node id="concat(head1, ..., headh)w_o">
+  <data key="d0">Concat(head1, ..., headh)W_O</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">The final output after concatenating the heads and applying a linear projection.</data>
+  <data key="d3">1</data>
+</node>
+<node id="headi">
+  <data key="d0">headi</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">Each individual attention head computed in parallel on the projected queries, keys, and values. | An individual attention head in MultiHead model</data>
+  <data key="d3">2</data>
+</node>
+<node id="multihead">
+  <data key="d0">MultiHead</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">A model using multiple attention heads</data>
+  <data key="d3">1</data>
+</node>
+<node id="attention">
+  <data key="d0">Attention</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method used in attention mechanism</data>
+  <data key="d3">1</data>
+</node>
+<node id="qw">
+  <data key="d0">QW</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Parameter matrix for query projection in attention mechanism</data>
+  <data key="d3">1</data>
+</node>
+<node id="wq">
+  <data key="d0">WQ</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Parameter matrix for query projection in attention mechanism</data>
+  <data key="d3">1</data>
+</node>
+<node id="wo">
+  <data key="d0">WO</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Parameter matrix for output projection in attention mechanism</data>
+  <data key="d3">1</data>
+</node>
+<node id="dv">
+  <data key="d0">dv</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Dimensionality of the value vector in attention mechanism | The dimensionality of the value vectors in multi-head attention</data>
+  <data key="d3">2</data>
+</node>
+<node id="h">
+  <data key="d0">h</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Number of parallel attention layers or heads | The number of heads in multi-head attention</data>
+  <data key="d3">2</data>
+</node>
+<node id="encoder-decoder attention">
+  <data key="d0">encoder-decoder attention</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A task where the queries come from the previous decoder layer and the memory keys and values come from the encoder output</data>
+  <data key="d3">1</data>
+</node>
+<node id="ffn">
+  <data key="d0">FFN</data>
+  <data key="d1">MODEL</data>
+  <data key="d2"></data>
+  <data key="d3">1</data>
+</node>
+<node id="dff">
+  <data key="d0">dff</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">inner-layer has dimensionality dff = 2048 | The dimensionality of the intermediate feedforward layer</data>
+  <data key="d3">2</data>
+</node>
+<node id="linear transformations">
+  <data key="d0">linear transformations</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2"></data>
+  <data key="d3">1</data>
+</node>
+<node id="relu activation">
+  <data key="d0">ReLU activation</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2"></data>
+  <data key="d3">1</data>
+</node>
+<node id="embeddings">
+  <data key="d0">embeddings</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">used to convert the input tokens and output tokens to vectors of dimension dmodel | sums of the embeddings and the positional encodings</data>
+  <data key="d3">2</data>
+</node>
+<node id="weight matrix">
+  <data key="d0">weight matrix</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">shared the same weight matrix between the two embedding layers and the pre-softmax linear transformation</data>
+  <data key="d3">1</data>
+</node>
+<node id="embedding layers">
+  <data key="d0">embedding layers</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">The component where weights are multiplied by √dmodel.</data>
+  <data key="d3">1</data>
+</node>
+<node id="pre-softmax linear transformation">
+  <data key="d0">pre-softmax linear transformation</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A component similar to [30] used in the model.</data>
+  <data key="d3">1</data>
+</node>
+<node id="recurrent">
+  <data key="d0">recurrent</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method with complexity O(n · d2) and maximum path length O(n).</data>
+  <data key="d3">1</data>
+</node>
+<node id="convolutional">
+  <data key="d0">convolutional</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method with complexity O(k · n · d2) and maximum path length O(1).</data>
+  <data key="d3">1</data>
+</node>
+<node id="self-attention (restricted)">
+  <data key="d0">self-attention (restricted)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method with complexity O(r · n · d) and maximum path length O(1).</data>
+  <data key="d3">1</data>
+</node>
+<node id="positional encodings">
+  <data key="d0">positional encodings</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Information added to the input embeddings to account for the order of the sequence.</data>
+  <data key="d3">1</data>
+</node>
+<node id="r">
+  <data key="d0">r</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The size of the neighborhood in restricted self-attention.</data>
+  <data key="d3">2</data>
+</node>
+<node id="sine">
+  <data key="d0">sine</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">A type of trigonometric function used for positional encoding.</data>
+  <data key="d3">1</data>
+</node>
+<node id="cosine">
+  <data key="d0">cosine</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">A type of trigonometric function used for positional encoding.</data>
+  <data key="d3">1</data>
+</node>
+<node id="positional encoding">
+  <data key="d0">positional encoding</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method to add positional information to the input embeddings in a transformer model. | A method to add positional information to the input embeddings</data>
+  <data key="d3">2</data>
+</node>
+<node id="learned positional embeddings">
+  <data key="d0">learned positional embeddings</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">A method to add positional information to the input embeddings in a transformer model, where the embeddings are learned during training. | a type of positional encoding learned during training | Positional embeddings that are learned during training</data>
+  <data key="d3">3</data>
+</node>
+<node id="sinusoidal version">
+  <data key="d0">sinusoidal version</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A specific method of positional encoding using sine and cosine functions. | a type of positional encoding</data>
+  <data key="d3">2</data>
+</node>
+<node id="pe">
+  <data key="d0">PE</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">The positional encoding component in the transformer model.</data>
+  <data key="d3">1</data>
+</node>
+<node id="self-attention layer">
+  <data key="d0">self-attention layer</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">layers used for sequence transduction | a component that connects all positions with a constant number of sequentially executed operations | a component of separable convolution</data>
+  <data key="d3">4</data>
+</node>
+<node id="recurrent layers">
+  <data key="d0">recurrent layers</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">commonly used layers for sequence processing | A type of model layer that processes data sequentially. | a component that requires O(n) sequential operations</data>
+  <data key="d3">4</data>
+</node>
+<node id="convolutional layers">
+  <data key="d0">convolutional layers</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">commonly used layers for sequence processing</data>
+  <data key="d3">2</data>
+</node>
+<node id="sequence transduction encoder">
+  <data key="d0">sequence transduction encoder</data>
+  <data key="d1">TASK</data>
+  <data key="d2">a task involving sequence-to-sequence transformation</data>
+  <data key="d3">2</data>
+</node>
+<node id="path length">
+  <data key="d0">path length</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">the measure of the minimum number of sequential operations required for computation</data>
+  <data key="d3">1</data>
+</node>
+<node id="long-range dependencies">
+  <data key="d0">long-range dependencies</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">dependencies between positions in the input and output sequences that are far apart</data>
+  <data key="d3">1</data>
+</node>
+<node id="sequence transduction tasks">
+  <data key="d0">sequence transduction tasks</data>
+  <data key="d1">TASK</data>
+  <data key="d2">tasks involving transformation of one sequence into another</data>
+  <data key="d3">1</data>
+</node>
+<node id="sequence length n">
+  <data key="d0">sequence length n</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The length of the input sequence.</data>
+  <data key="d3">1</data>
+</node>
+<node id="representation dimensionality d">
+  <data key="d0">representation dimensionality d</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The dimensionality of the input representation.</data>
+  <data key="d3">1</data>
+</node>
+<node id="sentence representations">
+  <data key="d0">sentence representations</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">Representations of sentences used in machine translation models.</data>
+  <data key="d3">1</data>
+</node>
+<node id="very long sequences">
+  <data key="d0">very long sequences</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">Sequences that are longer than typical input lengths for models.</data>
+  <data key="d3">1</data>
+</node>
+<node id="point-wise feed-forward layer">
+  <data key="d0">point-wise feed-forward layer</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a component of separable convolution</data>
+  <data key="d3">2</data>
+</node>
+<node id="separable convolution">
+  <data key="d0">separable convolution</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a combination of a self-attention layer and a point-wise feed-forward layer</data>
+  <data key="d3">2</data>
+</node>
+<node id="dilated convolution">
+  <data key="d0">dilated convolution</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2"></data>
+  <data key="d3">1</data>
+</node>
+<node id="stack of convolutional layers">
+  <data key="d0">stack of convolutional layers</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2"></data>
+  <data key="d3">1</data>
+</node>
+<node id="wmt 2014 english-german dataset">
+  <data key="d0">WMT 2014 English-German dataset</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">a dataset consisting of about 4.5 million sentence pairs</data>
+  <data key="d3">1</data>
+</node>
+<node id="wmt 2014 english-french dataset">
+  <data key="d0">WMT 2014 English-French dataset</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">a dataset consisting of 36M sentences</data>
+  <data key="d3">1</data>
+</node>
+<node id="sentence pair">
+  <data key="d0">sentence pair</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a pair of sentences in the dataset</data>
+  <data key="d3">1</data>
+</node>
+<node id="sequence length">
+  <data key="d0">sequence length</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">a parameter used for batching sentences</data>
+  <data key="d3">1</data>
+</node>
+<node id="training batch">
+  <data key="d0">training batch</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a set of sentence pairs used for training</data>
+  <data key="d3">1</data>
+</node>
+<node id="adam optimizer">
+  <data key="d0">Adam optimizer</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">an optimization algorithm</data>
+  <data key="d3">1</data>
+</node>
+<node id="base model">
+  <data key="d0">base model</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">models with standard hyperparameters | the basic version of the transformer model | A single model obtained by averaging the last 5 checkpoints for base models. | The default model configuration | the original model without any modifications | The original or default model configuration</data>
+  <data key="d3">6</data>
+</node>
+<node id="big models">
+  <data key="d0">big models</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">models with larger parameters or more complex architecture | A large-scale Transformer model trained for English-to-French translation, using more checkpoints for averaging.</data>
+  <data key="d3">2</data>
+</node>
+<node id="warmup_steps">
+  <data key="d0">warmup_steps</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">4000 training steps for linear learning rate increase | warmup_steps = 4000</data>
+  <data key="d3">2</data>
+</node>
+<node id="learning rate">
+  <data key="d0">learning rate</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">varied over the course of training | A hyperparameter controlling the step size at each iteration while moving toward a minimum of a loss function</data>
+  <data key="d3">2</data>
+</node>
+<node id="β1">
+  <data key="d0">β1</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">0.9, a parameter for the Adam optimizer</data>
+  <data key="d3">1</data>
+</node>
+<node id="β2">
+  <data key="d0">β2</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">0.98, a parameter for the Adam optimizer</data>
+  <data key="d3">1</data>
+</node>
+<node id="ϵ">
+  <data key="d0">ϵ</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">10^-9, a parameter for the Adam optimizer</data>
+  <data key="d3">1</data>
+</node>
+<node id="deep-att + posunk [39]">
+  <data key="d0">Deep-Att + PosUnk [39]</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">BLEU score: 39.2, FLOPs: 1.0 · 1020 | BLEU score: 40.4, FLOPs: 8.0 · 1020</data>
+  <data key="d3">2</data>
+</node>
+<node id="gnmt + rl [38]">
+  <data key="d0">GNMT + RL [38]</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">BLEU score: 24.6, FLOPs: 2.3 · 1019 | BLEU score: 26.30, FLOPs: 1.8 · 1020</data>
+  <data key="d3">2</data>
+</node>
+<node id="transformer (base model)">
+  <data key="d0">Transformer (base model)</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">BLEU score: 27.3, FLOPs: 3.3 · 1018</data>
+  <data key="d3">1</data>
+</node>
+<node id="transformer (big)">
+  <data key="d0">Transformer (big)</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">BLEU score: 28.4, FLOPs: 2.3 · 1019 | a specific model configuration for the WMT 2014 English-to-German task | A large-scale Transformer model trained for English-to-French translation.</data>
+  <data key="d3">3</data>
+</node>
+<node id="residual dropout">
+  <data key="d0">Residual Dropout</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Pdrop = 0.1</data>
+  <data key="d3">1</data>
+</node>
+<node id="sub-layer">
+  <data key="d0">sub-layer</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">applied dropout to the output of each sub-layer</data>
+  <data key="d3">1</data>
+</node>
+<node id="big transformer model">
+  <data key="d0">big transformer model</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">a larger version of the transformer model</data>
+  <data key="d3">1</data>
+</node>
+<node id="dropout">
+  <data key="d0">dropout</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">a technique used to prevent overfitting with rate Pdrop = 0.1 | a regularization technique to prevent overfitting | A hyperparameter used to prevent overfitting</data>
+  <data key="d3">3</data>
+</node>
+<node id="perplexity">
+  <data key="d0">perplexity</data>
+  <data key="d1">METRIC</data>
+  <data key="d2">a measure of how well the model predicts the validation set</data>
+  <data key="d3">1</data>
+</node>
+<node id="bleu score">
+  <data key="d0">BLEU score</data>
+  <data key="d1">METRIC</data>
+  <data key="d2">a metric for evaluating machine translation quality</data>
+  <data key="d3">1</data>
+</node>
+<node id="table 2">
+  <data key="d0">Table 2</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a table listing model configurations and performance | A table summarizing the results and comparing translation quality and training costs to other model architectures.</data>
+  <data key="d3">2</data>
+</node>
+<node id="table 3">
+  <data key="d0">Table 3</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">a table detailing the configuration of the big transformer model | a table presenting experimental results</data>
+  <data key="d3">2</data>
+</node>
+<node id="dropout rate pdrop = 0.1">
+  <data key="d0">dropout rate Pdrop = 0.1</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">The dropout rate used for the base model, set to 0.1.</data>
+  <data key="d3">1</data>
+</node>
+<node id="beam search with a beam size of 4 and length penalty α = 0.6">
+  <data key="d0">beam search with a beam size of 4 and length penalty α = 0.6</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">Beam search method used for decoding with specified parameters.</data>
+  <data key="d3">1</data>
+</node>
+<node id="input length + 50">
+  <data key="d0">input length + 50</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">Maximum output length during inference, set to input length plus 50.</data>
+  <data key="d3">1</data>
+</node>
+<node id="development set">
+  <data key="d0">development set</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">A dataset used for experimentation and hyperparameter tuning.</data>
+  <data key="d3">1</data>
+</node>
+<node id="newstest2013">
+  <data key="d0">newstest2013</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">A dataset used for evaluation | a dataset used for development set</data>
+  <data key="d3">2</data>
+</node>
+<node id="train ppl">
+  <data key="d0">train PPL</data>
+  <data key="d1">METRIC</data>
+  <data key="d2">The perplexity of the model during training</data>
+  <data key="d3">1</data>
+</node>
+<node id="bleu">
+  <data key="d0">BLEU</data>
+  <data key="d1">METRIC</data>
+  <data key="d2">A metric for evaluating the quality of machine translation</data>
+  <data key="d3">1</data>
+</node>
+<node id="positional embedding">
+  <data key="d0">positional embedding</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a type of positional encoding</data>
+  <data key="d3">1</data>
+</node>
+<node id="sinusoids">
+  <data key="d0">sinusoids</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a type of positional encoding</data>
+  <data key="d3">1</data>
+</node>
+<node id="beam search">
+  <data key="d0">beam search</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">a decoding method for sequence generation</data>
+  <data key="d3">1</data>
+</node>
+<node id="attention heads">
+  <data key="d0">attention heads</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">the number of attention heads in the model</data>
+  <data key="d3">1</data>
+</node>
+<node id="attention key and value dimensions">
+  <data key="d0">attention key and value dimensions</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">dimensions of the attention keys and values</data>
+  <data key="d3">1</data>
+</node>
+<node id="attention key size dk">
+  <data key="d0">attention key size dk</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">size of the attention key dimension</data>
+  <data key="d3">1</data>
+</node>
+<node id="sinusoidal positional encoding">
+  <data key="d0">sinusoidal positional encoding</data>
+  <data key="d1">COMPONENT</data>
+  <data key="d2">a type of positional encoding using sine functions</data>
+  <data key="d3">1</data>
+</node>
+<node id="4-layer transformer">
+  <data key="d0">4-layer transformer</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">A transformer model with 4 layers and d_model = 1024</data>
+  <data key="d3">1</data>
+</node>
+<node id="wall street journal (wsj)">
+  <data key="d0">Wall Street Journal (WSJ)</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">Portion of the Penn Treebank used for training</data>
+  <data key="d3">1</data>
+</node>
+<node id="rnn sequence-to-sequence models">
+  <data key="d0">RNN sequence-to-sequence models</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">Recurrent Neural Network models used for sequence-to-sequence tasks | models outperformed by the Transformer on the WSJ training set</data>
+  <data key="d3">2</data>
+</node>
+<node id="wsj">
+  <data key="d0">WSJ</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">The Wall Street Journal dataset | a dataset consisting of 40K sentences from the Wall Street Journal</data>
+  <data key="d3">2</data>
+</node>
+<node id="section 22">
+  <data key="d0">Section 22</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">A specific section of the WSJ dataset used for experiments</data>
+  <data key="d3">1</data>
+</node>
+<node id="section 23">
+  <data key="d0">Section 23</data>
+  <data key="d1">DATASET</data>
+  <data key="d2">A specific section of the WSJ dataset used for evaluation</data>
+  <data key="d3">1</data>
+</node>
+<node id="beam size">
+  <data key="d0">beam size</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">A hyperparameter used in beam search decoding | a hyperparameter set to 21 for the Transformer model</data>
+  <data key="d3">2</data>
+</node>
+<node id="vinyals &amp; kaiser el al. (2014)">
+  <data key="d0">Vinyals &amp; Kaiser el al. (2014)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="petrov et al. (2006)">
+  <data key="d0">Petrov et al. (2006)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="zhu et al. (2013)">
+  <data key="d0">Zhu et al. (2013)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="dyer et al. (2016)">
+  <data key="d0">Dyer et al. (2016)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="huang &amp; harper (2009)">
+  <data key="d0">Huang &amp; Harper (2009)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="mcclosky et al. (2006)">
+  <data key="d0">McClosky et al. (2006)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="luong et al. (2015)">
+  <data key="d0">Luong et al. (2015)</data>
+  <data key="d1">METHOD</data>
+  <data key="d2">A method or approach described in the referenced paper</data>
+  <data key="d3">1</data>
+</node>
+<node id="multi-task">
+  <data key="d0">multi-task</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A task involving multiple objectives or datasets | a method involving multiple tasks</data>
+  <data key="d3">2</data>
+</node>
+<node id="semi-supervised">
+  <data key="d0">semi-supervised</data>
+  <data key="d1">TASK</data>
+  <data key="d2">a task involving both labeled and unlabeled data</data>
+  <data key="d3">1</data>
+</node>
+<node id="recall neural network grammar">
+  <data key="d0">Recall Neural Network Grammar</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">a model achieving 93.3 performance</data>
+  <data key="d3">1</data>
+</node>
+<node id="berkeley parser">
+  <data key="d0">Berkeley Parser</data>
+  <data key="d1">MODEL</data>
+  <data key="d2">a parser outperformed by the Transformer</data>
+  <data key="d3">1</data>
+</node>
+<node id="α">
+  <data key="d0">α</data>
+  <data key="d1">HYPERPARAMETER</data>
+  <data key="d2">a hyperparameter set to 0.3 for the Transformer model</data>
+  <data key="d3">1</data>
+</node>
+<node id="luong et al.">
+  <data key="d0">Luong et al.</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">the authors of a model achieving 92.7 performance</data>
+  <data key="d3">1</data>
+</node>
+<node id="dyer et al.">
+  <data key="d0">Dyer et al.</data>
+  <data key="d1">CONCEPT</data>
+  <data key="d2">the authors of a model achieving 93.0 performance</data>
+  <data key="d3">1</data>
+</node>
+<node id="wmt 2014 english-to-german">
+  <data key="d0">WMT 2014 English-to-German</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A translation task where the Transformer achieved a new state of the art.</data>
+  <data key="d3">1</data>
+</node>
+<node id="wmt 2014 english-to-french">
+  <data key="d0">WMT 2014 English-to-French</data>
+  <data key="d1">TASK</data>
+  <data key="d2">A translation task where the Transformer achieved a new state of the art.</data>
+  <data key="d3">1</data>
+</node>
+<node id="tensorflow">
+  <data key="d0">TensorFlow</data>
+  <data key="d1">HARDWARE</data>
+  <data key="d2">The code used to train and evaluate the models is available at https://github.com/tensorflow/tensor2tensor.</data>
+  <data key="d3">1</data>
+</node>
+<edge source="attention is all you need" target="google brain">
+  <data key="d4">1</data>
+  <data key="d5">GRANTS PERMISSION</data>
+</edge>
+<edge source="attention is all you need" target="google research">
+  <data key="d4">1</data>
+  <data key="d5">GRANTS PERMISSION</data>
+</edge>
+<edge source="arxiv:1706.03762v7" target="cs.cl">
+  <data key="d4">1</data>
+  <data key="d5">RELATES_TO</data>
+</edge>
+<edge source="transformer" target="attention mechanism">
+  <data key="d4">2</data>
+  <data key="d5">based on; uses</data>
+</edge>
+<edge source="transformer" target="wmt 2014 english-german translation task">
+  <data key="d4">1</data>
+  <data key="d5">achieves</data>
+</edge>
+<edge source="transformer" target="wmt 2014 english-french translation task">
+  <data key="d4">1</data>
+  <data key="d5">establishes</data>
+</edge>
+<edge source="transformer" target="recurrent network">
+  <data key="d4">1</data>
+  <data key="d5">replaces</data>
+</edge>
+<edge source="transformer" target="p100 gpu">
+  <data key="d4">1</data>
+  <data key="d5">trained on</data>
+</edge>
+<edge source="transformer" target="translation quality">
+  <data key="d4">2</data>
+  <data key="d5">improves; improves</data>
+</edge>
+<edge source="transformer" target="multi-head attention">
+  <data key="d4">3</data>
+  <data key="d5">uses; replaces; uses</data>
+</edge>
+<edge source="transformer" target="self-attention">
+  <data key="d4">1</data>
+  <data key="d5">motivate</data>
+</edge>
+<edge source="transformer" target="encoder">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="transformer" target="decoder">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="transformer" target="multihead">
+  <data key="d4">1</data>
+  <data key="d5">used_in</data>
+</edge>
+<edge source="transformer" target="encoder-decoder attention">
+  <data key="d4">1</data>
+  <data key="d5">task_performed_by</data>
+</edge>
+<edge source="transformer" target="positional encoding">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="transformer" target="learned positional embeddings">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="transformer" target="wsj">
+  <data key="d4">2</data>
+  <data key="d5">generalizes well to; trained on</data>
+</edge>
+<edge source="transformer" target="section 23">
+  <data key="d4">1</data>
+  <data key="d5">evaluates on</data>
+</edge>
+<edge source="transformer" target="section 22">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="transformer" target="beam size">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="transformer" target="α">
+  <data key="d4">1</data>
+  <data key="d5">sets</data>
+</edge>
+<edge source="transformer" target="semi-supervised">
+  <data key="d4">1</data>
+  <data key="d5">performs</data>
+</edge>
+<edge source="transformer" target="recall neural network grammar">
+  <data key="d4">1</data>
+  <data key="d5">outperforms</data>
+</edge>
+<edge source="transformer" target="berkeley parser">
+  <data key="d4">1</data>
+  <data key="d5">outperforms</data>
+</edge>
+<edge source="transformer" target="wmt 2014 english-to-german">
+  <data key="d4">1</data>
+  <data key="d5">achieves new state of the art</data>
+</edge>
+<edge source="transformer" target="wmt 2014 english-to-french">
+  <data key="d4">1</data>
+  <data key="d5">achieves new state of the art</data>
+</edge>
+<edge source="transformer" target="tensorflow">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="attention mechanism" target="sequence transduction models">
+  <data key="d4">1</data>
+  <data key="d5">include</data>
+</edge>
+<edge source="wmt 2014 english-german translation task" target="big transformer model">
+  <data key="d4">1</data>
+  <data key="d5">outperforms</data>
+</edge>
+<edge source="wmt 2014 english-french translation task" target="8 gpus">
+  <data key="d4">1</data>
+  <data key="d5">trained on</data>
+</edge>
+<edge source="wmt 2014 english-french translation task" target="big transformer model">
+  <data key="d4">1</data>
+  <data key="d5">achieves</data>
+</edge>
+<edge source="long short-term memory" target="sequence modeling">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="long short-term memory" target="language modeling">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="long short-term memory" target="machine translation">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="gated recurrent neural networks" target="sequence modeling">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="gated recurrent neural networks" target="language modeling">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="gated recurrent neural networks" target="machine translation">
+  <data key="d4">1</data>
+  <data key="d5">is used for</data>
+</edge>
+<edge source="recurrent language models" target="computation along the symbol positions">
+  <data key="d4">1</data>
+  <data key="d5">factor</data>
+</edge>
+<edge source="hidden states ht" target="computation along the symbol positions">
+  <data key="d4">1</data>
+  <data key="d5">generate</data>
+</edge>
+<edge source="hidden states ht" target="previous hidden state ht−1">
+  <data key="d4">1</data>
+  <data key="d5">depend on</data>
+</edge>
+<edge source="p100 gpu" target="base model">
+  <data key="d4">1</data>
+  <data key="d5">trained_on</data>
+</edge>
+<edge source="p100 gpu" target="big models">
+  <data key="d4">1</data>
+  <data key="d5">trained_on</data>
+</edge>
+<edge source="multi-head attention" target="self-attention">
+  <data key="d4">1</data>
+  <data key="d5">counteract</data>
+</edge>
+<edge source="multi-head attention" target="decoder">
+  <data key="d4">1</data>
+  <data key="d5">performs</data>
+</edge>
+<edge source="multi-head attention" target="dot-product attention">
+  <data key="d4">1</data>
+  <data key="d5">is part of</data>
+</edge>
+<edge source="multi-head attention" target="additive attention">
+  <data key="d4">1</data>
+  <data key="d5">is part of</data>
+</edge>
+<edge source="multi-head attention" target="queries">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="multi-head attention" target="keys">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="multi-head attention" target="values">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="self-attention" target="encoder">
+  <data key="d4">2</data>
+  <data key="d5">used_in; used in</data>
+</edge>
+<edge source="self-attention" target="decoder">
+  <data key="d4">3</data>
+  <data key="d5">used_in; modified in; used in</data>
+</edge>
+<edge source="self-attention" target="stacked self-attention">
+  <data key="d4">1</data>
+  <data key="d5">is</data>
+</edge>
+<edge source="self-attention" target="dmodel">
+  <data key="d4">1</data>
+  <data key="d5">complexity</data>
+</edge>
+<edge source="self-attention" target="recurrent layers">
+  <data key="d4">1</data>
+  <data key="d5">faster than</data>
+</edge>
+<edge source="self-attention" target="sentence representations">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="self-attention" target="very long sequences">
+  <data key="d4">1</data>
+  <data key="d5">could be restricted to</data>
+</edge>
+<edge source="encoder" target="point-wise, fully connected layers">
+  <data key="d4">1</data>
+  <data key="d5">used_in</data>
+</edge>
+<edge source="encoder" target="multi-head self-attention mechanism">
+  <data key="d4">1</data>
+  <data key="d5">in</data>
+</edge>
+<edge source="encoder" target="positionwise fully connected feed-forward network">
+  <data key="d4">1</data>
+  <data key="d5">in</data>
+</edge>
+<edge source="encoder" target="positional encodings">
+  <data key="d4">1</data>
+  <data key="d5">add</data>
+</edge>
+<edge source="decoder" target="point-wise, fully connected layers">
+  <data key="d4">1</data>
+  <data key="d5">used_in</data>
+</edge>
+<edge source="decoder" target="n">
+  <data key="d4">1</data>
+  <data key="d5">composed of</data>
+</edge>
+<edge source="decoder" target="scaled dot-product attention">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="decoder" target="positional encodings">
+  <data key="d4">1</data>
+  <data key="d5">add</data>
+</edge>
+<edge source="residual connection" target="sub-layer">
+  <data key="d4">1</data>
+  <data key="d5">around each of</data>
+</edge>
+<edge source="layer normalization" target="sub-layer">
+  <data key="d4">1</data>
+  <data key="d5">applied after each</data>
+</edge>
+<edge source="dmodel" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">dimensionality_of</data>
+</edge>
+<edge source="dmodel" target="linear transformations">
+  <data key="d4">1</data>
+  <data key="d5">=</data>
+</edge>
+<edge source="dmodel" target="embedding layers">
+  <data key="d4">1</data>
+  <data key="d5">multiply by</data>
+</edge>
+<edge source="dmodel" target="recurrent">
+  <data key="d4">1</data>
+  <data key="d5">complexity</data>
+</edge>
+<edge source="dmodel" target="convolutional">
+  <data key="d4">1</data>
+  <data key="d5">complexity</data>
+</edge>
+<edge source="dmodel" target="self-attention (restricted)">
+  <data key="d4">1</data>
+  <data key="d5">complexity</data>
+</edge>
+<edge source="dmodel" target="positional encodings">
+  <data key="d4">1</data>
+  <data key="d5">sum with</data>
+</edge>
+<edge source="scaled dot-product attention" target="queries">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="scaled dot-product attention" target="keys">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="scaled dot-product attention" target="values">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="queries" target="keys">
+  <data key="d4">1</data>
+  <data key="d5">computes attention scores with</data>
+</edge>
+<edge source="queries" target="values">
+  <data key="d4">1</data>
+  <data key="d5">computes attention scores with</data>
+</edge>
+<edge source="queries" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">applies to</data>
+</edge>
+<edge source="keys" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">applies to</data>
+</edge>
+<edge source="values" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">applies to</data>
+</edge>
+<edge source="additive attention" target="dk">
+  <data key="d4">1</data>
+  <data key="d5">affects</data>
+</edge>
+<edge source="additive attention" target="softmax">
+  <data key="d4">1</data>
+  <data key="d5">applied to</data>
+</edge>
+<edge source="dot-product attention" target="dk">
+  <data key="d4">1</data>
+  <data key="d5">affects</data>
+</edge>
+<edge source="dot-product attention" target="softmax">
+  <data key="d4">1</data>
+  <data key="d5">applied to</data>
+</edge>
+<edge source="q" target="k">
+  <data key="d4">1</data>
+  <data key="d5">computes with</data>
+</edge>
+<edge source="q" target="v">
+  <data key="d4">1</data>
+  <data key="d5">computes with</data>
+</edge>
+<edge source="dk" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">dimensionality_of_each</data>
+</edge>
+<edge source="concat(head1, ..., headh)w_o" target="headi">
+  <data key="d4">1</data>
+  <data key="d5">concatenates</data>
+</edge>
+<edge source="headi" target="multihead">
+  <data key="d4">1</data>
+  <data key="d5">comprises</data>
+</edge>
+<edge source="headi" target="attention">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="headi" target="qw">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="headi" target="wq">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="headi" target="wo">
+  <data key="d4">1</data>
+  <data key="d5">projects</data>
+</edge>
+<edge source="headi" target="dv">
+  <data key="d4">1</data>
+  <data key="d5">dimensionality_of</data>
+</edge>
+<edge source="headi" target="h">
+  <data key="d4">1</data>
+  <data key="d5">number_of</data>
+</edge>
+<edge source="ffn" target="linear transformations">
+  <data key="d4">1</data>
+  <data key="d5">consists of</data>
+</edge>
+<edge source="dff" target="linear transformations">
+  <data key="d4">1</data>
+  <data key="d5">=</data>
+</edge>
+<edge source="linear transformations" target="relu activation">
+  <data key="d4">1</data>
+  <data key="d5">with</data>
+</edge>
+<edge source="embeddings" target="sub-layer">
+  <data key="d4">1</data>
+  <data key="d5">sums with</data>
+</edge>
+<edge source="weight matrix" target="embedding layers">
+  <data key="d4">1</data>
+  <data key="d5">shared with</data>
+</edge>
+<edge source="weight matrix" target="pre-softmax linear transformation">
+  <data key="d4">1</data>
+  <data key="d5">shared with</data>
+</edge>
+<edge source="sine" target="positional encoding">
+  <data key="d4">1</data>
+  <data key="d5">used in</data>
+</edge>
+<edge source="cosine" target="positional encoding">
+  <data key="d4">1</data>
+  <data key="d5">used in</data>
+</edge>
+<edge source="positional encoding" target="learned positional embeddings">
+  <data key="d4">1</data>
+  <data key="d5">compared to</data>
+</edge>
+<edge source="positional encoding" target="sinusoidal version">
+  <data key="d4">1</data>
+  <data key="d5">chosen over</data>
+</edge>
+<edge source="positional encoding" target="pe">
+  <data key="d4">1</data>
+  <data key="d5">part of</data>
+</edge>
+<edge source="self-attention layer" target="path length">
+  <data key="d4">1</data>
+  <data key="d5">connects all positions</data>
+</edge>
+<edge source="self-attention layer" target="separable convolution">
+  <data key="d4">1</data>
+  <data key="d5">comprises</data>
+</edge>
+<edge source="recurrent layers" target="path length">
+  <data key="d4">1</data>
+  <data key="d5">requires O(n) sequential operations</data>
+</edge>
+<edge source="recurrent layers" target="convolutional layers">
+  <data key="d4">1</data>
+  <data key="d5">more expensive than</data>
+</edge>
+<edge source="convolutional layers" target="separable convolution">
+  <data key="d4">1</data>
+  <data key="d5">reduced complexity to</data>
+</edge>
+<edge source="convolutional layers" target="stack of convolutional layers">
+  <data key="d4">1</data>
+  <data key="d5">increases the length of the longest paths between</data>
+</edge>
+<edge source="path length" target="long-range dependencies">
+  <data key="d4">1</data>
+  <data key="d5">affects learning</data>
+</edge>
+<edge source="long-range dependencies" target="sequence transduction tasks">
+  <data key="d4">1</data>
+  <data key="d5">is a key challenge</data>
+</edge>
+<edge source="sequence length n" target="representation dimensionality d">
+  <data key="d4">1</data>
+  <data key="d5">smaller than</data>
+</edge>
+<edge source="point-wise feed-forward layer" target="separable convolution">
+  <data key="d4">1</data>
+  <data key="d5">comprises</data>
+</edge>
+<edge source="dilated convolution" target="stack of convolutional layers">
+  <data key="d4">1</data>
+  <data key="d5">requires</data>
+</edge>
+<edge source="wmt 2014 english-german dataset" target="sentence pair">
+  <data key="d4">1</data>
+  <data key="d5">contains</data>
+</edge>
+<edge source="wmt 2014 english-french dataset" target="sentence pair">
+  <data key="d4">1</data>
+  <data key="d5">contains</data>
+</edge>
+<edge source="sentence pair" target="sequence length">
+  <data key="d4">1</data>
+  <data key="d5">batched_by</data>
+</edge>
+<edge source="sentence pair" target="training batch">
+  <data key="d4">1</data>
+  <data key="d5">contains</data>
+</edge>
+<edge source="adam optimizer" target="β1">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="adam optimizer" target="β2">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="adam optimizer" target="ϵ">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="base model" target="learning rate">
+  <data key="d4">1</data>
+  <data key="d5">has</data>
+</edge>
+<edge source="base model" target="dropout">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="base model" target="beam search with a beam size of 4 and length penalty α = 0.6">
+  <data key="d4">1</data>
+  <data key="d5">used</data>
+</edge>
+<edge source="base model" target="input length + 50">
+  <data key="d4">1</data>
+  <data key="d5">set as maximum output length</data>
+</edge>
+<edge source="base model" target="development set">
+  <data key="d4">1</data>
+  <data key="d5">tuned on</data>
+</edge>
+<edge source="base model" target="table 2">
+  <data key="d4">1</data>
+  <data key="d5">summarizes result of</data>
+</edge>
+<edge source="base model" target="train ppl">
+  <data key="d4">1</data>
+  <data key="d5">measured</data>
+</edge>
+<edge source="base model" target="bleu">
+  <data key="d4">1</data>
+  <data key="d5">measured</data>
+</edge>
+<edge source="base model" target="sinusoidal positional encoding">
+  <data key="d4">1</data>
+  <data key="d5">replaced by</data>
+</edge>
+<edge source="base model" target="4-layer transformer">
+  <data key="d4">1</data>
+  <data key="d5">is variant of</data>
+</edge>
+<edge source="big models" target="learning rate">
+  <data key="d4">1</data>
+  <data key="d5">has</data>
+</edge>
+<edge source="big models" target="input length + 50">
+  <data key="d4">1</data>
+  <data key="d5">set as maximum output length</data>
+</edge>
+<edge source="big models" target="development set">
+  <data key="d4">1</data>
+  <data key="d5">tuned on</data>
+</edge>
+<edge source="big models" target="table 2">
+  <data key="d4">1</data>
+  <data key="d5">summarizes result of</data>
+</edge>
+<edge source="warmup_steps" target="learning rate">
+  <data key="d4">1</data>
+  <data key="d5">varies_over</data>
+</edge>
+<edge source="warmup_steps" target="transformer (base model)">
+  <data key="d4">1</data>
+  <data key="d5">used for</data>
+</edge>
+<edge source="transformer (big)" target="dropout rate pdrop = 0.1">
+  <data key="d4">1</data>
+  <data key="d5">used</data>
+</edge>
+<edge source="residual dropout" target="sub-layer">
+  <data key="d4">1</data>
+  <data key="d5">applied to</data>
+</edge>
+<edge source="big transformer model" target="dropout">
+  <data key="d4">1</data>
+  <data key="d5">uses</data>
+</edge>
+<edge source="big transformer model" target="perplexity">
+  <data key="d4">1</data>
+  <data key="d5">improves</data>
+</edge>
+<edge source="big transformer model" target="bleu score">
+  <data key="d4">1</data>
+  <data key="d5">improves</data>
+</edge>
+<edge source="dropout" target="table 3">
+  <data key="d4">1</data>
+  <data key="d5">observed effect of</data>
+</edge>
+<edge source="table 3" target="beam search">
+  <data key="d4">1</data>
+  <data key="d5">used in</data>
+</edge>
+<edge source="table 3" target="attention heads">
+  <data key="d4">1</data>
+  <data key="d5">varied in</data>
+</edge>
+<edge source="table 3" target="attention key and value dimensions">
+  <data key="d4">1</data>
+  <data key="d5">varied in</data>
+</edge>
+<edge source="table 3" target="attention key size dk">
+  <data key="d4">1</data>
+  <data key="d5">observed effect on</data>
+</edge>
+<edge source="positional embedding" target="sinusoids">
+  <data key="d4">1</data>
+  <data key="d5">replace</data>
+</edge>
+<edge source="4-layer transformer" target="wall street journal (wsj)">
+  <data key="d4">1</data>
+  <data key="d5">trained on</data>
+</edge>
+<edge source="wsj" target="vinyals &amp; kaiser el al. (2014)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="petrov et al. (2006)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="zhu et al. (2013)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="dyer et al. (2016)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="huang &amp; harper (2009)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="mcclosky et al. (2006)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="wsj" target="luong et al. (2015)">
+  <data key="d4">1</data>
+  <data key="d5">performs on</data>
+</edge>
+<edge source="multi-task" target="dyer et al.">
+  <data key="d4">1</data>
+  <data key="d5">achieved by</data>
+</edge>
+<edge source="semi-supervised" target="luong et al.">
+  <data key="d4">1</data>
+  <data key="d5">achieved by</data>
+</edge>
+</graph></graphml>
