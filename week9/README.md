@@ -199,13 +199,13 @@ System 1 在 test 上只有 **13%** 的請求需要升級到 System 2；benchmar
 ### UI（Gradio）
 
 文字 + 圖片上傳、分段泡泡（含「⌛ …」輸入中提示）、快速回覆按鈕；右側面板即時顯示 **最後一次的結構化 payload**、**對話狀態**（話題、槽位、離題次數、strikes、走 System 1 或 System 2）與 **已派送工單**。`launch(share=True)` 會產生約 1 週有效的公開連結。
-1. 分流
+1. 分流  
 ![Q3_UI_diverting](Outputs/Q3_UI_diverting.png)
 
-2. 多輪多模態
+2. 多輪多模態  
 ![Q3_UI_mutimodal](Outputs/Q3_UI_mutimodal.png)
 
-3. 邊角情境 + 中途換主題
+3. 邊角情境 + 中途換主題  
 ![Q3_UI_edge_case](Outputs/Q3_UI_edge_case.jpg) 
 
 
