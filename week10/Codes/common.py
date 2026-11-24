@@ -456,7 +456,9 @@ def launch_blocks(demo, gr, **kw):
             kw["server_port"] = p
             break
     try:
-        demo.launch(theme=gr.themes.Soft(), **kw)
+        demo.launch(theme=gr.themes.Soft(
+            font=[gr.themes.GoogleFont("Noto Sans TC"), "Microsoft JhengHei", "PingFang TC", "sans-serif"],
+            font_mono=[gr.themes.GoogleFont("JetBrains Mono"), "monospace"]), **kw)
     except TypeError:
         demo.launch(**kw)
     return demo

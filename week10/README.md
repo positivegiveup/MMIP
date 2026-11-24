@@ -114,6 +114,7 @@ week10/
 ### 進階 ③：User Interface
 
 Gradio 介面：左側是多輪對話；右側可即時調整 Top-K、Prompt 技術、是否改寫，並顯示改寫後的獨立查詢，以及可展開、標示是否被引用的 References。
+![Q1_UI](Q1_UI.jpg)
 
 ---
 
